@@ -26,7 +26,6 @@ while game:
             game = False
 
     # ----- Gera saídas
-<<<<<<< HEAD
     window.fill((0, 200, 253))  # Preenche com a cor branca
     window.blit(chaozinho1, (0, 540)) 
     window.blit(chaozinho1, (200, 540))
@@ -34,9 +33,6 @@ while game:
     window.blit(chaozinho1, (600, 540))  
     window.blit(chaozinho1, (800, 540))  
     window.blit(chaozinho1, (1000, 540)) 
-=======
-    window.fill((102, 178, 255))  # Preenche com a cor branca
->>>>>>> 42d5dae903d7529247a37a8c8ae3caf4bd42e1db
 
     # ----- Atualiza estado do jogo
     pygame.display.update()  # Mostra o novo frame para o jogador
