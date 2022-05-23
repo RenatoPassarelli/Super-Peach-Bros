@@ -10,6 +10,10 @@ pygame.init()
 window = pygame.display.set_mode((1200, 600))
 pygame.display.set_caption('Super Peach game')
 
+# ----- Inicia Assets
+chao_padrao = pygame.image.load("C:/Users/bebec/OneDrive/Área de Trabalho/Super-Peach-Bros/chaozinho.jpg").convert()
+chaozinho1 = pygame.transform.scale(chao_padrao, (200,60)) 
+
 # ----- Inicia estruturas de dados
 game = True
 
@@ -23,6 +27,12 @@ while game:
 
     # ----- Gera saídas
     window.fill((0, 200, 253))  # Preenche com a cor branca
+    window.blit(chaozinho1, (0, 540)) 
+    window.blit(chaozinho1, (200, 540))
+    window.blit(chaozinho1, (400, 540)) 
+    window.blit(chaozinho1, (600, 540))  
+    window.blit(chaozinho1, (800, 540))  
+    window.blit(chaozinho1, (1000, 540)) 
 
     # ----- Atualiza estado do jogo
     pygame.display.update()  # Mostra o novo frame para o jogador
