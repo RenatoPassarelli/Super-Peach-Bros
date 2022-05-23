@@ -3,7 +3,7 @@
 # ===== Inicialização =====
 # ----- Importa e inicia pacotes
 import pygame
-
+from os import path
 pygame.init()
 
 # ----- Gera tela principal
@@ -11,9 +11,10 @@ window = pygame.display.set_mode((1200, 600))
 pygame.display.set_caption('Super Peach game')
 
 # ----- Inicia Assets
-chao_padrao = pygame.image.load("C:/Users/bebec/OneDrive/Área de Trabalho/Super-Peach-Bros/chaozinho.jpg").convert()
+chao_padrao = pygame.image.load(path.join(path.dirname(__file__),"chaozinho.jpg")).convert()
 chaozinho1 = pygame.transform.scale(chao_padrao, (200,60)) 
-
+peachzinha = pygame.image.load(path.join(path.dirname(__file__),"Peachzinha.png")).convert_alpha()
+peachzinha1=pygame.transform.scale(peachzinha, (60,80))
 # ----- Inicia estruturas de dados
 game = True
 
@@ -34,6 +35,8 @@ while game:
     window.blit(chaozinho1, (800, 540))  
     window.blit(chaozinho1, (1000, 540)) 
 
+    #peach
+    window.blit(peachzinha1, (200, 460))
     # ----- Atualiza estado do jogo
     pygame.display.update()  # Mostra o novo frame para o jogador
 
