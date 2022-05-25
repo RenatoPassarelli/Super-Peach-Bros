@@ -7,7 +7,9 @@ from os import path
 pygame.init()
 
 # ----- Gera tela principal
-window = pygame.display.set_mode((1200, 600))
+WIDTH = 1200
+HEIGHT = 600
+window = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('Super Peach game')
 
 # ----- Inicia Assets
