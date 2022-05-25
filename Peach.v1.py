@@ -98,8 +98,7 @@ while game:
     window.blit(chaozinho1, (400, 540)) 
     window.blit(chaozinho1, (600, 540))  
     window.blit(chaozinho1, (800, 540))  
-    window.blit(chaozinho1, (1000, 540))
-    # Desenhando meteoros
+    window.blit(chaozinho1, (1000, 540)) 
     all_sprites.draw(window)
 
     pygame.display.update()
