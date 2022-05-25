@@ -38,10 +38,12 @@ class boneco(pygame.sprite.Sprite):
         self.rect.centerx = peach_largura / 2
         self.rect.bottom =540
         self.speedx = 0
+        self.speedy=0
 
     def update(self):
         # Atualização da posição da nave
         self.rect.x += self.speedx
+        self.rect.y += self.speedy
 
         # Mantem dentro da tela
         if self.rect.right > 1200:
@@ -51,7 +53,7 @@ class boneco(pygame.sprite.Sprite):
 game = True
 # Variável para o ajuste de velocidade
 clock = pygame.time.Clock()
-FPS = 30
+FPS = 60
 all_sprites = pygame.sprite.Group()
 player = boneco(peachzinha1)
 all_sprites.add(player)
@@ -67,17 +69,22 @@ while game:
         if event.type == pygame.KEYDOWN:
             # Dependendo da tecla, altera a velocidade.
             if event.key == pygame.K_LEFT:
-                player.speedx -= 8
+                player.speedx -= 4
             if event.key == pygame.K_RIGHT:
-                player.speedx += 8
+                player.speedx += 4
+            if event.key== pygame.K_SPACE:
+                player.speedy -=5
         # Verifica se soltou alguma tecla.
         if event.type == pygame.KEYUP:
             # Dependendo da tecla, altera a velocidade.
             if event.key == pygame.K_LEFT:
-                player.speedx += 8
+                player.speedx += 4
             if event.key == pygame.K_RIGHT:
-                player.speedx -= 8
-
+                player.speedx -= 4
+            if event.key== pygame.K_SPACE:
+                player.speedy+=7
+                if player.rect.bottom>=540:
+                    player.speedy=0
     # ----- Atualiza estado do jogo
     # Atualizando a posição dos meteoros
     all_sprites.update()
