@@ -5,7 +5,9 @@ from os import path
 pygame.init()
 
 # ----- Gera tela principal
-window = pygame.display.set_mode((1200, 600))
+WIDTH = 1200
+HEIGHT = 600
+window = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('Super Peach game')
 
 # ----- Inicia Assets
@@ -65,9 +67,9 @@ while game:
         if event.type == pygame.KEYDOWN:
             # Dependendo da tecla, altera a velocidade.
             if event.key == pygame.K_LEFT:
-                player.speedx -= 8
+                player.speedx -= 20
             if event.key == pygame.K_RIGHT:
-                player.speedx += 8
+                player.speedx += 20
         # Verifica se soltou alguma tecla.
         if event.type == pygame.KEYUP:
             # Dependendo da tecla, altera a velocidade.
@@ -80,7 +82,9 @@ while game:
     # Atualizando a posição dos meteoros
     all_sprites.update()
 
+    all_sprites.update()
     # ----- Gera saídas
+    
     window.fill((0, 200, 253))  # Preenche com a cor branca
     window.blit(chaozinho1, (0, 540))
     window.blit(chaozinho1, (200, 540))
