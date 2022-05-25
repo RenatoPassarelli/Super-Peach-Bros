@@ -81,8 +81,8 @@ while game:
                 player.speedx += 4
             if event.key == pygame.K_RIGHT:
                 player.speedx -= 4
-            if event.key== pygame.K_SPACE:
-                player.speedy+=7
+            #if event.key== pygame.K_SPACE:
+                #player.speedy+=7
                 if player.rect.bottom>=540:
                     player.speedy=0
     # ----- Atualiza estado do jogo
