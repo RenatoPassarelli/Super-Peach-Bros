@@ -31,7 +31,7 @@ window.blit(chaozinho1, (1000, 540))
 
 #pulo
 y_gravidade=1
-y_saltomax=15
+y_saltomax=20
 y_velocidade= y_saltomax
 
 jumping=False 
@@ -76,14 +76,14 @@ while game:
             game = False
         if event.type == pygame.KEYDOWN:
             if event.key== pygame.K_LEFT:
-                player.speedx -= 4
+                player.speedx -= 3
             if event.key== pygame.K_RIGHT:
-                player.speedx += 4
+                player.speedx += 3
         if event.type == pygame.KEYUP:
             if event.key== pygame.K_LEFT:
-                player.speedx += 4
+                player.speedx += 3
             if event.key== pygame.K_RIGHT:
-                player.speedx -= 4
+                player.speedx -= 3
         # Verifica se apertou alguma tecla.
     keys_pressed= pygame.key.get_pressed()
             # Dependendo da tecla, altera a velocidade.
