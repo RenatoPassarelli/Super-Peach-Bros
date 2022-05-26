@@ -1,5 +1,6 @@
 # ===== Inicialização =====
 # ----- Importa e inicia pacotes
+from pickle import TRUE
 import pygame
 from os import path
 pygame.init()
@@ -28,6 +29,14 @@ window.blit(chaozinho1, (600, 540)),
 window.blit(chaozinho1, (800, 540)),  
 window.blit(chaozinho1, (1000, 540))
 
+#pulo
+y_gravidade=1
+y_saltomax=15
+y_velocidade= y_saltomax
+
+jumping=False 
+right=False
+left=False
 class boneco(pygame.sprite.Sprite):
     def __init__(self, img):
         # Construtor da classe mãe (Sprite).
@@ -41,7 +50,7 @@ class boneco(pygame.sprite.Sprite):
         self.speedy=0
 
     def update(self):
-        # Atualização da posição da nave
+        # Atualização da posição da PEACH
         self.rect.x += self.speedx
         self.rect.y += self.speedy
 
@@ -65,27 +74,28 @@ while game:
         # ----- Verifica consequências
         if event.type == pygame.QUIT:
             game = False
-        # Verifica se apertou alguma tecla.
         if event.type == pygame.KEYDOWN:
-            # Dependendo da tecla, altera a velocidade.
-            if event.key == pygame.K_LEFT:
+            if event.key== pygame.K_LEFT:
                 player.speedx -= 4
-            if event.key == pygame.K_RIGHT:
+            if event.key== pygame.K_RIGHT:
                 player.speedx += 4
-            if event.key== pygame.K_SPACE:
-                player.speedy -=5
-        # Verifica se soltou alguma tecla.
         if event.type == pygame.KEYUP:
-            # Dependendo da tecla, altera a velocidade.
-            if event.key == pygame.K_LEFT:
+            if event.key== pygame.K_LEFT:
                 player.speedx += 4
-            if event.key == pygame.K_RIGHT:
+            if event.key== pygame.K_RIGHT:
                 player.speedx -= 4
-            #if event.key== pygame.K_SPACE:
-                #player.speedy+=7
-                if player.rect.bottom>=540:
-                    player.speedy=0
-    # ----- Atualiza estado do jogo
+        # Verifica se apertou alguma tecla.
+    keys_pressed= pygame.key.get_pressed()
+            # Dependendo da tecla, altera a velocidade.
+    if keys_pressed[pygame.K_SPACE]:
+            jumping= True
+    if jumping:
+        player.rect.y -=y_velocidade
+        y_velocidade-= y_gravidade
+        if y_velocidade < -(y_saltomax):
+            jumping= False
+            y_velocidade= y_saltomax
+
     # Atualizando a posição dos meteoros
     all_sprites.update()
 
