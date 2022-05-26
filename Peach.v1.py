@@ -63,12 +63,7 @@ class boneco(pygame.sprite.Sprite):
             self.rect.right =1200
         if self.rect.left < 0:
             self.rect.left = 0
-<<<<<<< HEAD
         
-=======
-
-# Inicia o jogo
->>>>>>> a6331b335e85269c7e24925278e7d6fd0cdc17e4
 game = True
 # Variável para o ajuste de velocidade
 clock = pygame.time.Clock()
@@ -97,13 +92,8 @@ while game:
             if event.key== pygame.K_LEFT:
                 player.speedx += 6
             if event.key== pygame.K_RIGHT:
-<<<<<<< HEAD
                 player.speedx -= 6
         # Verifica se apertou alguma tecla.
-=======
-                player.speedx -= 3
-        # Pular
->>>>>>> a6331b335e85269c7e24925278e7d6fd0cdc17e4
     keys_pressed= pygame.key.get_pressed()
             # Dependendo da tecla, altera a velocidade.
     if keys_pressed[pygame.K_SPACE]:
