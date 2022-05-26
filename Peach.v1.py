@@ -29,7 +29,7 @@ window.blit(chaozinho1, (600, 540)),
 window.blit(chaozinho1, (800, 540)),  
 window.blit(chaozinho1, (1000, 540))
 
-#pulo
+#pulo do personagem
 y_gravidade=1
 y_saltomax=20
 y_velocidade= y_saltomax
@@ -37,6 +37,8 @@ y_velocidade= y_saltomax
 jumping=False 
 right=False
 left=False
+
+# Cria Classe do personagem
 class boneco(pygame.sprite.Sprite):
     def __init__(self, img):
         # Construtor da classe mãe (Sprite).
@@ -59,6 +61,8 @@ class boneco(pygame.sprite.Sprite):
             self.rect.right =1200
         if self.rect.left < 0:
             self.rect.left = 0
+
+# Inicia o jogo
 game = True
 # Variável para o ajuste de velocidade
 clock = pygame.time.Clock()
@@ -66,6 +70,8 @@ FPS = 60
 all_sprites = pygame.sprite.Group()
 player = boneco(peachzinha1)
 all_sprites.add(player)
+
+# Looping do Game 
 while game:
     clock.tick(FPS)
 
@@ -74,6 +80,8 @@ while game:
         # ----- Verifica consequências
         if event.type == pygame.QUIT:
             game = False
+        # Verifica se apertou alguma tecla. 
+        # Andar   
         if event.type == pygame.KEYDOWN:
             if event.key== pygame.K_LEFT:
                 player.speedx -= 3
@@ -84,24 +92,22 @@ while game:
                 player.speedx += 3
             if event.key== pygame.K_RIGHT:
                 player.speedx -= 3
-        # Verifica se apertou alguma tecla.
+        # Pular
     keys_pressed= pygame.key.get_pressed()
             # Dependendo da tecla, altera a velocidade.
     if keys_pressed[pygame.K_SPACE]:
             jumping= True
     if jumping:
-        player.rect.y -=y_velocidade
+        player.rect.y -= y_velocidade
         y_velocidade-= y_gravidade
         if y_velocidade < -(y_saltomax):
             jumping= False
             y_velocidade= y_saltomax
 
-    # Atualizando a posição dos meteoros
+    # Atualizando a posição das sprites
     all_sprites.update()
 
-    all_sprites.update()
-    # ----- Gera saídas
-    
+    # ----- Gera as saídas
     window.fill((0, 200, 253))  # Preenche com a cor branca
     window.blit(chaozinho1, (0, 540))
     window.blit(chaozinho1, (200, 540))
