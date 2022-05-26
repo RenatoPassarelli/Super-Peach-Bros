@@ -31,7 +31,7 @@ window.blit(chaozinho1, (600, 540)),
 window.blit(chaozinho1, (800, 540)),  
 window.blit(chaozinho1, (1000, 540))
 
-#pulo
+#pulo do personagem
 y_gravidade=1
 y_saltomax=20
 y_velocidade= y_saltomax
@@ -39,6 +39,8 @@ foto=0
 jumping=False 
 right=False
 left=False
+
+# Cria Classe do personagem
 class boneco(pygame.sprite.Sprite):
     def __init__(self, img):
         # Construtor da classe mãe (Sprite).
@@ -61,7 +63,12 @@ class boneco(pygame.sprite.Sprite):
             self.rect.right =1200
         if self.rect.left < 0:
             self.rect.left = 0
+<<<<<<< HEAD
         
+=======
+
+# Inicia o jogo
+>>>>>>> a6331b335e85269c7e24925278e7d6fd0cdc17e4
 game = True
 # Variável para o ajuste de velocidade
 clock = pygame.time.Clock()
@@ -69,6 +76,8 @@ FPS = 60
 all_sprites = pygame.sprite.Group()
 player = boneco(peachzinha1)
 all_sprites.add(player)
+
+# Looping do Game 
 while game:
     all_sprites.add(player)
     clock.tick(FPS)
@@ -77,6 +86,8 @@ while game:
         # ----- Verifica consequências
         if event.type == pygame.QUIT:
             game = False
+        # Verifica se apertou alguma tecla. 
+        # Andar   
         if event.type == pygame.KEYDOWN:
             if event.key== pygame.K_LEFT:
                 player.speedx -= 6
@@ -86,20 +97,25 @@ while game:
             if event.key== pygame.K_LEFT:
                 player.speedx += 6
             if event.key== pygame.K_RIGHT:
+<<<<<<< HEAD
                 player.speedx -= 6
         # Verifica se apertou alguma tecla.
+=======
+                player.speedx -= 3
+        # Pular
+>>>>>>> a6331b335e85269c7e24925278e7d6fd0cdc17e4
     keys_pressed= pygame.key.get_pressed()
             # Dependendo da tecla, altera a velocidade.
     if keys_pressed[pygame.K_SPACE]:
             jumping= True
     if jumping:
-        player.rect.y -=y_velocidade
+        player.rect.y -= y_velocidade
         y_velocidade-= y_gravidade
         if y_velocidade < -(y_saltomax):
             jumping= False
             y_velocidade= y_saltomax
 
-    # Atualizando a posição dos meteoros
+    # Atualizando a posição das sprites
     all_sprites.update()
     # ----- Gera saídas
     
