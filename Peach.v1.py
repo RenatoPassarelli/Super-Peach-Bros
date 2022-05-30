@@ -14,13 +14,13 @@ pygame.display.set_caption('Super Peach game')
 
 # ----- Inicia Assets
 # Tiles
-chao_padrao = pygame.image.load(path.join(path.dirname(__file__),"chaozinho.jpg")).convert()
+chao_padrao = pygame.image.load(path.join(path.dirname(__file__),"Imagens/chaozinho.jpg")).convert()
 chaozinho1 = pygame.transform.scale(chao_padrao, (200,60))
 
 # Personagem 
-peachzinha = pygame.image.load(path.join(path.dirname(__file__),"Peachzinha.png")).convert_alpha()
+peachzinha = pygame.image.load(path.join(path.dirname(__file__),"Imagens/Peachzinha.png")).convert_alpha()
 peachzinha1=pygame.transform.scale(peachzinha, (60,80))
-peachzinhaco=pygame.image.load(path.join(path.dirname(__file__),"Peachzinha contrária.png")).convert_alpha()
+peachzinhaco=pygame.image.load(path.join(path.dirname(__file__),"Imagens/Peachzinha contrária.png")).convert_alpha()
 peachzinhaco1=pygame.transform.scale(peachzinhaco, (60,80))
   
 
