@@ -40,7 +40,7 @@ game = True
 clock = pygame.time.Clock()
 FPS = 60
 all_sprites = pygame.sprite.Group()
-player = boneco(peachzinha1,peachzinhaco1)
+player = player(peachzinha1,peachzinhaco1)
 all_sprites.add(player)
 
 # Looping do Game 

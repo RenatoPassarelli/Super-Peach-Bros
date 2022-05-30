@@ -11,7 +11,7 @@ right=False
 left=False
 
 # Cria Classe do personagem
-class boneco(pygame.sprite.Sprite):
+class player(pygame.sprite.Sprite):
     def __init__(self, img, imgcont):
         # Construtor da classe mãe (Sprite).
         pygame.sprite.Sprite.__init__(self)
