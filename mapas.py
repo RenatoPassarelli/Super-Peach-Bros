@@ -11,7 +11,8 @@ MAPAS = {
     '                                   XXXXXXXXXX    XXX          XXX                     XXXX               X             ',
     '               X                 XXXXXXXXXXXX                       XXX   XXX                            X             ',
     '           XXXXXXX   XXXXXX   XXXXXXXXXXXXXXX                                   XXXXXX                 XXXXXXXXXXXXXXXX',
-    ' P                   XXXXXX   XXXXXXXXXXXXXXX                                   XXXXXX                 XXXXXXXXXXXXXXXX',
+    '                     XXXXXX   XXXXXXXXXXXXXXX                                   XXXXXX                 XXXXXXXXXXXXXXXX',
+    'X   P                XXXXXX   XXXXXXXXXXXXXXX                                   XXXXXX                 XXXXXXXXXXXXXXXX',
     'XXXXXXXXXXXXXXXXXX   XXXXXX   XXXXXXXXXXXXXXX                                   XXXXXX                 XXXXXXXXXXXXXXXX'
 ] ,
     1: [
