@@ -14,7 +14,7 @@ MAPAS = {
     ' P                   XXXXXX   XXXXXXXXXXXXXXX                                   XXXXXX                 XXXXXXXXXXXXXXXX',
     'XXXXXXXXXXXXXXXXXX   XXXXXX   XXXXXXXXXXXXXXX                                   XXXXXX                 XXXXXXXXXXXXXXXX'
 ] ,
-    2: [
+    1: [
         '                           ',
         '                           ',
         '           XXX             ',
@@ -26,7 +26,7 @@ MAPAS = {
         ' P XXXXXXXXXXXXXXX  XXXXXXX',
         'XXXXXXXXXXXXXXXXXX  XXXXXXX'
     ],
-    3: [
+    2: [
         '                           ',
         '                           ',
         '           XXX             ',

@@ -32,6 +32,7 @@ FPS = 60
 all_sprites = pygame.sprite.Group()
 all_blocos = pygame.sprite.Group()
 player = None
+
 mapa = MAPAS[0]
 for l in range(len(mapa)):
     for c in range(len(mapa[l])):
@@ -40,7 +41,7 @@ for l in range(len(mapa)):
             b = Bloco(chaozinho, l, c)
             all_blocos.add(b)
             all_sprites.add(b)
-        if e == "P":
+        elif e == "P":
             player = Player(peachzinha1,peachzinhaco1, l, c)
             all_sprites.add(player)
 
@@ -64,8 +65,6 @@ while game:
         
     # Atualizando a posição das sprites
 
-    all_sprites.update()
-
     hits = pygame.sprite.spritecollideany(player, all_blocos)
     blocos = pygame.sprite.spritecollide(player, all_blocos, False)
     print(hits)
@@ -78,14 +77,14 @@ while game:
             elif player.rect.left >= bloco.rect.right:
                 player.speedx = 0
                 player.rect.x += 1 
-            
+             
             if player.rect.bottom <= bloco.rect.top:
                 player.rect.bottom = bloco.rect.top
             elif player.rect.top >= bloco.rect.bottom:
                 player.rect.top = bloco.rect.bottom
             
 
-        
+    all_sprites.update()   
     
     window.fill((0, 200, 253))  # Preenche com a cor branca
     all_sprites.draw(window)
