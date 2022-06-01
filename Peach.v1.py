@@ -55,36 +55,39 @@ while game:
         if event.type == pygame.QUIT:
             game = False
         keys_pressed=pygame.key.get_pressed()
-        
-        if keys_pressed[pygame.K_SPACE]:
-            player.jumping=True
-        if keys_pressed[pygame.K_LEFT]:
-            player.speedx = -3
-        if keys_pressed[pygame.K_RIGHT]:
-            player.speedx = 3
+        if event.type == pygame.KEYDOWN:        
+            if event.key == pygame.K_SPACE:
+                player.jump()
+            if event.key == pygame.K_LEFT:
+                player.speedx = -3
+            if event.key == pygame.K_RIGHT:
+                player.speedx = 3
+        if event.type == pygame.KEYUP:
+            if event.key in [pygame.K_LEFT, pygame.K_RIGHT]:
+                player.speedx = 0
         
     # Atualizando a posição das sprites
-
+    all_sprites.update() 
     hits = pygame.sprite.spritecollideany(player, all_blocos)
     blocos = pygame.sprite.spritecollide(player, all_blocos, False)
-    print(hits)
 
-    if hits:
-        for bloco in blocos:
-            if player.rect.right >= bloco.rect.left:
-                player.speedx = 0
-                player.rect.x -= 1
-            elif player.rect.left >= bloco.rect.right:
-                player.speedx = 0
-                player.rect.x += 1 
-             
-            if player.rect.bottom <= bloco.rect.top:
-                player.rect.bottom = bloco.rect.top
-            elif player.rect.top >= bloco.rect.bottom:
-                player.rect.top = bloco.rect.bottom
+    for bloco in blocos:
+        print(hits)
+        if player.rect.right >= bloco.rect.left:
+            player.speedx = 0
+            player.rect.x -= 1
+        elif player.rect.left >= bloco.rect.right:
+            player.speedx = 0
+            player.rect.x += 1 
+            
+        if player.rect.bottom >= bloco.rect.top:
+            player.jumping = False
+            player.rect.bottom = bloco.rect.top-1
+        elif player.rect.top >= bloco.rect.bottom:
+            player.rect.top = bloco.rect.bottom
             
 
-    all_sprites.update()   
+      
     
     window.fill((0, 200, 253))  # Preenche com a cor branca
     all_sprites.draw(window)

@@ -28,7 +28,11 @@ class Player(pygame.sprite.Sprite):
         self.speedx = 0
         self.speedy = 0
    
-        
+    def jump(self):
+        if not self.jumping:
+            self.jumping = True
+            self.y_velocidade = 20
+
 
 
     def update(self):
@@ -48,7 +52,4 @@ class Player(pygame.sprite.Sprite):
         if self.jumping:
             self.rect.y -= self.y_velocidade
             self.y_velocidade-= self.y_gravidade
-            if self.y_velocidade < -(self.y_saltomax):
-                self.jumping= False
-                self.y_velocidade= self.y_saltomax
         
