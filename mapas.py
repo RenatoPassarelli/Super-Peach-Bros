@@ -9,9 +9,9 @@ MAPAS = {
     '                                                                                             XXXX                      ',
     '                  XXXXXXX            XXXXXXXX          XXX                                                             ',
     '                                   XXXXXXXXXX    XXX          XXX                     XXXX               X             ',
-    '               X                 XXXXXXXXXXXX                       XXX   XXX                            X             ',
-    '           XXXXXXX   XXXXXX   XXXXXXXXXXXXXXX                                   XXXXXX                 XXXXXXXXXXXXXXXX',
-    '                     XXXXXX   XXXXXXXXXXXXXXX                                   XXXXXX                 XXXXXXXXXXXXXXXX',
+    'X              X                 XXXXXXXXXXXX                       XXX   XXX                            X             ',
+    'X          XXXXXXX   XXXXXX   XXXXXXXXXXXXXXX                                   XXXXXX                 XXXXXXXXXXXXXXXX',
+    'X                    XXXXXX   XXXXXXXXXXXXXXX                                   XXXXXX                 XXXXXXXXXXXXXXXX',
     'X   P                XXXXXX   XXXXXXXXXXXXXXX                                   XXXXXX                 XXXXXXXXXXXXXXXX',
     'XXXXXXXXXXXXXXXXXX   XXXXXX   XXXXXXXXXXXXXXX                                   XXXXXX                 XXXXXXXXXXXXXXXX'
 ] ,
