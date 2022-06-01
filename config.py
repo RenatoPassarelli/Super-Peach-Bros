@@ -8,3 +8,5 @@ HEIGHT = 600
 # Settings personagem 
 peach_altura=460
 peach_largura=200
+
+tile_size = 60
