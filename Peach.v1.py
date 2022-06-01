@@ -76,15 +76,20 @@ while game:
         if player.rect.right >= bloco.rect.left:
             player.speedx = 0
             player.rect.x -= 1
+            player.rect.y -= 1
+            
         elif player.rect.left >= bloco.rect.right:
             player.speedx = 0
             player.rect.x += 1 
+            player.rect.y += 1
             
-        if player.rect.bottom >= bloco.rect.top:
+        if player.rect.bottom > bloco.rect.top:
             player.jumping = False
             player.rect.bottom = bloco.rect.top-1
-        elif player.rect.top >= bloco.rect.bottom:
-            player.rect.top = bloco.rect.bottom
+        elif player.rect.top > bloco.rect.bottom:
+            player.jumping = False
+            player.speedy=0
+            player.rect.top = bloco.rect.bottom-1 
             
 
       
