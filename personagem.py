@@ -24,7 +24,7 @@ class Player(pygame.sprite.Sprite):
         self.cont=imgcont
         self.rect = self.image.get_rect()
         self.rect.x = c * tile_size
-        self.rect.y = l * tile_size-50
+        self.rect.centery = l * tile_size  + 20
         self.speedx = 0
         self.speedy = 0
    
