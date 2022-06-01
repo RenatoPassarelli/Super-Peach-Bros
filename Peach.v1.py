@@ -66,12 +66,26 @@ while game:
 
     all_sprites.update()
 
+    hits = pygame.sprite.spritecollideany(player, all_blocos)
+    blocos = pygame.sprite.spritecollide(player, all_blocos, False)
+    print(hits)
 
-    hits = pygame.sprite.spritecollide(player, all_blocos, False)
-    for bloco in hits:
-        if player.rect.right > bloco.rect.x:
-            player.speedx = 0
-            player.rect.x -= 1
+    if hits:
+        for bloco in blocos:
+            if player.rect.right >= bloco.rect.left:
+                player.speedx = 0
+                player.rect.x -= 1
+            elif player.rect.left >= bloco.rect.right:
+                player.speedx = 0
+                player.rect.x += 1 
+            
+            if player.rect.bottom <= bloco.rect.top:
+                player.rect.bottom = bloco.rect.top
+            elif player.rect.top >= bloco.rect.bottom:
+                player.rect.top = bloco.rect.bottom
+            
+
+        
     
     window.fill((0, 200, 253))  # Preenche com a cor branca
     all_sprites.draw(window)
