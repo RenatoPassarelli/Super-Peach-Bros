@@ -52,19 +52,24 @@ while game:
     # ----- Trata eventos
     for event in pygame.event.get():
         # ----- Verifica consequências
+        # ----- Se é para sair do jogo
         if event.type == pygame.QUIT:
             game = False
+        # ----- Checa as teclas apertadas 
         keys_pressed=pygame.key.get_pressed()
+
+
         if event.type == pygame.KEYDOWN:        
-            if event.key == pygame.K_SPACE:
-                player.jump()
             if event.key == pygame.K_LEFT:
                 player.speedx = -3
             if event.key == pygame.K_RIGHT:
                 player.speedx = 3
+            if event.key == pygame.K_SPACE:
+                player.jump()   
         if event.type == pygame.KEYUP:
             if event.key in [pygame.K_LEFT, pygame.K_RIGHT]:
-                player.speedx = 0
+                player.speedx = 0 
+ 
         
     # Atualizando a posição das sprites
     all_sprites.update() 
@@ -85,10 +90,12 @@ while game:
             
         if player.rect.bottom > bloco.rect.top:
             player.jumping = False
+            #player.gravidade()
             player.rect.bottom = bloco.rect.top-1
         elif player.rect.top > bloco.rect.bottom:
             player.jumping = False
-            player.speedy=0
+            #player.speedy=0
+            #player.gravidade()
             player.rect.top = bloco.rect.bottom-1 
             
 

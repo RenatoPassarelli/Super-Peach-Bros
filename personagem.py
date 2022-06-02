@@ -18,7 +18,7 @@ class Player(pygame.sprite.Sprite):
         self.y_gravidade=1
         self.y_saltomax=20
         self.y_velocidade=self.y_saltomax
-        self.jumping=False
+        self.jumping=False 
         self.image = img
         self.certo=img
         self.cont=imgcont
@@ -27,11 +27,19 @@ class Player(pygame.sprite.Sprite):
         self.rect.y = l * tile_size - 20
         self.speedx = 0
         self.speedy = 0
+        self.grav = 1 
+        self.existe = False 
    
     def jump(self):
         if not self.jumping:
             self.jumping = True
             self.y_velocidade = 20
+
+    # --- Arrumar essa função de gravidade       
+    def gravidade(self):
+        if not self.existe:
+            self.existe = True 
+            self.speedy += self.grav 
 
 
 
