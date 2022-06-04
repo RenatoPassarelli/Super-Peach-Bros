@@ -1,5 +1,5 @@
 import pygame
-from config import tile_size
+from config import tile_size, WIDTH
 
 class Bloco(pygame.sprite.Sprite):
     def __init__(self, img, l, c):
@@ -10,5 +10,6 @@ class Bloco(pygame.sprite.Sprite):
         self.rect.x = c * tile_size
         self.rect.y = l * tile_size
 
+
     def update(self):
-        pass
+        pass 

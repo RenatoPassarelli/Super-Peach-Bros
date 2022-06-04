@@ -74,8 +74,16 @@ while game:
  
         
     # Atualizando a posição das sprites
+    if player.rect.x > WIDTH/2 and player.speedx > 0: 
+        for bloco in all_blocos:
+           bloco.rect.x -= 6
+        # player.speedx = 0 
+  
     
+
     all_sprites.update() 
+
+    
 
     window.fill((0, 200, 253))  # Preenche com a cor branca
     all_sprites.draw(window)

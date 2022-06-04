@@ -69,3 +69,7 @@ class Player(pygame.sprite.Sprite):
         if self.state == STILL:
             self.speedy -= 30
             self.state = JUMPING
+
+
+
+
