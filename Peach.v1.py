@@ -76,7 +76,7 @@ while game:
     # Atualizando a posição das sprites
     if player.rect.x > WIDTH/2 and player.speedx > 0: 
         for bloco in all_blocos:
-           bloco.rect.x -= 6
+           bloco.rect.x -= 5
         # player.speedx = 0 
   
     
