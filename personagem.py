@@ -2,62 +2,65 @@ import pygame
 from config import * 
 
 #pulo do personagem
-y_gravidade=1
-y_saltomax=20
-y_velocidade= y_saltomax
-foto=0
+
+
 jumping=False 
-right=False
-left=False
+STILL=0
+JUMPING=1
+FALLING=2
+GRAVIDADE=2
+
 
 # Cria Classe do personagem
 class Player(pygame.sprite.Sprite):
-    def __init__(self, img, imgcont, l, c):
+    def __init__(self, img, imgcont, l, c,peças):
+        self.state=STILL
         # Construtor da classe mãe (Sprite).
         pygame.sprite.Sprite.__init__(self)
-        self.y_gravidade=1
-        self.y_saltomax=20
-        self.y_velocidade=self.y_saltomax
         self.jumping=False 
         self.image = img
         self.certo=img
         self.cont=imgcont
         self.rect = self.image.get_rect()
         self.rect.x = c * tile_size
-        self.rect.y = l * tile_size - 20
+        self.rect.bottom = l * tile_size 
         self.speedx = 0
         self.speedy = 0
-        self.grav = 1 
-        self.existe = False 
-   
-    def jump(self):
-        if not self.jumping:
-            self.jumping = True
-            self.y_velocidade = 20
-
-    # --- Arrumar essa função de gravidade       
-    def gravidade(self):
-        if not self.existe:
-            self.existe = True 
-            self.speedy += self.grav 
-
-
+        self.blocoss=peças
 
     def update(self):
-        
-        # Atualização da posição da PEACH
-        self.rect.x += self.speedx
+        self.speedy += GRAVIDADE
+        if self.speedy > 0:
+            self.state = FALLING
         self.rect.y += self.speedy
+
+        bloco = pygame.sprite.spritecollide(self,self.blocoss, False)
+        for blocos in bloco:
+            if self.speedy > 0:
+                self.rect.bottom = blocos.rect.top
+                self.speedy = 0
+                self.state = STILL
+            elif self.speedy < 0:
+                self.rect.top = blocos.rect.bottom
+                self.speedy = 0
+                self.state = STILL
+
         # Mantem dentro da tela
         if self.rect.right > 1200:
             self.rect.right =1200
         if self.rect.left < 0:
             self.rect.left = 0
-        if self.speedx<0:
-            self.image= self.cont
-        if self.speedx>0:
-            self.image= self.certo
-        if self.jumping:
-            self.rect.y -= self.y_velocidade
-            self.y_velocidade-= self.y_gravidade
+
+        self.rect.x += self.speedx
         
+        bloco = pygame.sprite.spritecollide(self, self.blocoss, False)
+        for blocos in bloco:
+            if self.speedx > 0:
+                self.rect.right = blocos.rect.left
+            elif self.speedx < 0:
+                self.rect.left = blocos.rect.right
+
+    def jump(self):
+        if self.state == STILL:
+            self.speedy -= 30
+            self.state = JUMPING

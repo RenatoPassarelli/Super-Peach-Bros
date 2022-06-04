@@ -42,7 +42,7 @@ for l in range(len(mapa)):
             all_blocos.add(b)
             all_sprites.add(b)
         elif e == "P":
-            player = Player(peachzinha1,peachzinhaco1, l, c)
+            player = Player(peachzinha1,peachzinhaco1, l, c,all_blocos)
             all_sprites.add(player)
 
 
@@ -61,46 +61,22 @@ while game:
 
         if event.type == pygame.KEYDOWN:        
             if event.key == pygame.K_LEFT:
-                player.speedx = -3
+                player.speedx -= 5
             if event.key == pygame.K_RIGHT:
-                player.speedx = 3
+                player.speedx += 5
             if event.key == pygame.K_SPACE:
                 player.jump()   
         if event.type == pygame.KEYUP:
-            if event.key in [pygame.K_LEFT, pygame.K_RIGHT]:
-                player.speedx = 0 
+            if event.key == pygame.K_LEFT:
+                player.speedx += 5
+            if event.key == pygame.K_RIGHT:
+                player.speedx -=5
  
         
     # Atualizando a posição das sprites
-    all_sprites.update() 
-    hits = pygame.sprite.spritecollideany(player, all_blocos)
-    blocos = pygame.sprite.spritecollide(player, all_blocos, False)
-
-    for bloco in blocos:
-        print(hits)
-        if player.rect.right >= bloco.rect.left:
-            player.speedx = 0
-            player.rect.x -= 1
-            player.rect.y -= 1
-            
-        elif player.rect.left >= bloco.rect.right:
-            player.speedx = 0
-            player.rect.x += 1 
-            player.rect.y += 1
-            
-        if player.rect.bottom > bloco.rect.top:
-            player.jumping = False
-            #player.gravidade()
-            player.rect.bottom = bloco.rect.top-1
-        elif player.rect.top > bloco.rect.bottom:
-            player.jumping = False
-            #player.speedy=0
-            #player.gravidade()
-            player.rect.top = bloco.rect.bottom-1 
-            
-
-      
     
+    all_sprites.update() 
+
     window.fill((0, 200, 253))  # Preenche com a cor branca
     all_sprites.draw(window)
 
