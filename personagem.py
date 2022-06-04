@@ -33,6 +33,11 @@ class Player(pygame.sprite.Sprite):
         if self.speedy > 0:
             self.state = FALLING
         self.rect.y += self.speedy
+        if self.speedx>0:
+            self.image=self.certo
+        if self.speedx<0:
+            self.image=self.cont
+        
 
         bloco = pygame.sprite.spritecollide(self,self.blocoss, False)
         for blocos in bloco:
