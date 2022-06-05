@@ -37,7 +37,8 @@ Gomba=pygame.transform.scale(Gomba1, (60,60))
 # Moedinhas
 moedinha = pygame.image.load(path.join(path.dirname(__file__), "Imagens\moedinha.png")).convert_alpha()
 moedinha1 = pygame.transform.scale(moedinha, (40, 40))
-
+nuvem1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\pngwing.com.png")).convert_alpha()
+nuvemzinha = pygame.transform.scale(nuvem1, (100,100))
 game = True
 
 # Variável para o ajuste de velocidade
@@ -47,6 +48,7 @@ limite=pygame.sprite.Group()
 all_sprites = pygame.sprite.Group()
 all_blocos = pygame.sprite.Group()
 movimento_blocos=pygame.sprite.Group()
+movimento_nuvem=pygame.sprite.Group()
 player = None
 
 mapa = MAPAS[0]
@@ -73,6 +75,10 @@ for l in range(len(mapa)):
             coin = Moedas(moedinha1, l, c)
             all_sprites.add(coin)
             movimento_blocos.add(coin)
+        elif e == 'N':
+            cloud = nuvem(nuvemzinha, l, c)
+            all_sprites.add(cloud)
+            movimento_nuvem.add(cloud)
         elif e == "a":
             b = animais(Gomba, l, c,limite)
             all_sprites.add(b)
@@ -122,6 +128,10 @@ while game:
     if player.rect.x > WIDTH/2 and player.speedx > 0: 
         for bloco in movimento_blocos:
             bloco.rect.x -= 5
+            player.speedx = 0.0001
+    if player.rect.x > WIDTH/2 and player.speedx > 0: 
+        for bloco in movimento_nuvem:
+            bloco.rect.x -= 0.5
             player.speedx = 0.0001
     
     #print(player.speedx)

@@ -4,15 +4,15 @@ from config import tile_size
 
 MAPAS = {
     0: [
-    '                                                                                                                       ',
-    '                                                                                             MM                        ',
+    '                               N                                                                                      ',
+    '              N                                  N                                             MM                        ',
     '                  q  a M a M a  q                                  M                                     XXXXXXXX                  ',
-    '                   XXXXXXXXXXXXX       XXXXXXXX         XXXX                                                             ',
-    '                                   XXXXXXXXXX   XXXX        XXXXXX     M               XXXX            XXXX             ',
-    'X              XXX                XXXXXXXXXXXX                       XXXX  XXXXX                        XXXX             ',
-    'X          XXXXXXX   XXXXXX   XXXXXXXXXXXXXXX                                   XXXXXX                 XXXXXXXXXXXXXXXX',
-    'X                    XXXXXX   XXXXXXXXXXXXXXX                                   XXXXXX                 XXXXXXXXXXXXXXXX',
-    'X   P        MM      XXXXXX   XXXXXXXXXXXXXXX                                   XXXXXX                 XXXXXXXXXXXXXXXX',
+    '          N         XXXXXXXXXXXXX       XXXXXXXX         XXXX                                                             ',
+    '                        N          XXXXXXXXXX   XXXX        XXXXXX     M               XXXX            XXXX             ',
+    'X              XXX               NXXXXXXXXXXXX    N          N         XXXX  XXXXX                        XXXX             ',
+    'X          XXXXXXX   XXXXXX  NXXXXXXXXXXXXXXX                                   XXXXXX                 XXXXXXXXXXXXXXXX',
+    'X                    XXXXXX   XXXXXXXXXXXXXXX       N              N            XXXXXX                 XXXXXXXXXXXXXXXX',
+    'X   P        MM      XXXXXX   XXXXXXXXXXXXXXX N                                 XXXXXX                 XXXXXXXXXXXXXXXX',
     'XXXXXXXXXXXXXXXXXX   XXXXXX   XXXXXXXXXXXXXXX                                   XXXXXX                 XXXXXXXXXXXXXXXX'
 ] ,
     1: [

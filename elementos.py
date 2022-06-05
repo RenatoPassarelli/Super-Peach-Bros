@@ -66,3 +66,13 @@ class Moedas(pygame.sprite.Sprite):
     def update(self):
         pass 
 
+class nuvem(pygame.sprite.Sprite):
+    def __init__(self, img, l, c):
+        pygame.sprite.Sprite.__init__(self)
+        self.image = img
+        self.rect = self.image.get_rect()
+        self.rect.x = c * tile_size
+        self.rect.y = l * tile_size 
+
+    def update(self):
+        pass 
