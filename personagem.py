@@ -1,9 +1,8 @@
 import pygame 
 from config import * 
-
 #pulo do personagem
 
-
+batida=False
 jumping=False 
 STILL=0
 JUMPING=1
@@ -42,6 +41,7 @@ class Player(pygame.sprite.Sprite):
         bloco = pygame.sprite.spritecollide(self,self.blocoss, False)
         for blocos in bloco:
             if self.speedy > 0:
+                print(1)
                 self.rect.bottom = blocos.rect.top
                 self.speedy = 0
                 self.state = STILL

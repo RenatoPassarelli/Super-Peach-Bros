@@ -7,6 +7,7 @@ from config import *
 from personagem import * 
 from mapas import MAPAS, jan_altura, jan_largura
 from elementos import Bloco
+from personagem import batida
 
 
 pygame.init()
@@ -24,7 +25,6 @@ peachzinha = pygame.image.load(path.join(path.dirname(__file__),"Imagens\Peachzi
 peachzinha1=pygame.transform.scale(peachzinha, (60,80))
 peachzinhaco=pygame.image.load(path.join(path.dirname(__file__),"Imagens\Peachzinha contrária.png")).convert_alpha()
 peachzinhaco1=pygame.transform.scale(peachzinhaco, (60,80))
-  
 game = True
 # Variável para o ajuste de velocidade
 clock = pygame.time.Clock()
@@ -56,6 +56,7 @@ while game:
         if event.type == pygame.QUIT:
             game = False
         # ----- Checa as teclas apertadas 
+
         keys_pressed=pygame.key.get_pressed()
 
 
@@ -67,19 +68,27 @@ while game:
             if event.key == pygame.K_SPACE:
                 player.jump()   
         if event.type == pygame.KEYUP:
-            if event.key == pygame.K_LEFT:
+            if event.key == pygame.K_LEFT and player.speedx>-1:
+                player.speedx = 0 
+            if event.key == pygame.K_LEFT and player.speedx<-1:
                 player.speedx += 5
-            if event.key == pygame.K_RIGHT:
+            if event.key == pygame.K_RIGHT and player.speedx>1:
                 player.speedx -=5
- 
+            if event.key == pygame.K_RIGHT and player.speedx<1:
+                player.speedx =0
+
         
     # Atualizando a posição das sprites
     if player.rect.x > WIDTH/2 and player.speedx > 0: 
         for bloco in all_blocos:
-           bloco.rect.x -= 5
-        # player.speedx = 0 
-  
-    
+            bloco.rect.x -= 5
+            player.speedx = 0.0001
+    if player.rect.x < WIDTH/8 and player.speedx < 0: 
+        for bloco in all_blocos:
+            bloco.rect.x += 5
+            player.speedx = -0.0001
+
+    #print(player.speedx)
 
     all_sprites.update() 
 
