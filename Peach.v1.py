@@ -12,6 +12,7 @@ from personagem import batida
 
 
 pygame.init()
+pygame.mixer.init() 
 # ----- Gera tela principal
 window = pygame.display.set_mode((jan_largura, jan_altura))
 pygame.display.set_caption('Super Peach game')
@@ -37,8 +38,13 @@ Gomba=pygame.transform.scale(Gomba1, (60,60))
 # Moedinhas
 moedinha = pygame.image.load(path.join(path.dirname(__file__), "Imagens\moedinha.png")).convert_alpha()
 moedinha1 = pygame.transform.scale(moedinha, (40, 40))
+# Nuvem 
 nuvem1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\pngwing.com.png")).convert_alpha()
 nuvemzinha = pygame.transform.scale(nuvem1, (100,100))
+# Estrelinha 
+estrela1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\estrelinha_peq.png")).convert_alpha()
+estrela = pygame.transform.scale(estrela1, (40,40)) 
+
 game = True
 
 # Variável para o ajuste de velocidade
@@ -75,17 +81,25 @@ for l in range(len(mapa)):
             coin = Moedas(moedinha1, l, c)
             all_sprites.add(coin)
             movimento_blocos.add(coin)
+        elif e == 'E':
+            est = Estrela(estrela, l, c)
+            all_sprites.add(est)
+            movimento_blocos.add(est)    
         elif e == 'N':
-            cloud = nuvem(nuvemzinha, l, c)
+            cloud = Nuvem(nuvemzinha, l, c)
             all_sprites.add(cloud)
             movimento_nuvem.add(cloud)
         elif e == "a":
-            b = animais(Gomba, l, c,limite)
-            all_sprites.add(b)
-            movimento_blocos.add(b)
+            a = Animais(Gomba, l, c,limite)
+            all_sprites.add(a)
+            movimento_blocos.add(a)
+         
+pygame.mixer.music.load(path.join(path.dirname(__file__),"sounds\emafundo1.wav")) 
+pygame.mixer.music.set_volume(0.3) 
             
 
 # Looping do Game 
+pygame.mixer.music.play(loops=-1) 
 while game:
     tempo = pygame.time.get_ticks()/1000
 
@@ -119,7 +133,7 @@ while game:
                 player.speedx =0
 
         
-    # Atualizando a posição das sprites
+    # Atualizando a posição das sprites tiles 
     if player.rect.x < WIDTH/8 and player.speedx < 0: 
         for bloco in movimento_blocos:
             bloco.rect.x += 5
@@ -129,9 +143,11 @@ while game:
         for bloco in movimento_blocos:
             bloco.rect.x -= 5
             player.speedx = 0.0001
+    
+    # Movimento das nuvens
     if player.rect.x > WIDTH/2 and player.speedx > 0: 
         for bloco in movimento_nuvem:
-            bloco.rect.x -= 0.5
+            bloco.rect.x -= 1
             player.speedx = 0.0001
     
     #print(player.speedx)

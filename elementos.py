@@ -34,7 +34,7 @@ class ina(pygame.sprite.Sprite):
         self.rect.y = l * tile_size
     def update(self):
         pass
-class animais(pygame.sprite.Sprite):
+class Animais(pygame.sprite.Sprite):
     def __init__(self, img, l, c,limites):
         # Construtor da classe mãe (Sprite).
         pygame.sprite.Sprite.__init__(self)
@@ -66,7 +66,18 @@ class Moedas(pygame.sprite.Sprite):
     def update(self):
         pass 
 
-class nuvem(pygame.sprite.Sprite):
+class Nuvem(pygame.sprite.Sprite):
+    def __init__(self, img, l, c):
+        pygame.sprite.Sprite.__init__(self)
+        self.image = img
+        self.rect = self.image.get_rect()
+        self.rect.x = c * tile_size
+        self.rect.y = l * tile_size 
+
+    def update(self):
+        pass 
+
+class Estrela(pygame.sprite.Sprite):
     def __init__(self, img, l, c):
         pygame.sprite.Sprite.__init__(self)
         self.image = img
