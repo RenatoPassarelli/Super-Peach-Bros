@@ -2,6 +2,7 @@
 # ----- Importa e inicia pacotes
 from pickle import TRUE
 import pygame
+from math import * 
 from os import path
 from config import * 
 from personagem import * 
@@ -57,8 +58,9 @@ for l in range(len(mapa)):
 
 # Looping do Game 
 while game:
+    tempo = pygame.time.get_ticks()/1000
+
     clock.tick(FPS)
-    #tempo = clock.tick(FPS)
     # ----- Trata eventos
     for event in pygame.event.get():
         # ----- Verifica consequências
@@ -108,7 +110,7 @@ while game:
     all_sprites.draw(window)
 
     # Placar
-    text_tempo = fonte_placar.render("Tempo: {:02d}".format(tempo), True, (0,0,0))
+    text_tempo = fonte_placar.render("Tempo: {}".format(ceil(tempo)), True, (0,0,0))
     text_moedas = fonte_placar.render("Moedas: {}".format(moedas), True, (0,0,0))
     text_nivel = fonte_placar.render("Nível: {}".format(nivel), True, (0,0,0))
     text_moedas_rect = text_moedas.get_rect()
