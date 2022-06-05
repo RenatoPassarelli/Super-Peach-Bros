@@ -5,14 +5,14 @@ from config import tile_size
 MAPAS = {
     0: [
     '                                                                                                                       ',
-    '                                                                                                                       ',
-    '                                                                                             XXXXXXXX                  ',
+    '                                                                                             MM                        ',
+    '                   MMM                                 M                                     XXXXXXXX                  ',
     '                  XXXXXXX            XXXXXXXX         XXXX                                                             ',
-    '                                   XXXXXXXXXX   XXXX        XXXXXX                     XXXX            XXXX             ',
+    '                                   XXXXXXXXXX   XXXX        XXXXXX     M               XXXX            XXXX             ',
     'X              X                 XXXXXXXXXXXX                       XXXX  XXXXX                        XXXX             ',
     'X          XXXXXXX   XXXXXX   XXXXXXXXXXXXXXX                                   XXXXXX                 XXXXXXXXXXXXXXXX',
     'X                    XXXXXX   XXXXXXXXXXXXXXX                                   XXXXXX                 XXXXXXXXXXXXXXXX',
-    'X   P                XXXXXX   XXXXXXXXXXXXXXX                                   XXXXXX                 XXXXXXXXXXXXXXXX',
+    'X   P        MM      XXXXXX   XXXXXXXXXXXXXXX                                   XXXXXX                 XXXXXXXXXXXXXXXX',
     'XXXXXXXXXXXXXXXXXX   XXXXXX   XXXXXXXXXXXXXXX                                   XXXXXX                 XXXXXXXXXXXXXXXX'
 ] ,
     1: [
