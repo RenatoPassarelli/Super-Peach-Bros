@@ -6,10 +6,10 @@ MAPAS = {
     0: [
     '                                                                                                                       ',
     '                                                                                             MM                        ',
-    '                   MMM                                 M                                     XXXXXXXX                  ',
-    '                  XXXXXXX            XXXXXXXX         XXXX                                                             ',
+    '                  q  a M a M a  q                                  M                                     XXXXXXXX                  ',
+    '                   XXXXXXXXXXXXX       XXXXXXXX         XXXX                                                             ',
     '                                   XXXXXXXXXX   XXXX        XXXXXX     M               XXXX            XXXX             ',
-    'X              X                 XXXXXXXXXXXX                       XXXX  XXXXX                        XXXX             ',
+    'X              XXX                XXXXXXXXXXXX                       XXXX  XXXXX                        XXXX             ',
     'X          XXXXXXX   XXXXXX   XXXXXXXXXXXXXXX                                   XXXXXX                 XXXXXXXXXXXXXXXX',
     'X                    XXXXXX   XXXXXXXXXXXXXXX                                   XXXXXX                 XXXXXXXXXXXXXXXX',
     'X   P        MM      XXXXXX   XXXXXXXXXXXXXXX                                   XXXXXX                 XXXXXXXXXXXXXXXX',

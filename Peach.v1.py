@@ -7,7 +7,7 @@ from os import path
 from config import * 
 from personagem import * 
 from mapas import MAPAS, jan_altura, jan_largura
-from elementos import Bloco, Moedas
+from elementos import *
 from personagem import batida
 
 
@@ -16,22 +16,24 @@ pygame.init()
 window = pygame.display.set_mode((jan_largura, jan_altura))
 pygame.display.set_caption('Super Peach game')
 # Placar 
-fonte_placar = pygame.font.Font("C:/Users/bebec/OneDrive/Área de Trabalho\Super-Peach-Bros/font/PressStart2P.ttf", 28)
+fonte_placar = pygame.font.Font(path.join(path.dirname(__file__),"font\PressStart2P.ttf" ),28)
 tempo = 0 
 moedas = 0 
 nivel = 0 
 
 # ----- Inicia Assets
 # Tiles
-chao_padrao = pygame.image.load(path.join(path.dirname(__file__),"Imagens\chao.png")).convert()
+chao_padrao = pygame.image.load(path.join(path.dirname(__file__),"Imagens\chao.png")).convert_alpha()
 chaozinho = pygame.transform.scale(chao_padrao, (60,60))
-
+Vazio1= pygame.image.load(path.join(path.dirname(__file__),"Imagens\pngegg.png")).convert_alpha()
+Vazio=pygame.transform.scale(Vazio1, (60,60))
 # Personagem 
 peachzinha = pygame.image.load(path.join(path.dirname(__file__),"Imagens\Peachzinha.png")).convert_alpha()
 peachzinha1=pygame.transform.scale(peachzinha, (60,80))
 peachzinhaco=pygame.image.load(path.join(path.dirname(__file__),"Imagens\Peachzinha contrária.png")).convert_alpha()
 peachzinhaco1=pygame.transform.scale(peachzinhaco, (60,80))
-
+Gomba1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\Goompa.png")).convert_alpha()
+Gomba=pygame.transform.scale(Gomba1, (60,60))
 # Moedinhas
 moedinha = pygame.image.load(path.join(path.dirname(__file__), "Imagens\moedinha.png")).convert_alpha()
 moedinha1 = pygame.transform.scale(moedinha, (40, 40))
@@ -41,8 +43,10 @@ game = True
 # Variável para o ajuste de velocidade
 clock = pygame.time.Clock()
 FPS = 60
+limite=pygame.sprite.Group()
 all_sprites = pygame.sprite.Group()
 all_blocos = pygame.sprite.Group()
+movimento_blocos=pygame.sprite.Group()
 player = None
 
 mapa = MAPAS[0]
@@ -51,17 +55,29 @@ nivel = list(MAPAS.keys())[0] + 1
 for l in range(len(mapa)):
     for c in range(len(mapa[l])):
         e = mapa[l][c]
-        if e == "X":
+        if e == "q":
+            b=Limite(Vazio,l,c)
+            limite.add(b)
+            all_sprites.add(b)
+            movimento_blocos.add(b)
+        elif e == "X":
             b = Bloco(chaozinho, l, c)
             all_blocos.add(b)
             all_sprites.add(b)
+            movimento_blocos.add(b)
         elif e == "P":
             player = Player(peachzinha1,peachzinhaco1, l, c,all_blocos)
             all_sprites.add(player)
+            
         elif e == 'M':
             coin = Moedas(moedinha1, l, c)
             all_sprites.add(coin)
-
+            movimento_blocos.add(coin)
+        elif e == "a":
+            b = animais(Gomba, l, c,limite)
+            all_sprites.add(b)
+            movimento_blocos.add(b)
+            
 
 # Looping do Game 
 while game:
@@ -98,15 +114,16 @@ while game:
 
         
     # Atualizando a posição das sprites
-    if player.rect.x > WIDTH/2 and player.speedx > 0: 
-        for bloco in all_blocos:
-            bloco.rect.x -= 5
-            player.speedx = 0.0001
     if player.rect.x < WIDTH/8 and player.speedx < 0: 
-        for bloco in all_blocos:
+        for bloco in movimento_blocos:
             bloco.rect.x += 5
             player.speedx = -0.0001
 
+    if player.rect.x > WIDTH/2 and player.speedx > 0: 
+        for bloco in movimento_blocos:
+            bloco.rect.x -= 5
+            player.speedx = 0.0001
+    
     #print(player.speedx)
 
     all_sprites.update() 
