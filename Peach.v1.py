@@ -9,6 +9,7 @@ from personagem import *
 from mapas import MAPAS, jan_altura, jan_largura
 from elementos import *
 from personagem import batida
+from tela_inicial import * 
 
 
 pygame.init()
@@ -49,7 +50,6 @@ game = True
 
 # Variável para o ajuste de velocidade
 clock = pygame.time.Clock()
-FPS = 60
 limite=pygame.sprite.Group()
 all_sprites = pygame.sprite.Group()
 all_blocos = pygame.sprite.Group()
@@ -100,78 +100,90 @@ pygame.mixer.music.set_volume(0.3)
 
 # Looping do Game 
 pygame.mixer.music.play(loops=-1) 
-while game:
-    tempo = pygame.time.get_ticks()/1000
 
-    clock.tick(FPS)
-    # ----- Trata eventos
-    for event in pygame.event.get():
-        # ----- Verifica consequências
-        # ----- Se é para sair do jogo
-        if event.type == pygame.QUIT:
-            game = False
-        # ----- Checa as teclas apertadas 
+state = INIT
 
-        keys_pressed=pygame.key.get_pressed()
+while state != QUIT:
+    if state == INIT:
+        state = init_screen(window)
+
+    elif state == GAME:
+        tempo = pygame.time.get_ticks()/1000
+
+        clock.tick(FPS)
+        # ----- Trata eventos
+        for event in pygame.event.get():
+            # ----- Verifica consequências
+            # ----- Se é para sair do jogo
+            if event.type == pygame.QUIT:
+                game = False
+            # ----- Checa as teclas apertadas 
+
+            keys_pressed=pygame.key.get_pressed()
 
 
-        if event.type == pygame.KEYDOWN:        
-            if event.key == pygame.K_LEFT:
-                player.speedx -= 5
-            if event.key == pygame.K_RIGHT:
-                player.speedx += 5
-            if event.key == pygame.K_SPACE:
-                player.jump()   
-        if event.type == pygame.KEYUP:
-            if event.key == pygame.K_LEFT and player.speedx>-1:
-                player.speedx = 0 
-            if event.key == pygame.K_LEFT and player.speedx<-1:
-                player.speedx += 5
-            if event.key == pygame.K_RIGHT and player.speedx>1:
-                player.speedx -=5
-            if event.key == pygame.K_RIGHT and player.speedx<1:
-                player.speedx =0
+            if event.type == pygame.KEYDOWN:        
+                if event.key == pygame.K_LEFT:
+                    player.speedx -= 5
+                if event.key == pygame.K_RIGHT:
+                    player.speedx += 5
+                if event.key == pygame.K_SPACE:
+                    player.jump()   
+            if event.type == pygame.KEYUP:
+                if event.key == pygame.K_LEFT and player.speedx>-1:
+                    player.speedx = 0 
+                if event.key == pygame.K_LEFT and player.speedx<-1:
+                    player.speedx += 5
+                if event.key == pygame.K_RIGHT and player.speedx>1:
+                    player.speedx -=5
+                if event.key == pygame.K_RIGHT and player.speedx<1:
+                    player.speedx =0
+
+            
+        # Atualizando a posição das sprites tiles 
+        if player.rect.x < WIDTH/8 and player.speedx < 0: 
+            for bloco in movimento_blocos:
+                bloco.rect.x += 5
+                player.speedx = -0.0001
+
+        if player.rect.x > WIDTH/2 and player.speedx > 0: 
+            for bloco in movimento_blocos:
+                bloco.rect.x -= 5
+                player.speedx = 0.0001
+        
+        # Movimento das nuvens
+        if player.rect.x > WIDTH/2 and player.speedx > 0: 
+            for bloco in movimento_nuvem:
+                bloco.rect.x -= 1
+                player.speedx = 0.0001
+        
+        #print(player.speedx)
+
+        all_sprites.update() 
 
         
-    # Atualizando a posição das sprites tiles 
-    if player.rect.x < WIDTH/8 and player.speedx < 0: 
-        for bloco in movimento_blocos:
-            bloco.rect.x += 5
-            player.speedx = -0.0001
 
-    if player.rect.x > WIDTH/2 and player.speedx > 0: 
-        for bloco in movimento_blocos:
-            bloco.rect.x -= 5
-            player.speedx = 0.0001
-    
-    # Movimento das nuvens
-    if player.rect.x > WIDTH/2 and player.speedx > 0: 
-        for bloco in movimento_nuvem:
-            bloco.rect.x -= 1
-            player.speedx = 0.0001
-    
-    #print(player.speedx)
+        window.fill((0, 200, 253))  # Preenche com a cor de fundo
+        all_sprites.draw(window)
 
-    all_sprites.update() 
-
-    
-
-    window.fill((0, 200, 253))  # Preenche com a cor de fundo
-    all_sprites.draw(window)
-
-    # Placar
-    text_tempo = fonte_placar.render("Tempo: {}".format(ceil(tempo)), True, (0,0,0))
-    text_moedas = fonte_placar.render("Moedas: {}".format(moedas), True, (0,0,0))
-    text_nivel = fonte_placar.render("Nível: {}".format(nivel), True, (0,0,0))
-    text_moedas_rect = text_moedas.get_rect()
-    text_nivel_rect = text_nivel.get_rect()
-    text_tempo_rect = text_tempo.get_rect()
-    text_moedas_rect.midtop = ((WIDTH/5), 15)
-    text_nivel_rect.midtop = ((WIDTH/5)*2.5, 15)
-    text_tempo_rect.midtop = ((WIDTH/5)*4., 15)
-    window.blit(text_moedas, text_moedas_rect)
-    window.blit(text_nivel, text_nivel_rect)
-    window.blit(text_tempo, text_tempo_rect)
+        # Placar
+        text_tempo = fonte_placar.render("Tempo: {}".format(ceil(tempo)), True, (0,0,0))
+        text_moedas = fonte_placar.render("Moedas: {}".format(moedas), True, (0,0,0))
+        text_nivel = fonte_placar.render("Nível: {}".format(nivel), True, (0,0,0))
+        text_moedas_rect = text_moedas.get_rect()
+        text_nivel_rect = text_nivel.get_rect()
+        text_tempo_rect = text_tempo.get_rect()
+        text_moedas_rect.midtop = ((WIDTH/5), 15)
+        text_nivel_rect.midtop = ((WIDTH/5)*2.5, 15)
+        text_tempo_rect.midtop = ((WIDTH/5)*4., 15)
+        window.blit(text_moedas, text_moedas_rect)
+        window.blit(text_nivel, text_nivel_rect)
+        window.blit(text_tempo, text_tempo_rect)
 
 
-    pygame.display.update()
+        pygame.display.update()
+        
+    else:
+        state = QUIT 
+
+

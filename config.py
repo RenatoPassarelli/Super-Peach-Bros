@@ -11,3 +11,8 @@ peach_largura=200
 
 tile_size = 60
 
+INIT = 0
+GAME = 1 
+QUIT = 2 
+
+FPS = 60 
