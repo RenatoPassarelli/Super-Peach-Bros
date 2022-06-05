@@ -95,19 +95,19 @@ for l in range(len(mapa)):
             movimento_blocos.add(a)
          
 pygame.mixer.music.load(path.join(path.dirname(__file__),"sounds\emafundo1.wav")) 
-pygame.mixer.music.set_volume(0.3) 
+pygame.mixer.music.set_volume(0) 
             
-
+pygame.mixer.music.play(loops=-1)
 # Looping do Game 
-pygame.mixer.music.play(loops=-1) 
 
 state = INIT
-
 while state != QUIT:
     if state == INIT:
         state = init_screen(window)
-
+    
     elif state == GAME:
+        pygame.mixer.music.set_volume(0.1) 
+        tocando = True 
         tempo = pygame.time.get_ticks()/1000
 
         clock.tick(FPS)
@@ -116,7 +116,7 @@ while state != QUIT:
             # ----- Verifica consequências
             # ----- Se é para sair do jogo
             if event.type == pygame.QUIT:
-                game = False
+                state = QUIT 
             # ----- Checa as teclas apertadas 
 
             keys_pressed=pygame.key.get_pressed()
@@ -182,8 +182,9 @@ while state != QUIT:
 
 
         pygame.display.update()
-        
+
     else:
         state = QUIT 
+        pygame.quit()
 
 
