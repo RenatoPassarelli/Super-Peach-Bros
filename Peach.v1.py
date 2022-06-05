@@ -7,7 +7,7 @@ from os import path
 from config import * 
 from personagem import * 
 from mapas import MAPAS, jan_altura, jan_largura
-from elementos import Bloco
+from elementos import Bloco, Moedas
 from personagem import batida
 
 
@@ -32,6 +32,10 @@ peachzinha1=pygame.transform.scale(peachzinha, (60,80))
 peachzinhaco=pygame.image.load(path.join(path.dirname(__file__),"Imagens\Peachzinha contrária.png")).convert_alpha()
 peachzinhaco1=pygame.transform.scale(peachzinhaco, (60,80))
 
+# Moedinhas
+moedinha = pygame.image.load(path.join(path.dirname(__file__), "Imagens\moedinha.png")).convert_alpha()
+moedinha1 = pygame.transform.scale(moedinha, (40, 40))
+
 game = True
 
 # Variável para o ajuste de velocidade
@@ -54,6 +58,9 @@ for l in range(len(mapa)):
         elif e == "P":
             player = Player(peachzinha1,peachzinhaco1, l, c,all_blocos)
             all_sprites.add(player)
+        elif e == 'M':
+            coin = Moedas(moedinha1, l, c)
+            all_sprites.add(coin)
 
 
 # Looping do Game 
