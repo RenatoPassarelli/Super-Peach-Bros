@@ -82,7 +82,7 @@ class Animais(pygame.sprite.Sprite):
         self.image = self.frames[self.frame_atual]
         self.rect = self.image.get_rect()
         self.rect.x = c * tile_size
-        self.rect.y = l * tile_size
+        self.rect.y = l * tile_size+6
         self.speedx=2
         self.pecas=limites
 
