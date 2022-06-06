@@ -9,6 +9,7 @@ HEIGHT = 600
 peach_altura=460
 peach_largura=200
 
+# Settings jogo
 tile_size = 60
 
 INIT = 0

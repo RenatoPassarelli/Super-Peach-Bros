@@ -17,9 +17,8 @@ pygame.mixer.init()
 # ----- Gera tela principal
 window = pygame.display.set_mode((jan_largura, jan_altura))
 pygame.display.set_caption('Super Peach game')
-# Placar 
-fonte_placar = pygame.font.Font(path.join(path.dirname(__file__),"font\PressStart2P.ttf" ),28)
-
+# ----- Settings Placar / escritos 
+fonte_placar = pygame.font.Font(path.join(path.dirname(__file__),"font\PressStart2P.ttf" ),28) 
 
 # ----- Inicia Assets
 # Tiles
