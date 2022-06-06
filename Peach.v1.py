@@ -53,6 +53,7 @@ clock = pygame.time.Clock()
 limite=pygame.sprite.Group()
 all_sprites = pygame.sprite.Group()
 all_blocos = pygame.sprite.Group()
+all_moedas = pygame.sprite.Group() 
 movimento_blocos=pygame.sprite.Group()
 movimento_nuvem=pygame.sprite.Group()
 player = None
@@ -76,9 +77,10 @@ for l in range(len(mapa)):
         elif e == "P":
             player = Player(peachzinha1,peachzinhaco1, l, c,all_blocos)
             all_sprites.add(player)
-            
+             
         elif e == 'M':
             coin = Moedas(moedinha1, l, c)
+            all_moedas.add(coin)
             all_sprites.add(coin)
             movimento_blocos.add(coin)
         elif e == 'E':
@@ -161,6 +163,11 @@ while state != QUIT:
                 player.speedx = 0.0001
         
         #print(player.speedx)
+
+        # Colisões com as moedas (colocar som)
+        peg_moeda = pygame.sprite.spritecollide(player, all_moedas, True)
+        for m in peg_moeda:
+            moedas += 1 
 
         all_sprites.update() 
         window.fill((0, 200, 253))  # Preenche com a cor de fundo
