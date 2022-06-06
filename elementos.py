@@ -20,6 +20,15 @@ class Bloco(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = c * tile_size
         self.rect.y = l * tile_size
+
+class Jorre(pygame.sprite.Sprite):
+    def __init__(self, img, l, c):
+        # Construtor da classe mãe (Sprite).
+        pygame.sprite.Sprite.__init__(self)
+        self.image = img
+        self.rect = self.image.get_rect()
+        self.rect.x = c * tile_size
+        self.rect.y = l * tile_size
         
 class Arvore(pygame.sprite.Sprite):
     def __init__(self, img, l, c):
@@ -33,16 +42,7 @@ class Arvore(pygame.sprite.Sprite):
 
     def update(self):
         pass 
-class ina(pygame.sprite.Sprite):
-    def __init__(self, img, l, c):
-        # Construtor da classe mãe (Sprite).
-        pygame.sprite.Sprite.__init__(self)
-        self.image = img
-        self.rect = self.image.get_rect()
-        self.rect.x = c * tile_size
-        self.rect.y = l * tile_size
-    def update(self):
-        pass
+
 class Animais(pygame.sprite.Sprite):
     def __init__(self, img, l, c,limites):
         # Construtor da classe mãe (Sprite).

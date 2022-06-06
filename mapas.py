@@ -4,16 +4,16 @@ from config import tile_size
 
 MAPAS = {
     0: [
-    '                               N      N                                                                                ',
-    '              N                                  N                                                         t t t t       ',
-    '                   q ta M a M a tq   N   t tMMt  M       MM t        M                                     XXXXXXXX      ',
-    '          N         XXXXXXXXXXXXX     M XXXXXXXX  Mtt t  XXXX     t t                    M t M t M    MMM              ',
-    '                t M      N         tXXXXXXXXXX     XXXXX         XXXXXX  t  Mt            XXXXXXXXXX   XXXXX      E     ',
-    'X           MMtXXX    M  M   N  tNXXXXXXXXXXX     N          N          XXX  XX   t t X                XXXX   t t    t ',
-    'X          XXXXXXX   XXXXXX  NXXXXXXXXXXXXXXX                                   XXXXXX                XXXXXXXXXXXXXXXX',
-    'X                 N  XXXXXX   XXXXXXXXXXXXXXX       N              N            XXXXXX                XXXXXXXXXXXXXXXX',
-    'Xttt  P        MM      XXXXXXN  XXXXXXXXXXXXXXX N                                 XXXXXX                XXXXXXXXXXXXXXXX',
-    'XXXXXXXXXXXXXXXXXX   XXXXXX   XXXXXXXXXXXXXXX                                   XXXXXX                XXXXXXXXXXXXXXXX'
+    '                               N      N          N            N                                                       ',
+    '              N                                  N                                                         tMtMtMt    ',
+    '   N                q ta M a M atq   Nq  tatMMtq M        MMt        M                                   XXXXXXXX   ',
+    '          N         XXXXXXXXXXXXX     M XXXXXXXX  Mtt t   XXXX   t t                    q Mat aMatq    MMM             ',
+    '                t M      N         t XXXXXXXXXXX   XXXXX        XXXXX   t  Mqaq          XXXXXXXXXX   XXX        E    ',
+    'X  N        MMt XX              N  XXXXXXXXXXXXX             N          XXX  X    t t X               XXXq  at ta a tq',
+    'X          XXXXXXX               tXXXXXXXXXXXXXX                                XXXXXXX               XXXXXXXXXXXXXXXX',
+    'X                 N q M a M a q  XXXXXXXXXXXXXXX                                XXXXXXX               XXXXXXXXXXXXXXXX',
+    'Xttt  P        MM    XXXXXXXXX  XXXXXXXXXXXXXXXX N                              XXXXXXX               XXXXXXXXXXXXXXXX',
+    'XXXXXXXXXXXXXXXXXX   XXXXXXXXX  XXXXXXXXXXXXXXXX                                XXXXXXX               XXXXXXXXXXXXXXXX'
 ] ,
     1: [
         '                           ',

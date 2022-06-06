@@ -24,6 +24,8 @@ fonte_placar = pygame.font.Font(path.join(path.dirname(__file__),"font\PressStar
 # Tiles
 chao_padrao = pygame.image.load(path.join(path.dirname(__file__),"Imagens\chao.png")).convert_alpha()
 chaozinho = pygame.transform.scale(chao_padrao, (60,60))
+jorre1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\jorre.png")).convert_alpha()
+jorre = pygame.transform.scale(jorre1, (60,60))
 Vazio1= pygame.image.load(path.join(path.dirname(__file__),"Imagens\pngegg.png")).convert_alpha()
 Vazio=pygame.transform.scale(Vazio1, (60,60))
 # Personagem 
@@ -106,6 +108,11 @@ while state != QUIT:
                     all_blocos.add(b)
                     all_sprites.add(b)
                     movimento_blocos.add(b)
+                elif e == "J":
+                    b = Jorre(jorre, l, c)
+                    all_blocos.add(b)
+                    all_sprites.add(b)
+                    movimento_blocos.add(b)
                 elif e == "P":
                     player = Player(peachzinha1,peachzinhaco1, l, c,all_blocos)
                     all_sprites.add(player)
@@ -132,7 +139,7 @@ while state != QUIT:
 
     elif state == GAME:
         pygame.mixer.music.set_volume(0.1)
-        tempo += clock.tick_busy_loop()/100
+        tempo += clock.tick_busy_loop()/100/2.8
         # pygame.time.get_ticks()/1000 mudar esse tipo de pygame.time
 
         clock.tick(FPS)
