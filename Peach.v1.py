@@ -33,7 +33,7 @@ peachzinha = pygame.image.load(path.join(path.dirname(__file__),"Imagens\Peachzi
 peachzinha1=pygame.transform.scale(peachzinha, (60,80))
 peachzinhaco=pygame.image.load(path.join(path.dirname(__file__),"Imagens\Peachzinha contrária.png")).convert_alpha()
 peachzinhaco1=pygame.transform.scale(peachzinhaco, (60,80))
-Gomba1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\Goompa.png")).convert_alpha()
+Gomba1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\gomp.gif")).convert_alpha()
 Gomba=pygame.transform.scale(Gomba1, (60,60))
 # Moedinhas
 moedinha = pygame.image.load(path.join(path.dirname(__file__), "Imagens\moedinha.png")).convert_alpha()

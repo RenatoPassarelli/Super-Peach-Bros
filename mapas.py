@@ -6,8 +6,8 @@ MAPAS = {
     0: [
     '                                N      N          N            N                                                       ',
     '               N                                  N                                                         tMtMtMt    ',
-    '    N                q ta M a M atq   Nq  tatMMtq M        MMt        M                                   XXXXXXXX   ',
-    '           N         XXXXXXXXXXXXX     M XXXXXXXX  Mtt t   XXXX   t t                    q Mat aMatq    MMM            D',
+    '    N                q ta M a M atq   Nq  tatMMtq M        MMt        M                                    XXXXXXXX   ',
+    '           N         XXXXXXXXXXXXX     M XXXXXXXX   tt t   XXXX   t t                    q Mat aMatq    MM             D',
     'E                t M      N         t XXXXXXXXXXX   XXXXX        XXXXX   t  Mqaq          XXXXXXXXXX   XXX        S    D',
     'E   N        MMt XX              N  XXXXXXXXXXXXX             N          XXX  X    t t X               XXXq  at ta a tqD',
     'E           XXXXXXX               tXXXXXXXXXXXXXX                                XXXXXXX               XXXXXXXXXXXXXXXXX',
