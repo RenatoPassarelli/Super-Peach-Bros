@@ -77,6 +77,7 @@ def game_over_screen(screen):
                     state = INIT 
                     running = False
                 if event.key == pygame.K_ESCAPE:
+                    pygame.time.delay(2000) 
                     state = QUIT
                     running = False 
 
@@ -91,5 +92,6 @@ def game_over_screen(screen):
 
         # Depois de desenhar tudo, inverte o display.
         pygame.display.flip()
+
 
     return state
