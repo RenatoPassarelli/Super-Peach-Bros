@@ -8,12 +8,12 @@ MAPAS = {
     '              N                                  N                                             MM                      ',
     '                  q  a M a M a  q   N      MM   M       MM         M                                     XXXXXXXX      ',
     '          N         XXXXXXXXXXXXX     M XXXXXXXX  M      XXXX                                                          ',
-    '                 M      N          XXXXXXXXXX    XXXXX      XXXXXX     M              XXXXXXXXXXXXX   XXXXX      E     ',
-    'X           MM XXX    M  M   N   NXXXXXXXXXXX     N          N         XXXX  XXXXX                        XXXX         ',
-    'X          XXXXXXX   XXXXXX  NXXXXXXXXXXXXXXX                                   XXXXXX                 XXXXXXXXXXXXXXXX',
-    'X                 N  XXXXXX   XXXXXXXXXXXXXXX       N              N            XXXXXX                 XXXXXXXXXXXXXXXX',
-    'X   P        MM      XXXXXXN  XXXXXXXXXXXXXXX N                                 XXXXXX                 XXXXXXXXXXXXXXXX',
-    'XXXXXXXXXXXXXXXXXX   XXXXXX   XXXXXXXXXXXXXXX                                   XXXXXX                 XXXXXXXXXXXXXXXX'
+    '                 M      N          XXXXXXXXXX     XXXXX         XXXXXX     M            XXXXXXXXXX   XXXXX      E     ',
+    'X           MM XXX    M  M   N   NXXXXXXXXXXX     N          N          XXX  XX      X                XXXX         ',
+    'X          XXXXXXX   XXXXXX  NXXXXXXXXXXXXXXX                                   XXXXXX                XXXXXXXXXXXXXXXX',
+    'X                 N  XXXXXX   XXXXXXXXXXXXXXX       N              N            XXXXXX                XXXXXXXXXXXXXXXX',
+    'X   P        MM      XXXXXXN  XXXXXXXXXXXXXXX N                                 XXXXXX                XXXXXXXXXXXXXXXX',
+    'XXXXXXXXXXXXXXXXXX   XXXXXX   XXXXXXXXXXXXXXX                                   XXXXXX                XXXXXXXXXXXXXXXX'
 ] ,
     1: [
         '                           ',
