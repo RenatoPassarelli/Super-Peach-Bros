@@ -19,9 +19,7 @@ window = pygame.display.set_mode((jan_largura, jan_altura))
 pygame.display.set_caption('Super Peach game')
 # Placar 
 fonte_placar = pygame.font.Font(path.join(path.dirname(__file__),"font\PressStart2P.ttf" ),28)
-tempo = 0 
-moedas = 0 
-nivel = 0 
+
 
 # ----- Inicia Assets
 # Tiles
@@ -49,7 +47,7 @@ estrela = pygame.transform.scale(estrela1, (40,40))
 game = True
 
 # Variável para o ajuste de velocidade
-clock = pygame.time.Clock()
+
 limite=pygame.sprite.Group()
 all_sprites = pygame.sprite.Group()
 all_blocos = pygame.sprite.Group()
@@ -57,44 +55,6 @@ all_moedas = pygame.sprite.Group()
 movimento_blocos=pygame.sprite.Group()
 movimento_nuvem=pygame.sprite.Group()
 player = None
-
-mapa = MAPAS[0]
-nivel = list(MAPAS.keys())[0] + 1 
-
-for l in range(len(mapa)):
-    for c in range(len(mapa[l])):
-        e = mapa[l][c]
-        if e == "q":
-            b=Limite(Vazio,l,c)
-            limite.add(b)
-            all_sprites.add(b)
-            movimento_blocos.add(b)
-        elif e == "X":
-            b = Bloco(chaozinho, l, c)
-            all_blocos.add(b)
-            all_sprites.add(b)
-            movimento_blocos.add(b)
-        elif e == "P":
-            player = Player(peachzinha1,peachzinhaco1, l, c,all_blocos)
-            all_sprites.add(player)
-             
-        elif e == 'M':
-            coin = Moedas(moedinha1, l, c)
-            all_moedas.add(coin)
-            all_sprites.add(coin)
-            movimento_blocos.add(coin)
-        elif e == 'E':
-            est = Estrela(estrela, l, c)
-            all_sprites.add(est)
-            movimento_blocos.add(est)    
-        elif e == 'N':
-            cloud = Nuvem(nuvemzinha, l, c)
-            all_sprites.add(cloud)
-            movimento_nuvem.add(cloud)
-        elif e == "a":
-            a = Animais(Gomba, l, c,limite)
-            all_sprites.add(a)
-            movimento_blocos.add(a)
          
 pygame.mixer.music.load(path.join(path.dirname(__file__),"sounds\emafundo1.wav")) 
 pygame.mixer.music.set_volume(0) 
@@ -105,10 +65,63 @@ pygame.mixer.music.play(loops=-1)
 state = INIT
 while state != QUIT:
     if state == INIT:
-        state = init_screen(window) 
+        state = init_screen(window)
+        clock = pygame.time.Clock()
+        limite=pygame.sprite.Group()
+        all_sprites = pygame.sprite.Group()
+        all_blocos = pygame.sprite.Group()
+        all_moedas = pygame.sprite.Group() 
+        movimento_blocos=pygame.sprite.Group()
+        movimento_nuvem=pygame.sprite.Group()
+        player = None
+        tempo = 0 
+        moedas = 0 
+        nivel = 0 
+                
+        pygame.mixer.music.load(path.join(path.dirname(__file__),"sounds\emafundo1.wav")) 
+        pygame.mixer.music.set_volume(0) 
+                    
+        pygame.mixer.music.play(loops=-1)
+        # Looping do Game 
+        mapa = MAPAS[0]
+        nivel = list(MAPAS.keys())[0] + 1 
+
+        for l in range(len(mapa)):
+            for c in range(len(mapa[l])):
+                e = mapa[l][c]
+                if e == "q":
+                    b=Limite(Vazio,l,c)
+                    limite.add(b)
+                    all_sprites.add(b)
+                    movimento_blocos.add(b)
+                elif e == "X":
+                    b = Bloco(chaozinho, l, c)
+                    all_blocos.add(b)
+                    all_sprites.add(b)
+                    movimento_blocos.add(b)
+                elif e == "P":
+                    player = Player(peachzinha1,peachzinhaco1, l, c,all_blocos)
+                    all_sprites.add(player)
+                    
+                elif e == 'M':
+                    coin = Moedas(moedinha1, l, c)
+                    all_moedas.add(coin)
+                    all_sprites.add(coin)
+                    movimento_blocos.add(coin)
+                elif e == 'E':
+                    est = Estrela(estrela, l, c)
+                    all_sprites.add(est)
+                    movimento_blocos.add(est)    
+                elif e == 'N':
+                    cloud = Nuvem(nuvemzinha, l, c)
+                    all_sprites.add(cloud)
+                    movimento_nuvem.add(cloud)
+                elif e == "a":
+                    a = Animais(Gomba, l, c,limite)
+                    all_sprites.add(a)
+                    movimento_blocos.add(a)
     elif state == GAME:
-        pygame.mixer.music.set_volume(0.1) 
-        tocando = True 
+        pygame.mixer.music.set_volume(0.1)
         tempo = pygame.time.get_ticks()/1000
 
         clock.tick(FPS)
@@ -192,5 +205,6 @@ while state != QUIT:
         state = game_over_screen(window)
     
     else:
-        state = QUIT 
+        state = QUIT
+        
 

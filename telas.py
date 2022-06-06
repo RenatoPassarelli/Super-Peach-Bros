@@ -5,6 +5,7 @@ from config import *
 
 
 def init_screen(screen):
+    
     # Variável para o ajuste de velocidade
     clock = pygame.time.Clock()
 
@@ -24,7 +25,7 @@ def init_screen(screen):
                 state = QUIT
                 running = False
 
-            if event.type == pygame.KEYUP:
+            if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE: 
                     state = GAME
                     running = False
@@ -49,6 +50,7 @@ def game_over_screen(screen):
 
     running = True
     while running:
+        pygame.mixer.music.set_volume(0) 
         # Ajusta a velocidade do jogo.
         clock.tick(FPS)
         # Processa os eventos (mouse, teclado, botão, etc).
@@ -58,7 +60,7 @@ def game_over_screen(screen):
                 state = QUIT
                 running = False
 
-            if event.type == pygame.KEYDOWN:
+            if event.type == pygame.KEYUP:
                 if event.key == pygame.K_SPACE: 
                     state = INIT 
                     running = False
