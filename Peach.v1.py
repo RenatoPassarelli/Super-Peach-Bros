@@ -9,7 +9,7 @@ from personagem import *
 from mapas import MAPAS, jan_altura, jan_largura
 from elementos import *
 from personagem import batida
-from tela_inicial import * 
+from telas import * 
 
 
 pygame.init()
@@ -150,6 +150,9 @@ while state != QUIT:
             for bloco in movimento_blocos:
                 bloco.rect.x -= 5
                 player.speedx = 0.0001
+
+        if player.rect.y >= 600:
+            state = GO 
         
         # Movimento das nuvens
         if player.rect.x > WIDTH/2 and player.speedx > 0: 
@@ -160,9 +163,6 @@ while state != QUIT:
         #print(player.speedx)
 
         all_sprites.update() 
-
-        
-
         window.fill((0, 200, 253))  # Preenche com a cor de fundo
         all_sprites.draw(window)
 
@@ -183,8 +183,9 @@ while state != QUIT:
 
         pygame.display.update()
 
+    elif state == GO:
+        state = game_over_screen(window)
+    
     else:
         state = QUIT 
-        pygame.quit()
-
 

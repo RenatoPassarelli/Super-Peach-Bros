@@ -13,6 +13,7 @@ tile_size = 60
 
 INIT = 0
 GAME = 1 
-QUIT = 2 
+GO = 2 
+QUIT = 3  
 
 FPS = 60 
