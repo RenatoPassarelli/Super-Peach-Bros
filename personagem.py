@@ -36,12 +36,12 @@ class Player(pygame.sprite.Sprite):
             self.image=self.certo
         if self.speedx<0:
             self.image=self.cont
-        
+       
 
         bloco = pygame.sprite.spritecollide(self,self.blocoss, False)
+        
         for blocos in bloco:
             if self.speedy > 0:
-                print(1)
                 self.rect.bottom = blocos.rect.top
                 self.speedy = 0
                 self.state = STILL
@@ -49,6 +49,9 @@ class Player(pygame.sprite.Sprite):
                 self.rect.top = blocos.rect.bottom
                 self.speedy = 0
                 self.state = STILL
+            
+
+            
 
         # Mantem dentro da tela
         if self.rect.right > 1200:
@@ -59,6 +62,7 @@ class Player(pygame.sprite.Sprite):
         self.rect.x += self.speedx
         
         bloco = pygame.sprite.spritecollide(self, self.blocoss, False)
+        
         for blocos in bloco:
             if self.speedx > 0:
                 self.rect.right = blocos.rect.left

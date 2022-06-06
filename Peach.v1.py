@@ -76,8 +76,10 @@ while state != QUIT:
         all_sprites = pygame.sprite.Group()
         all_blocos = pygame.sprite.Group()
         all_moedas = pygame.sprite.Group() 
-        movimento_blocos=pygame.sprite.Group()
         movimento_nuvem=pygame.sprite.Group()
+        LimiteE_peach=pygame.sprite.Group()
+        LimiteD_peach=pygame.sprite.Group()
+        morrer=pygame.sprite.Group()
         player = None
         tempo = 0 
         moedas = 0 
@@ -122,7 +124,7 @@ while state != QUIT:
                     all_moedas.add(coin)
                     all_sprites.add(coin)
                     movimento_blocos.add(coin)
-                elif e == 'E':
+                elif e == 'S':
                     est = Estrela(estrela, l, c)
                     all_sprites.add(est)
                     movimento_blocos.add(est)    
@@ -134,7 +136,18 @@ while state != QUIT:
                     a = Animais(Gomba, l, c,limite)
                     all_sprites.add(a)
                     movimento_blocos.add(a)
-                
+                    morrer.add(a)
+                elif e == "E":
+                    a = LimiteE(Vazio, l, c)
+                    all_sprites.add(a)
+                    movimento_blocos.add(a)
+                    LimiteE_peach.add(a)
+
+                elif e == "D":
+                    a = LimiteD(Vazio, l, c)
+                    all_sprites.add(a)
+                    movimento_blocos.add(a)
+                    LimiteD_peach.add(a)
                 
 
     elif state == GAME:
@@ -172,6 +185,11 @@ while state != QUIT:
                     player.speedx =0
             
         # Atualizando a posição das sprites tiles 
+        
+
+        if player.rect.y >= 600:
+            state = GO 
+
         if player.rect.x < WIDTH/8 and player.speedx < 0: 
             for bloco in movimento_blocos:
                 bloco.rect.x += 5
@@ -182,14 +200,18 @@ while state != QUIT:
                 bloco.rect.x -= 5
                 player.speedx = 0.0001
 
-        if player.rect.y >= 600:
-            state = GO 
-        
         # Movimento das nuvens
         if player.rect.x > WIDTH/2 and player.speedx > 0: 
             for bloco in movimento_nuvem:
                 bloco.rect.x -= 1
-                player.speedx = 0.0001
+        
+        bloco = pygame.sprite.spritecollide(player, all_blocos, False)
+        for blocos in bloco:
+            if player.speedx > 0:
+                player.rect.right = blocos.rect.left-1
+            elif player.speedx < 0:
+                player.rect.left = blocos.rect.right+1
+                
         
         #print(player.speedx)
 
@@ -197,6 +219,27 @@ while state != QUIT:
         peg_moeda = pygame.sprite.spritecollide(player, all_moedas, True)
         for m in peg_moeda:
             moedas += 1 
+        
+        morrere = pygame.sprite.spritecollide(player,morrer,False)
+        for m in morrere:
+            if player.speedy>0:
+                 morrere = pygame.sprite.spritecollide(player,morrer,True)
+            else:
+                pygame.time.wait(1000)
+                state=GO
+                
+            #pygame.time.wait(1000)
+            #state= GO
+
+        limitee=pygame.sprite.spritecollide(player,LimiteE_peach,False)
+        for l in limitee:
+            
+            player.rect.left=l.rect.right+1
+                
+        limited=pygame.sprite.spritecollide(player,LimiteD_peach,False)
+        for l in limited:
+            player.rect.right=l.rect.left-1
+            
 
         all_sprites.update() 
         window.fill((0, 200, 253))  # Preenche com a cor de fundo
