@@ -74,7 +74,7 @@ def game_over_screen(screen):
 
             if event.type == pygame.KEYUP:
                 if event.key == pygame.K_SPACE: 
-                    state = INIT 
+                    state = INIT
                     running = False
                 if event.key == pygame.K_ESCAPE:
                     pygame.time.delay(2000) 

@@ -133,10 +133,10 @@ while state != QUIT:
                     all_sprites.add(cloud)
                     movimento_nuvem.add(cloud)
                 elif e == "a":
-                    a = Animais(Gomba, l, c,limite)
-                    all_sprites.add(a)
-                    movimento_blocos.add(a)
-                    morrer.add(a)
+                    g = Animais(l, c,limite)
+                    all_sprites.add(g)
+                    movimento_blocos.add(g)
+                    morrer.add(g)
                 elif e == "E":
                     a = LimiteE(Vazio, l, c)
                     all_sprites.add(a)
@@ -220,10 +220,10 @@ while state != QUIT:
         for m in peg_moeda:
             moedas += 1 
         
-        morrere = pygame.sprite.spritecollide(player,morrer,False)
+        morrere = pygame.sprite.spritecollide(player,morrer,False,pygame.sprite.collide_mask)
         for m in morrere:
             if player.speedy>0:
-                 morrere = pygame.sprite.spritecollide(player,morrer,True)
+                morrere = pygame.sprite.spritecollide(player,morrer,True,pygame.sprite.collide_mask)
             else:
                 pygame.time.wait(1000)
                 state=GO
