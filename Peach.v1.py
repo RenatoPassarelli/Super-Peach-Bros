@@ -120,9 +120,11 @@ while state != QUIT:
                     a = Animais(Gomba, l, c,limite)
                     all_sprites.add(a)
                     movimento_blocos.add(a)
+
     elif state == GAME:
         pygame.mixer.music.set_volume(0.1)
-        tempo = pygame.time.get_ticks()/1000
+        tempo += clock.tick_busy_loop()/100
+        # pygame.time.get_ticks()/1000 mudar esse tipo de pygame.time
 
         clock.tick(FPS)
         # ----- Trata eventos
