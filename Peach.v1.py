@@ -42,7 +42,11 @@ nuvemzinha = pygame.transform.scale(nuvem1, (100,100))
 # Estrelinha 
 estrela1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\estrelinha_peq.png")).convert_alpha()
 estrela = pygame.transform.scale(estrela1, (40,40)) 
-
+#Árvore
+arvore1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\Arvore.png")).convert_alpha()
+arvore=pygame.transform.scale(arvore1, (125,250))
+Deserto1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\Duna.png")).convert_alpha()
+Deserto=pygame.transform.scale(Deserto1, (1210,600))
 game = True
 
 # Variável para o ajuste de velocidade
@@ -76,7 +80,7 @@ while state != QUIT:
         tempo = 0 
         moedas = 0 
         nivel = 0 
-                
+        
         pygame.mixer.music.load(path.join(path.dirname(__file__),"sounds\emafundo1.wav")) 
         pygame.mixer.music.set_volume(0) 
                     
@@ -88,7 +92,11 @@ while state != QUIT:
         for l in range(len(mapa)):
             for c in range(len(mapa[l])):
                 e = mapa[l][c]
-                if e == "q":
+                if e == "t":
+                    a = Arvore(arvore, l, c)
+                    all_sprites.add(a)
+                    movimento_blocos.add(a)
+                elif e == "q":
                     b=Limite(Vazio,l,c)
                     limite.add(b)
                     all_sprites.add(b)
@@ -119,6 +127,8 @@ while state != QUIT:
                     a = Animais(Gomba, l, c,limite)
                     all_sprites.add(a)
                     movimento_blocos.add(a)
+                
+                
 
     elif state == GAME:
         pygame.mixer.music.set_volume(0.1)
@@ -183,6 +193,7 @@ while state != QUIT:
 
         all_sprites.update() 
         window.fill((0, 200, 253))  # Preenche com a cor de fundo
+        window.blit(Deserto,(0,150))
         all_sprites.draw(window)
 
         # Placar

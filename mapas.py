@@ -5,14 +5,14 @@ from config import tile_size
 MAPAS = {
     0: [
     '                               N      N                                                                                ',
-    '              N                                  N                                                                     ',
-    '                  q  a M a M a  q   N      MM   M       MM         M                                     XXXXXXXX      ',
-    '          N         XXXXXXXXXXXXX     M XXXXXXXX  M      XXXX                            M   M   M    MMM              ',
-    '                 M      N          XXXXXXXXXX     XXXXX         XXXXXX     M            XXXXXXXXXX   XXXXX      E     ',
-    'X           MM XXX    M  M   N   NXXXXXXXXXXX     N          N          XXX  XX      X                XXXX         ',
+    '              N                                  N                                                         t t t t       ',
+    '                   q ta M a M a tq   N   t tMMt  M       MM t        M                                     XXXXXXXX      ',
+    '          N         XXXXXXXXXXXXX     M XXXXXXXX  Mtt t  XXXX     t t                    M t M t M    MMM              ',
+    '                t M      N         tXXXXXXXXXX     XXXXX         XXXXXX  t  Mt            XXXXXXXXXX   XXXXX      E     ',
+    'X           MMtXXX    M  M   N  tNXXXXXXXXXXX     N          N          XXX  XX   t t X                XXXX   t t    t ',
     'X          XXXXXXX   XXXXXX  NXXXXXXXXXXXXXXX                                   XXXXXX                XXXXXXXXXXXXXXXX',
     'X                 N  XXXXXX   XXXXXXXXXXXXXXX       N              N            XXXXXX                XXXXXXXXXXXXXXXX',
-    'X   P        MM      XXXXXXN  XXXXXXXXXXXXXXX N                                 XXXXXX                XXXXXXXXXXXXXXXX',
+    'Xttt  P        MM      XXXXXXN  XXXXXXXXXXXXXXX N                                 XXXXXX                XXXXXXXXXXXXXXXX',
     'XXXXXXXXXXXXXXXXXX   XXXXXX   XXXXXXXXXXXXXXX                                   XXXXXX                XXXXXXXXXXXXXXXX'
 ] ,
     1: [
