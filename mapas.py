@@ -5,9 +5,9 @@ from config import tile_size
 MAPAS = {
     0: [
     '                               N      N                                                                                ',
-    '              N                                  N                                             MM                      ',
+    '              N                                  N                                                                     ',
     '                  q  a M a M a  q   N      MM   M       MM         M                                     XXXXXXXX      ',
-    '          N         XXXXXXXXXXXXX     M XXXXXXXX  M      XXXX                                                          ',
+    '          N         XXXXXXXXXXXXX     M XXXXXXXX  M      XXXX                            M   M   M    MMM              ',
     '                 M      N          XXXXXXXXXX     XXXXX         XXXXXX     M            XXXXXXXXXX   XXXXX      E     ',
     'X           MM XXX    M  M   N   NXXXXXXXXXXX     N          N          XXX  XX      X                XXXX         ',
     'X          XXXXXXX   XXXXXX  NXXXXXXXXXXXXXXX                                   XXXXXX                XXXXXXXXXXXXXXXX',
