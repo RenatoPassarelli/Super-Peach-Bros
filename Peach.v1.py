@@ -105,8 +105,7 @@ pygame.mixer.music.play(loops=-1)
 state = INIT
 while state != QUIT:
     if state == INIT:
-        state = init_screen(window)
-    
+        state = init_screen(window) 
     elif state == GAME:
         pygame.mixer.music.set_volume(0.1) 
         tocando = True 
@@ -140,7 +139,6 @@ while state != QUIT:
                     player.speedx -=5
                 if event.key == pygame.K_RIGHT and player.speedx<1:
                     player.speedx =0
-
             
         # Atualizando a posição das sprites tiles 
         if player.rect.x < WIDTH/8 and player.speedx < 0: 
