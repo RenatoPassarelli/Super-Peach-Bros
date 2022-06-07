@@ -1,5 +1,6 @@
 import pygame
 from os import path
+import time 
 
 from config import * 
 
@@ -75,10 +76,11 @@ def game_over_screen(screen):
             if event.type == pygame.KEYUP:
                 if event.key == pygame.K_SPACE: 
                     state = INIT
+                    time.sleep(1)
                     running = False
                 if event.key == pygame.K_ESCAPE:
-                    pygame.time.delay(2000) 
                     state = QUIT
+                    time.sleep(1)
                     running = False 
 
         text_1 = fonte_placar.render("Aperte space para reiniciar", True, (255,255,255))
