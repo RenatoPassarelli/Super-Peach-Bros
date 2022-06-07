@@ -90,7 +90,7 @@ while state != QUIT:
                     all_sprites.add(coin)
                     movimento_blocos.add(coin)
                 elif e == 'S':
-                    est = Estrela(estrela, l, c)
+                    est = Estrela(l, c,limite)
                     all_sprites.add(est)
                     movimento_blocos.add(est)
                     a_star.add(est)    
