@@ -71,8 +71,43 @@ while state != QUIT:
                     limite.add(b)
                     all_sprites.add(b)
                     movimento_blocos.add(b)
+                elif e == "Z":
+                    b = Bloco(centro, l, c)
+                    all_blocos.add(b)
+                    all_sprites.add(b)
+                    movimento_blocos.add(b)
+                elif e == "C":
+                    b = Bloco(centroc, l, c)
+                    all_blocos.add(b)
+                    all_sprites.add(b)
+                    movimento_blocos.add(b)
+                elif e == "U":
+                    b = Bloco(centrod, l, c)
+                    all_blocos.add(b)
+                    all_sprites.add(b)
+                    movimento_blocos.add(b)
+                elif e == "Y":
+                    b = Bloco(centroe, l, c)
+                    all_blocos.add(b)
+                    all_sprites.add(b)
+                    movimento_blocos.add(b)
+                elif e == "G":
+                    b = Bloco(gelo, l, c)
+                    all_blocos.add(b)
+                    all_sprites.add(b)
+                    movimento_blocos.add(b)
+                elif e == "L":
+                    b = Bloco(cantoe, l, c)
+                    all_blocos.add(b)
+                    all_sprites.add(b)
+                    movimento_blocos.add(b)
+                elif e == "R":
+                    b = Bloco(cantod, l, c)
+                    all_blocos.add(b)
+                    all_sprites.add(b)
+                    movimento_blocos.add(b)
                 elif e == "X":
-                    b = Bloco(chaozinho, l, c)
+                    b = Bloco(cantod, l, c)
                     all_blocos.add(b)
                     all_sprites.add(b)
                     movimento_blocos.add(b)

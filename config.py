@@ -70,6 +70,28 @@ imgcont=[peachzinhaco1,sonico,yoshico,resinaco,Humbertoco,bombaco]
 # Imagens dos assets 
 chao_padrao = pygame.image.load(path.join(path.dirname(__file__),"Imagens\chao.png"))
 chaozinho = pygame.transform.scale(chao_padrao, (60,60)).convert_alpha()
+
+cantod1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\canto direito.png"))
+cantod = pygame.transform.scale(cantod1, (60,60)).convert_alpha()
+
+cantoe1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\canto esquerdo.png"))
+cantoe = pygame.transform.scale(cantoe1, (60,60)).convert_alpha()
+
+centroc1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\centro cima.png"))
+centroc = pygame.transform.scale(centroc1, (60,60)).convert_alpha()
+
+centroe1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\centro esquerdo.png"))
+centroe = pygame.transform.scale(centroe1, (60,60)).convert_alpha()
+
+centrod1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\centro direito.png"))
+centrod = pygame.transform.scale(centrod1, (60,60)).convert_alpha()
+
+centro1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\centro.png"))
+centro = pygame.transform.scale(centro1, (60,60)).convert_alpha()
+
+gelo1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\gelo.png"))
+gelo = pygame.transform.scale(gelo1, (60,60)).convert_alpha()
+
 jorre1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\jorre.png"))
 jorre = pygame.transform.scale(jorre1, (60,60)).convert_alpha()
 

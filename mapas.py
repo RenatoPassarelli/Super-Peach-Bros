@@ -28,15 +28,15 @@ MAPAS = {
     'XXXXXXXXXXXXXXXXXXX   XXXXXXXXX  XXXXXXXXXXXXXXXX                                XXXXXXX               XXXXXXXXXXXXXXXX'
 ] ,
     2: [
-        '                           ',
-        '                           ',
-        '           XXX             ',
-        '    XX                     ',
-        '                  XXXXXXX  ',
-        '        XXXXX              ',
-        '                           ',
-        '      XXXXXXXXXXXX  XXXXXXX',
-        ' P XXXXXXXXXXXXXXX  XXXXXXX',
-        'XXXXXXXXXXXXXXXXXX  XXXXXXX'
-    ]
+    '                                                                                             CCCCCCCCC           S               ',
+    '                                                                        G                    GGGGGGGGG        LCCCCCR                   ',
+    '                                                     GGGGGGGGGGGGG   G      G         q a a a aMMMMMMMM   LCCZZZZZZZCCR                      ',
+    '                                                G                                      LCqa a a a MMMMMqLCCZZZZZZZZZZZZZ                                  ',
+    '                                     G   G   G                                       LCZZZZCCCCCCCCCCCCCCZZZZZZZZZZZZZZZ                                    ',
+    'E                          LCCCCCCR                 LCCCR                        LCCCZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ                                        ',
+    'E                          YZZZZZZU                 YZZZZRq   aaaq              LZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ                                           ',
+    'E            q a  M Mq LCCCZZZZZZZU                 YZZZZZCCCCCCR      G  G   G  YCZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ                                          ',
+    'Eq  P  a  a q LCCCCCC  YZZZZZZZZZZU                 YZZZZZZZZZZZZCCU   G  G   G  YZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ                                         ',
+    'ELCCCCCCCCCC  YZZZZZZ  YZZZZZZZZZZU                 YZZZZZZZZZZZZZZU   G  G   G  YZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ                                          ',
+] 
 }
