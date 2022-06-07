@@ -4,8 +4,13 @@ from elementos import *
 from personagem import batida
 from telas import *
 from config import * 
+
+
+
 game = True
 # Looping do Game 
+ret_x=[]
+ret_m = []
 
 state = PG
 while state != QUIT:
@@ -14,10 +19,29 @@ while state != QUIT:
         
     if state == MP:
         ret_m.append(mapas_screen(window))
+        n = ret_m[0][1] 
         state = ret_m[0][0]
-        n = ret_m[0][1]
+        
 
     if state == INIT:
+        limite=pygame.sprite.Group()
+        all_sprites = pygame.sprite.Group()
+        all_blocos = pygame.sprite.Group()
+        all_moedas = pygame.sprite.Group() 
+        movimento_blocos=pygame.sprite.Group()
+        movimento_nuvem=pygame.sprite.Group()
+        a_star = pygame.sprite.GroupSingle()
+        player = None
+        
+        limite=pygame.sprite.Group()
+        all_sprites = pygame.sprite.Group()
+        all_blocos = pygame.sprite.Group()
+        all_moedas = pygame.sprite.Group() 
+        movimento_nuvem=pygame.sprite.Group()
+        LimiteE_peach=pygame.sprite.Group()
+        LimiteD_peach=pygame.sprite.Group()
+        morrer=pygame.sprite.Group()
+
         ret_x.append(init_screen(window))
         personagem = ret_x[0][1]
         state = ret_x[0][0]
@@ -90,6 +114,8 @@ while state != QUIT:
                     LimiteD_peach.add(a)       
         clock = pygame.time.Clock()
     elif state == GAME:
+        ret_x=[]
+        ret_m = []
         pygame.mixer.music.set_volume(0.3)
         tempo += clock.tick_busy_loop()/100/2.8
         # pygame.time.get_ticks()/1000 mudar esse tipo de pygame.time
@@ -164,8 +190,8 @@ while state != QUIT:
         
         ganhou = pygame.sprite.spritecollide(player,a_star, True)
         for g in ganhou:
-            pygame.mixer.music.set_volume(0) 
-            state = 
+            ganhou_sound.play() 
+            state = WIN 
         
         morrere = pygame.sprite.spritecollide(player,morrer,False,pygame.sprite.collide_mask)
         for m in morrere:
@@ -213,7 +239,9 @@ while state != QUIT:
 
     elif state == GO:
         state = game_over_screen(window)
-    
+    elif state == WIN:
+        state = win_screen(window)
+
     else:
         state = QUIT
         

@@ -27,6 +27,7 @@ INIT = 6
 MP = 20
 GAME = 8 
 GO = 9 
+WIN = 12 
 QUIT =10  
 PG=11
 FPS = 60 
@@ -99,24 +100,8 @@ pygame.mixer.music.play(loops=-1)
 caiu_sound = pygame.mixer.Sound(path.join(path.dirname(__file__),"sounds\caiu.wav")) 
 pisou_sound = pygame.mixer.Sound(path.join(path.dirname(__file__),"sounds\smb_bump.wav"))
 som_moeda = pygame.mixer.Sound(path.join(path.dirname(__file__),"sounds\smb_coin.wav"))
+ganhou_sound = pygame.mixer.Sound(path.join(path.dirname(__file__),"sounds\ganhou.wav")) 
 
 fonte_placar = pygame.font.Font(path.join(path.dirname(__file__),"font\PressStart2P.ttf" ),28)
 
-limite=pygame.sprite.Group()
-all_sprites = pygame.sprite.Group()
-all_blocos = pygame.sprite.Group()
-all_moedas = pygame.sprite.Group() 
-movimento_blocos=pygame.sprite.Group()
-movimento_nuvem=pygame.sprite.Group()
-a_star = pygame.sprite.GroupSingle()
-player = None
-ret_x=[]
-ret_m = []
-limite=pygame.sprite.Group()
-all_sprites = pygame.sprite.Group()
-all_blocos = pygame.sprite.Group()
-all_moedas = pygame.sprite.Group() 
-movimento_nuvem=pygame.sprite.Group()
-LimiteE_peach=pygame.sprite.Group()
-LimiteD_peach=pygame.sprite.Group()
-morrer=pygame.sprite.Group()
+

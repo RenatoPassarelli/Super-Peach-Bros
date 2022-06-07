@@ -157,8 +157,6 @@ def init_screen(screen):
                     running = False
                     ret = [state, PP]
                 
-
-        
         # A cada loop, redesenha o fundo, escritos e os sprites
         screen.fill((255,255,255))
         screen.blit(background1, background_rect) 
@@ -197,7 +195,7 @@ def game_over_screen(screen):
                 running = False
 
             if event.type == pygame.KEYUP:
-                if event.key == pygame.K_SPACE: 
+                if event.key == pygame.K_TAB: 
                     state = PG
                     time.sleep(0.5)
                     pygame.mixer.music.stop() 
@@ -208,13 +206,53 @@ def game_over_screen(screen):
                     pygame.mixer.music.stop() 
                     running = False 
 
-        text_1 = fonte_placar.render("Aperte space para reiniciar", True, (255,255,255))
+        text_1 = fonte_placar.render("Aperte TAB para reiniciar", True, (255,255,255))
         text_2 = fonte_placar.render('para sair do jogo clique esc',True, (255,255,255))
         # A cada loop, redesenha o fundo e os sprites
         screen.fill((0,0,0))
         screen.blit(background, ((WIDTH/3)-50, 0))
         screen.blit(text_1, (60, 70))
         screen.blit(text_2, (25, 510))
+
+
+        # Depois de desenhar tudo, inverte o display.
+        pygame.display.flip()
+
+
+    return state
+
+def win_screen(screen):
+    # Variável para o ajuste de velocidade
+    clock = pygame.time.Clock() 
+
+    # Carrega o fundo da tela inicial
+    background = pygame.image.load(path.join(path.dirname(__file__), 'Imagens\Você Venceu!.png')).convert()
+    background1 = pygame.transform.scale(background, (WIDTH,HEIGHT)) 
+    background_rect = background.get_rect()
+
+    running = True
+    while running:
+        # Ajusta a velocidade do jogo.
+        clock.tick(FPS)
+        # Processa os eventos (mouse, teclado, botão, etc).
+
+        for event in pygame.event.get():
+            # Verifica se foi fechado.
+            if event.type == pygame.QUIT:
+                state = QUIT
+                running = False
+
+            if event.type == pygame.KEYUP:
+                if event.key == pygame.K_SPACE: 
+                    state = MP
+                    running = False
+ 
+
+        
+        # A cada loop, redesenha o fundo e os sprites
+        screen.fill((0,0,0))
+        screen.blit(background, background_rect)
+
 
 
         # Depois de desenhar tudo, inverte o display.
