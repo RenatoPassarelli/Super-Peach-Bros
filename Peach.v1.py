@@ -35,6 +35,7 @@ peachzinhaco=pygame.image.load(path.join(path.dirname(__file__),"Imagens\Peachzi
 peachzinhaco1=pygame.transform.scale(peachzinhaco, (60,80))
 Gomba1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\gomp.gif")).convert_alpha()
 Gomba=pygame.transform.scale(Gomba1, (60,60))
+caiu_sound = pygame.mixer.Sound(path.join(path.dirname(__file__),"sounds\caiu.wav")) 
 # Moedinhas
 moedinha = pygame.image.load(path.join(path.dirname(__file__), "Imagens\moedinha.png")).convert_alpha()
 moedinha1 = pygame.transform.scale(moedinha, (40, 40))
@@ -190,6 +191,8 @@ while state != QUIT:
         
 
         if player.rect.y >= 600:
+            caiu_sound.play() 
+            time.sleep(2.5) 
             state = GO 
 
         if player.rect.x < WIDTH/8 and player.speedx < 0: 
