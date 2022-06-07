@@ -60,13 +60,17 @@ def game_over_screen(screen):
     # Carrega a fonte 
     fonte_placar = pygame.font.Font(path.join(path.dirname(__file__),"font\PressStart2P.ttf" ),40) 
 
+    pygame.mixer.music.load(path.join(path.dirname(__file__),"sounds\gameover_music.wav"))
+    pygame.mixer.music.play()
 
     running = True
     while running:
-        pygame.mixer.music.set_volume(0) 
         # Ajusta a velocidade do jogo.
         clock.tick(FPS)
         # Processa os eventos (mouse, teclado, botão, etc).
+        # Musica tema
+        pygame.mixer.music.set_volume(0.3)
+
         for event in pygame.event.get():
             # Verifica se foi fechado.
             if event.type == pygame.QUIT:
@@ -76,11 +80,13 @@ def game_over_screen(screen):
             if event.type == pygame.KEYUP:
                 if event.key == pygame.K_SPACE: 
                     state = INIT
-                    time.sleep(1)
+                    time.sleep(0.5)
+                    pygame.mixer.music.stop() 
                     running = False
                 if event.key == pygame.K_ESCAPE:
                     state = QUIT
                     time.sleep(1)
+                    pygame.mixer.music.stop() 
                     running = False 
 
         text_1 = fonte_placar.render("Aperte space para reiniciar", True, (255,255,255))

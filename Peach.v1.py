@@ -38,7 +38,7 @@ Gomba=pygame.transform.scale(Gomba1, (60,60))
 # Moedinhas
 moedinha = pygame.image.load(path.join(path.dirname(__file__), "Imagens\moedinha.png")).convert_alpha()
 moedinha1 = pygame.transform.scale(moedinha, (40, 40))
-som_moeda = pygame.mixer.Sound(path.join(path.dirname(__file__),""))
+#som_moeda = pygame.mixer.Sound(path.join(path.dirname(__file__),""))
 # Nuvem 
 nuvem1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\pngwing.com.png")).convert_alpha()
 nuvemzinha = pygame.transform.scale(nuvem1, (100,100))
@@ -51,6 +51,7 @@ arvore=pygame.transform.scale(arvore1, (125,250))
 Deserto1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\Duna.png")).convert_alpha()
 Deserto=pygame.transform.scale(Deserto1, (1210,600))
 game = True
+
 
 # Variável para o ajuste de velocidade
 
