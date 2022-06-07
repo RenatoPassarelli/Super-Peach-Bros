@@ -1,104 +1,10 @@
-# ===== Inicialização =====
-# ----- Importa e inicia pacotes
-from pickle import TRUE
-import pygame
-from math import * 
-from os import path
-from config import * 
 from personagem import * 
-from mapas import MAPAS, jan_altura, jan_largura
+from mapas import MAPAS
 from elementos import *
 from personagem import batida
-from telas import * 
-
-pygame.init()
-pygame.mixer.init() 
-# ----- Gera tela principal
-window = pygame.display.set_mode((jan_largura, jan_altura))
-pygame.display.set_caption('Super Peach game')
-# Personagem 
-
-peachzinha = pygame.image.load(path.join(path.dirname(__file__),"Imagens\Peachzinha.png")).convert_alpha()
-peachzinha1=pygame.transform.scale(peachzinha, (60,80))
-peachzinhaco=pygame.image.load(path.join(path.dirname(__file__),"Imagens\Peachzinha contrária.png")).convert_alpha()
-peachzinhaco1=pygame.transform.scale(peachzinhaco, (60,80))
-
-sonic1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\sonic.png")).convert_alpha()
-sonic=pygame.transform.scale(sonic1, (60,80))
-sonico1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\sonico.png")).convert_alpha()
-sonico=pygame.transform.scale(sonico1, (60,80))
-
-yoshi1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\Yoshi.png")).convert_alpha()
-yoshi=pygame.transform.scale(yoshi1, (60,80))
-yoshico1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\Yoshico.png")).convert_alpha()
-yoshico=pygame.transform.scale(yoshico1, (60,80))
-
-resina1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\lresina.png")).convert_alpha()
-resina=pygame.transform.scale(resina1, (60,80))
-resinaco1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\lresina_co.png")).convert_alpha()
-resinaco=pygame.transform.scale(resinaco1, (60,80))
-
-Humberto1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\mhumberto.png")).convert_alpha()
-Humberto=pygame.transform.scale(Humberto1, (60,80))
-Humbertoco1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\mhumberto_co.png")).convert_alpha()
-Humbertoco=pygame.transform.scale(Humbertoco1, (60,80))
-
-bomba1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\Bomba.png")).convert_alpha()
-bomba=pygame.transform.scale(bomba1, (60,80))
-bombaco1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\Bombaco.png")).convert_alpha()
-bombaco=pygame.transform.scale(bombaco1, (60,80))
-
-img=[peachzinha1,sonic,yoshi,resina,Humberto,bomba]
-imgcont=[peachzinhaco1,sonico,yoshico,resinaco,Humbertoco,bombaco]
-# ----- Settings Placar / escritos 
-fonte_placar = pygame.font.Font(path.join(path.dirname(__file__),"font\PressStart2P.ttf" ),28) 
-
-# ----- Inicia Assets
-# Tiles
-chao_padrao = pygame.image.load(path.join(path.dirname(__file__),"Imagens\chao.png")).convert_alpha()
-chaozinho = pygame.transform.scale(chao_padrao, (60,60))
-jorre1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\jorre.png")).convert_alpha()
-jorre = pygame.transform.scale(jorre1, (60,60))
-Vazio1= pygame.image.load(path.join(path.dirname(__file__),"Imagens\pngegg.png")).convert_alpha()
-Vazio=pygame.transform.scale(Vazio1, (60,60))
-Gomba1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\gomp.gif")).convert_alpha()
-Gomba=pygame.transform.scale(Gomba1, (60,60))
-caiu_sound = pygame.mixer.Sound(path.join(path.dirname(__file__),"sounds\caiu.wav")) 
-pisou_sound = pygame.mixer.Sound(path.join(path.dirname(__file__),"sounds\smb_bump.wav"))
-# Moedinhas
-moedinha = pygame.image.load(path.join(path.dirname(__file__), "Imagens\moedinha.png")).convert_alpha()
-moedinha1 = pygame.transform.scale(moedinha, (40, 40))
-som_moeda = pygame.mixer.Sound(path.join(path.dirname(__file__),"sounds\smb_coin.wav"))
-# Nuvem 
-nuvem1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\pngwing.com.png")).convert_alpha()
-nuvemzinha = pygame.transform.scale(nuvem1, (100,100))
-# Estrelinha 
-estrela1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\estrelinha_peq.png")).convert_alpha()
-estrela = pygame.transform.scale(estrela1, (40,40)) 
-#Árvore
-arvore1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\Arvore.png")).convert_alpha()
-arvore=pygame.transform.scale(arvore1, (125,250))
-Deserto1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\Duna.png")).convert_alpha()
-Deserto=pygame.transform.scale(Deserto1, (1210,600))
+from telas import *
+from config import * 
 game = True
-
-
-# Variável para o ajuste de velocidade
-
-limite=pygame.sprite.Group()
-all_sprites = pygame.sprite.Group()
-all_blocos = pygame.sprite.Group()
-all_moedas = pygame.sprite.Group() 
-movimento_blocos=pygame.sprite.Group()
-movimento_nuvem=pygame.sprite.Group()
-player = None
-ret_x=[]
-ret_m = []
-         
-pygame.mixer.music.load(path.join(path.dirname(__file__),"sounds\emafundo1.wav")) 
-pygame.mixer.music.set_volume(0) 
-            
-pygame.mixer.music.play(loops=-1)
 # Looping do Game 
 
 state = PG
@@ -115,27 +21,17 @@ while state != QUIT:
         ret_x.append(init_screen(window))
         personagem = ret_x[0][1]
         state = ret_x[0][0]
-        clock = pygame.time.Clock()
-        limite=pygame.sprite.Group()
-        all_sprites = pygame.sprite.Group()
-        all_blocos = pygame.sprite.Group()
-        all_moedas = pygame.sprite.Group() 
-        movimento_nuvem=pygame.sprite.Group()
-        LimiteE_peach=pygame.sprite.Group()
-        LimiteD_peach=pygame.sprite.Group()
-        morrer=pygame.sprite.Group()
         player = None
         tempo = 0 
         moedas = 0 
         nivel = 0 
-        
         pygame.mixer.music.load(path.join(path.dirname(__file__),"sounds\emafundo1.wav")) 
         pygame.mixer.music.set_volume(0) 
                     
         pygame.mixer.music.play(loops=-1)
         # Looping do Game 
         mapa = MAPAS[n]
-        nivel = list(MAPAS.keys())[0] + 1 
+        nivel = list(MAPAS.keys())[n] + 1 
 
         for l in range(len(mapa)):
             for c in range(len(mapa[l])):
@@ -192,7 +88,7 @@ while state != QUIT:
                     all_sprites.add(a)
                     movimento_blocos.add(a)
                     LimiteD_peach.add(a)       
-
+        clock = pygame.time.Clock()
     elif state == GAME:
         pygame.mixer.music.set_volume(0.3)
         tempo += clock.tick_busy_loop()/100/2.8

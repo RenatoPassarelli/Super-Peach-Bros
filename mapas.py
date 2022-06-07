@@ -40,5 +40,3 @@ MAPAS = {
         'XXXXXXXXXXXXXXXXXX  XXXXXXX'
     ]
 }
-jan_largura = 1200
-jan_altura = len(MAPAS[0])*tile_size
