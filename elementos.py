@@ -75,7 +75,7 @@ class Animais(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         self.frames = []
         for i in range(1,3):
-            self.image = pygame.image.load(path.join('Super-Peach-Bros/Imagens/goompa2/Imagem{}.png'.format(i))).convert_alpha()
+            self.image = pygame.image.load(path.join(path.dirname(__file__),'Imagens/goompa2/Imagem{}.png'.format(i))).convert_alpha()
             self.image = pygame.transform.scale(self.image, (60,60))
             self.frames.append(self.image)
         self.frame_atual = 0
