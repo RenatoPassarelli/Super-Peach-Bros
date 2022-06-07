@@ -91,7 +91,8 @@ while state != QUIT:
                 elif e == 'S':
                     est = Estrela(estrela, l, c)
                     all_sprites.add(est)
-                    movimento_blocos.add(est)    
+                    movimento_blocos.add(est)
+                    a_star.add(est)    
                 elif e == 'N':
                     cloud = Nuvem(nuvemzinha, l, c)
                     all_sprites.add(cloud)
@@ -188,6 +189,7 @@ while state != QUIT:
             som_moeda.play()
             moedas += 1 
         
+        # Ganhou 
         ganhou = pygame.sprite.spritecollide(player,a_star, True)
         for g in ganhou:
             ganhou_sound.play() 
