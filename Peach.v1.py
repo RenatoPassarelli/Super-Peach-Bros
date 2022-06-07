@@ -36,6 +36,7 @@ peachzinhaco1=pygame.transform.scale(peachzinhaco, (60,80))
 Gomba1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\gomp.gif")).convert_alpha()
 Gomba=pygame.transform.scale(Gomba1, (60,60))
 caiu_sound = pygame.mixer.Sound(path.join(path.dirname(__file__),"sounds\caiu.wav")) 
+pisou_sound = pygame.mixer.Sound(path.join(path.dirname(__file__),"sounds\smb_bump.wav"))
 # Moedinhas
 moedinha = pygame.image.load(path.join(path.dirname(__file__), "Imagens\moedinha.png")).convert_alpha()
 moedinha1 = pygame.transform.scale(moedinha, (40, 40))
@@ -188,8 +189,6 @@ while state != QUIT:
                     player.speedx =0
             
         # Atualizando a posição das sprites tiles 
-        
-
         if player.rect.y >= 600:
             caiu_sound.play() 
             time.sleep(2.5) 
@@ -229,6 +228,7 @@ while state != QUIT:
         morrere = pygame.sprite.spritecollide(player,morrer,False,pygame.sprite.collide_mask)
         for m in morrere:
             if player.speedy>0:
+                pisou_sound.play() 
                 morrere = pygame.sprite.spritecollide(player,morrer,True,pygame.sprite.collide_mask)
             else:
                 pygame.time.wait(1000)
