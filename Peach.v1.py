@@ -39,7 +39,7 @@ caiu_sound = pygame.mixer.Sound(path.join(path.dirname(__file__),"sounds\caiu.wa
 # Moedinhas
 moedinha = pygame.image.load(path.join(path.dirname(__file__), "Imagens\moedinha.png")).convert_alpha()
 moedinha1 = pygame.transform.scale(moedinha, (40, 40))
-som_moeda = pygame.mixer.Sound(path.join(path.dirname(__file__),"sounda\smb_coin.wav"))
+som_moeda = pygame.mixer.Sound(path.join(path.dirname(__file__),"sounds\smb_coin.wav"))
 # Nuvem 
 nuvem1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\pngwing.com.png")).convert_alpha()
 nuvemzinha = pygame.transform.scale(nuvem1, (100,100))
@@ -154,7 +154,7 @@ while state != QUIT:
                 
 
     elif state == GAME:
-        pygame.mixer.music.set_volume(0.1)
+        pygame.mixer.music.set_volume(0.3)
         tempo += clock.tick_busy_loop()/100/2.8
         # pygame.time.get_ticks()/1000 mudar esse tipo de pygame.time
 

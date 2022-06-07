@@ -69,7 +69,7 @@ def game_over_screen(screen):
         clock.tick(FPS)
         # Processa os eventos (mouse, teclado, botão, etc).
         # Musica tema
-        pygame.mixer.music.set_volume(0.3)
+        pygame.mixer.music.set_volume(0.4)
 
         for event in pygame.event.get():
             # Verifica se foi fechado.
