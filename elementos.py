@@ -111,18 +111,31 @@ class Animais(pygame.sprite.Sprite):
         self.image = pygame.transform.scale(self.image, (60,60))
             
         
-# Moedas        
+# Moedas    
 class Moedas(pygame.sprite.Sprite):
-    def __init__(self, img, l, c):
+    def __init__(self, l, c,limites):
+        # Construtor da classe mãe (Sprite).
         pygame.sprite.Sprite.__init__(self)
-        self.image = img
+        self.frames = []
+        for i in range(1,12):
+            self.image = pygame.image.load(path.join(path.dirname(__file__),'Imagens/moeda2/{}.png'.format(i))).convert_alpha()
+            self.image = pygame.transform.scale(self.image, (45,45))
+            self.frames.append(self.image)
+        self.frame_atual = 0
+        self.image = self.frames[self.frame_atual]
         self.rect = self.image.get_rect()
         self.rect.x = c * tile_size
-        self.rect.y = l * tile_size 
+        self.rect.y = l * tile_size-20
+        
+        self.pecas=limites
 
     def update(self):
-        pass 
-
+        self.frame_atual += 0.40
+        limitess = pygame.sprite.spritecollide(self, self.pecas, False)
+        if self.frame_atual > len(self.frames):
+            self.frame_atual = 0
+        self.image = self.frames[int(self.frame_atual)]
+       
 # Nuvenzinhas do céu 
 class Nuvem(pygame.sprite.Sprite):
     def __init__(self, img, l, c):
