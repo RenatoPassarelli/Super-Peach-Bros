@@ -8,18 +8,17 @@ STILL=0
 JUMPING=1
 FALLING=2
 GRAVIDADE=2
-
-
+# img1, imgcont1,
 # Cria Classe do personagem
 class Player(pygame.sprite.Sprite):
-    def __init__(self, img, imgcont, l, c,peças):
+    def __init__(self,img,imgco,l,c,peças,ind):
         self.state=STILL
         # Construtor da classe mãe (Sprite).
         pygame.sprite.Sprite.__init__(self)
         self.jumping=False 
-        self.image = img
-        self.certo=img
-        self.cont=imgcont
+        self.image = img[ind]
+        self.certo=self.image
+        self.cont=imgco[ind]
         self.rect = self.image.get_rect()
         self.rect.x = c * tile_size
         self.rect.bottom = l * tile_size 

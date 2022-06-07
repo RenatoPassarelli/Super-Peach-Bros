@@ -12,9 +12,10 @@ peach_largura=200
 # Settings jogo
 tile_size = 60
 
-INIT = 0
-GAME = 1 
-GO = 2 
-QUIT = 3  
-
+PP=0
+INIT = 6
+GAME = 8 
+GO = 9 
+QUIT =10  
+PG=11
 FPS = 60 

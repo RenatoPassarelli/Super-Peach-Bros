@@ -3,9 +3,7 @@ from os import path
 import time 
 
 from config import * 
-
-
-def init_screen(screen):
+def Pag1(screen):
     
     # Variável para o ajuste de velocidade
     clock = pygame.time.Clock()
@@ -32,7 +30,7 @@ def init_screen(screen):
 
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE: 
-                    state = GAME
+                    state = INIT
                     running = False
 
         text_1 = fonte_placar.render("Bem vindo!", True, (0,0,0))
@@ -48,6 +46,72 @@ def init_screen(screen):
         pygame.display.flip()
 
     return state
+
+
+def init_screen(screen):
+    
+    # Variável para o ajuste de velocidade
+    clock = pygame.time.Clock()
+    # ----- Carrega settings escritos 
+
+    running = True
+    while running:
+        # Ajusta a velocidade do jogo.
+        clock.tick(FPS)
+        # Processa os eventos (mouse, teclado, botão, etc).
+        for event in pygame.event.get():
+            # Verifica se foi fechado.
+            if event.type == pygame.QUIT:
+                state = QUIT
+                running = False
+                ret = [state, PP]
+
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_1: 
+                    PP=0
+                    state = GAME
+                    running = False
+                    ret = [state, PP]
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_2: 
+                    PP=1
+                    state = GAME
+                    running = False
+                    ret = [state, PP]
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_3: 
+                    PP=2
+                    state = GAME
+                    running = False
+                    ret = [state, PP]
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_4: 
+                    PP=3
+                    state = GAME
+                    running = False
+                    ret = [state, PP]
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_5: 
+                    PP=4
+                    state = GAME
+                    running = False
+                    ret = [state, PP]
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_6: 
+                    PP=5
+                    state = GAME
+                    running = False
+                    ret = [state, PP]
+                
+
+        
+        # A cada loop, redesenha o fundo, escritos e os sprites
+        screen.fill((255,255,255))
+
+        # Depois de desenhar tudo, inverte o display.
+        pygame.display.flip()
+
+    return ret 
 
 def game_over_screen(screen):
     # Variável para o ajuste de velocidade
@@ -79,7 +143,7 @@ def game_over_screen(screen):
 
             if event.type == pygame.KEYUP:
                 if event.key == pygame.K_SPACE: 
-                    state = INIT
+                    state = PG
                     time.sleep(0.5)
                     pygame.mixer.music.stop() 
                     running = False

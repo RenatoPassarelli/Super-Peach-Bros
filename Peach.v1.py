@@ -11,12 +11,45 @@ from elementos import *
 from personagem import batida
 from telas import * 
 
-
 pygame.init()
 pygame.mixer.init() 
 # ----- Gera tela principal
 window = pygame.display.set_mode((jan_largura, jan_altura))
 pygame.display.set_caption('Super Peach game')
+# Personagem 
+
+peachzinha = pygame.image.load(path.join(path.dirname(__file__),"Imagens\Peachzinha.png")).convert_alpha()
+peachzinha1=pygame.transform.scale(peachzinha, (60,80))
+peachzinhaco=pygame.image.load(path.join(path.dirname(__file__),"Imagens\Peachzinha contrária.png")).convert_alpha()
+peachzinhaco1=pygame.transform.scale(peachzinhaco, (60,80))
+
+sonic1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\sonic.png")).convert_alpha()
+sonic=pygame.transform.scale(sonic1, (60,80))
+sonico1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\sonico.png")).convert_alpha()
+sonico=pygame.transform.scale(sonico1, (60,80))
+
+yoshi1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\Yoshi.png")).convert_alpha()
+yoshi=pygame.transform.scale(yoshi1, (60,80))
+yoshico1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\Yoshico.png")).convert_alpha()
+yoshico=pygame.transform.scale(yoshico1, (60,80))
+
+resina1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\lresina.png")).convert_alpha()
+resina=pygame.transform.scale(resina1, (60,80))
+resinaco1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\lresina_co.png")).convert_alpha()
+resinaco=pygame.transform.scale(resinaco1, (60,80))
+
+Humberto1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\mhumberto.png")).convert_alpha()
+Humberto=pygame.transform.scale(Humberto1, (60,80))
+Humbertoco1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\mhumberto_co.png")).convert_alpha()
+Humbertoco=pygame.transform.scale(Humbertoco1, (60,80))
+
+bomba1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\Bomba.png")).convert_alpha()
+bomba=pygame.transform.scale(bomba1, (60,80))
+bombaco1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\Bombaco.png")).convert_alpha()
+bombaco=pygame.transform.scale(bombaco1, (60,80))
+
+img=[peachzinha1,sonic,yoshi,resina,Humberto,bomba]
+imgcont=[peachzinhaco1,sonico,yoshico,resinaco,Humbertoco,bombaco]
 # ----- Settings Placar / escritos 
 fonte_placar = pygame.font.Font(path.join(path.dirname(__file__),"font\PressStart2P.ttf" ),28) 
 
@@ -28,11 +61,6 @@ jorre1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\jorre.png")
 jorre = pygame.transform.scale(jorre1, (60,60))
 Vazio1= pygame.image.load(path.join(path.dirname(__file__),"Imagens\pngegg.png")).convert_alpha()
 Vazio=pygame.transform.scale(Vazio1, (60,60))
-# Personagem 
-peachzinha = pygame.image.load(path.join(path.dirname(__file__),"Imagens\Peachzinha.png")).convert_alpha()
-peachzinha1=pygame.transform.scale(peachzinha, (60,80))
-peachzinhaco=pygame.image.load(path.join(path.dirname(__file__),"Imagens\Peachzinha contrária.png")).convert_alpha()
-peachzinhaco1=pygame.transform.scale(peachzinhaco, (60,80))
 Gomba1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\gomp.gif")).convert_alpha()
 Gomba=pygame.transform.scale(Gomba1, (60,60))
 caiu_sound = pygame.mixer.Sound(path.join(path.dirname(__file__),"sounds\caiu.wav")) 
@@ -64,6 +92,7 @@ all_moedas = pygame.sprite.Group()
 movimento_blocos=pygame.sprite.Group()
 movimento_nuvem=pygame.sprite.Group()
 player = None
+ret_x=[]
          
 pygame.mixer.music.load(path.join(path.dirname(__file__),"sounds\emafundo1.wav")) 
 pygame.mixer.music.set_volume(0) 
@@ -71,10 +100,14 @@ pygame.mixer.music.set_volume(0)
 pygame.mixer.music.play(loops=-1)
 # Looping do Game 
 
-state = INIT
+state = PG
 while state != QUIT:
+    if state == PG:
+        state = Pag1(window)
     if state == INIT:
-        state = init_screen(window)
+        ret_x.append(init_screen(window))
+        personagem = ret_x[0][1]
+        state = ret_x[0][0]
         clock = pygame.time.Clock()
         limite=pygame.sprite.Group()
         all_sprites = pygame.sprite.Group()
@@ -120,7 +153,7 @@ while state != QUIT:
                     all_sprites.add(b)
                     movimento_blocos.add(b)
                 elif e == "P":
-                    player = Player(peachzinha1,peachzinhaco1, l, c,all_blocos)
+                    player = Player(img,imgcont, l, c,all_blocos,personagem)
                     all_sprites.add(player)
                     
                 elif e == 'M':
@@ -151,8 +184,7 @@ while state != QUIT:
                     a = LimiteD(Vazio, l, c)
                     all_sprites.add(a)
                     movimento_blocos.add(a)
-                    LimiteD_peach.add(a)
-                
+                    LimiteD_peach.add(a)       
 
     elif state == GAME:
         pygame.mixer.music.set_volume(0.3)
