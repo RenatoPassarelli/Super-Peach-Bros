@@ -39,7 +39,7 @@ caiu_sound = pygame.mixer.Sound(path.join(path.dirname(__file__),"sounds\caiu.wa
 # Moedinhas
 moedinha = pygame.image.load(path.join(path.dirname(__file__), "Imagens\moedinha.png")).convert_alpha()
 moedinha1 = pygame.transform.scale(moedinha, (40, 40))
-#som_moeda = pygame.mixer.Sound(path.join(path.dirname(__file__),""))
+som_moeda = pygame.mixer.Sound(path.join(path.dirname(__file__),"sounda\smb_coin.wav"))
 # Nuvem 
 nuvem1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\pngwing.com.png")).convert_alpha()
 nuvemzinha = pygame.transform.scale(nuvem1, (100,100))
@@ -223,6 +223,7 @@ while state != QUIT:
         # Colisões com as moedas (colocar som)
         peg_moeda = pygame.sprite.spritecollide(player, all_moedas, True)
         for m in peg_moeda:
+            som_moeda.play()
             moedas += 1 
         
         morrere = pygame.sprite.spritecollide(player,morrer,False,pygame.sprite.collide_mask)
