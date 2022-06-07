@@ -224,7 +224,6 @@ def game_over_screen(screen):
 def win_screen(screen):
     # Variável para o ajuste de velocidade
     clock = pygame.time.Clock() 
-    pygame.mixer.music.set_volume(0) 
 
     # Carrega o fundo da tela inicial
     background = pygame.image.load(path.join(path.dirname(__file__), 'Imagens\Você Venceu!.png')).convert()

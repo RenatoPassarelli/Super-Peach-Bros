@@ -179,8 +179,6 @@ while state != QUIT:
             elif player.speedx < 0:
                 player.rect.left = blocos.rect.right+1
                 
-        
-        #print(player.speedx)
 
         # Colisões com as moedas (colocar som)
         peg_moeda = pygame.sprite.spritecollide(player, all_moedas, True)
@@ -192,6 +190,7 @@ while state != QUIT:
         # Ganhou 
         ganhou = pygame.sprite.spritecollide(player,a_star, True)
         for g in ganhou:
+            pygame.mixer.music.set_volume(0)  
             ganhou_sound.play() 
             state = WIN 
         
