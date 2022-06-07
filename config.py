@@ -15,16 +15,12 @@ pygame.mixer.init()
 # Set caption 
 pygame.display.set_caption('Super Peach game')
 
-# Tamanho da tela
-
-
 # Settings personagem 
 peach_altura=460
 peach_largura=200
 
 # Settings jogo
 tile_size = 60
-
 PP=0
 NN = 0 
 INIT = 6
@@ -35,8 +31,8 @@ WIN = 12
 QUIT =10  
 PG=11
 FPS = 60 
-# Personagem 
 
+# Imagens dos personagens
 peachzinha = pygame.image.load(path.join(path.dirname(__file__),"Imagens\Peachzinha.png"))
 peachzinha1=pygame.transform.scale(peachzinha, (60,80)).convert_alpha()
 peachzinhaco=pygame.image.load(path.join(path.dirname(__file__),"Imagens\Peachzinha contrária.png"))
@@ -51,7 +47,6 @@ yoshi1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\Yoshi.png")
 yoshi=pygame.transform.scale(yoshi1, (60,80)).convert_alpha()
 yoshico1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\Yoshico.png"))
 yoshico=pygame.transform.scale(yoshico1, (60,80)).convert_alpha()
-
 
 resina1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\lresina.png"))
 resina=pygame.transform.scale(resina1, (60,80)).convert_alpha()
@@ -68,9 +63,11 @@ bomba=pygame.transform.scale(bomba1, (60,80)).convert_alpha()
 bombaco1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\Bombaco.png"))
 bombaco=pygame.transform.scale(bombaco1, (60,80)).convert_alpha()
 
+# Listas com todas as imagens 
 img=[peachzinha1,sonic,yoshi,resina,Humberto,bomba]
 imgcont=[peachzinhaco1,sonico,yoshico,resinaco,Humbertoco,bombaco]
 
+# Imagens dos assets 
 chao_padrao = pygame.image.load(path.join(path.dirname(__file__),"Imagens\chao.png"))
 chaozinho = pygame.transform.scale(chao_padrao, (60,60)).convert_alpha()
 jorre1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\jorre.png"))
@@ -97,7 +94,7 @@ arvore=pygame.transform.scale(arvore1, (125,250)).convert_alpha()
 Deserto1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\Duna.png"))
 Deserto=pygame.transform.scale(Deserto1, (1210,600)).convert_alpha()
 
-
+# Carrendo sons especiais + músicas de fundo 
 pygame.mixer.music.load(path.join(path.dirname(__file__),"sounds\emafundo1.wav")) 
 pygame.mixer.music.set_volume(0) 
 pygame.mixer.music.play(loops=-1)
@@ -106,6 +103,7 @@ pisou_sound = pygame.mixer.Sound(path.join(path.dirname(__file__),"sounds\smb_bu
 som_moeda = pygame.mixer.Sound(path.join(path.dirname(__file__),"sounds\smb_coin.wav"))
 ganhou_sound = pygame.mixer.Sound(path.join(path.dirname(__file__),"sounds\ganhou.wav")) 
 
+# Fontes 
 fonte_placar = pygame.font.Font(path.join(path.dirname(__file__),"font\PressStart2P.ttf" ),28)
 
 

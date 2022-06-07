@@ -1,7 +1,7 @@
-# CONFIGURAÇÕES GERAI
+# Imports 
 from config import tile_size
-#bex 
 
+# Diretório com os mapas de cada nível do jogo 
 MAPAS = {
     0: [
         '                           ',

@@ -1,7 +1,11 @@
+# Imports 
 import pygame
 from config import tile_size, WIDTH
 from os import path
 
+# Definind as classes do jogo 
+
+# Limites ---- Direita e Esquerda 
 class Limite(pygame.sprite.Sprite):
     def __init__(self, img, l, c):
         # Construtor da classe mãe (Sprite).
@@ -38,6 +42,7 @@ class LimiteD(pygame.sprite.Sprite):
     def update(self):
         pass
     
+# Blocos mapa 
 class Bloco(pygame.sprite.Sprite):
     def __init__(self, img, l, c):
         # Construtor da classe mãe (Sprite).
@@ -47,6 +52,7 @@ class Bloco(pygame.sprite.Sprite):
         self.rect.x = c * tile_size
         self.rect.y = l * tile_size
 
+# Torre jogo 
 class Jorre(pygame.sprite.Sprite):
     def __init__(self, img, l, c):
         # Construtor da classe mãe (Sprite).
@@ -55,7 +61,8 @@ class Jorre(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = c * tile_size
         self.rect.y = l * tile_size
-        
+
+# Arvores      
 class Arvore(pygame.sprite.Sprite):
     def __init__(self, img, l, c):
         # Construtor da classe mãe (Sprite).
@@ -65,10 +72,10 @@ class Arvore(pygame.sprite.Sprite):
         self.rect.x = c * tile_size
         self.rect.y = l*tile_size-130
 
-
     def update(self):
         pass 
 
+# Gombas 
 class Animais(pygame.sprite.Sprite):
     def __init__(self, l, c,limites):
         # Construtor da classe mãe (Sprite).
@@ -104,7 +111,7 @@ class Animais(pygame.sprite.Sprite):
         self.image = pygame.transform.scale(self.image, (60,60))
             
         
-        
+# Moedas        
 class Moedas(pygame.sprite.Sprite):
     def __init__(self, img, l, c):
         pygame.sprite.Sprite.__init__(self)
@@ -116,6 +123,7 @@ class Moedas(pygame.sprite.Sprite):
     def update(self):
         pass 
 
+# Nuvenzinhas do céu 
 class Nuvem(pygame.sprite.Sprite):
     def __init__(self, img, l, c):
         pygame.sprite.Sprite.__init__(self)
@@ -127,6 +135,7 @@ class Nuvem(pygame.sprite.Sprite):
     def update(self):
         pass 
 
+# Estrela fim de jogo 
 class Estrela(pygame.sprite.Sprite):
     def __init__(self, img, l, c):
         pygame.sprite.Sprite.__init__(self)
