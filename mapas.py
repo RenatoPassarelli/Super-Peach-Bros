@@ -3,7 +3,7 @@ from config import tile_size
 #bex 
 
 MAPAS = {
-    0: [
+    1: [
     '                                N      N          N            N                                                       ',
     '               N                                  N                                                         tMtMtMt    ',
     '    N                q ta M a M atq   Nq  tatMMtq M        MMt        M                                    XXXXXXXX   ',
@@ -15,7 +15,7 @@ MAPAS = {
     'E ttt  P        MM    XXXXXXXXX  XXXXXXXXXXXXXXXX N                              XXXXXXX               XXXXXXXXXXXXXXXX',
     'XXXXXXXXXXXXXXXXXXX   XXXXXXXXX  XXXXXXXXXXXXXXXX                                XXXXXXX               XXXXXXXXXXXXXXXX'
 ] ,
-    1: [
+    0: [
         '                           ',
         '                           ',
         '           XXX             ',

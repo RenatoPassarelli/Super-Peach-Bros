@@ -162,6 +162,11 @@ while state != QUIT:
             som_moeda.play()
             moedas += 1 
         
+        ganhou = pygame.sprite.spritecollide(player,a_star, True)
+        for g in ganhou:
+            pygame.mixer.music.set_volume(0) 
+            state = 
+        
         morrere = pygame.sprite.spritecollide(player,morrer,False,pygame.sprite.collide_mask)
         for m in morrere:
             if player.speedy>0:

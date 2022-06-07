@@ -53,9 +53,9 @@ def mapas_screen(screen):
     clock = pygame.time.Clock()
 
     # ----- Carrega Imagem de fundo
-    # background = pygame.image.load(path.join(path.dirname(__file__), 'Imagens\selplayer_ct.png')).convert()
-    # background1 = pygame.transform.scale(background, (WIDTH,HEIGHT)) 
-    # background_rect = background1.get_rect()
+    background = pygame.image.load(path.join(path.dirname(__file__), 'Imagens\ela_mapas.png')).convert()
+    background1 = pygame.transform.scale(background, (WIDTH,HEIGHT)) 
+    background_rect = background1.get_rect()
 
     running = True
     while running:
@@ -91,7 +91,7 @@ def mapas_screen(screen):
         
         # A cada loop, redesenha o fundo, escritos e os sprites
         screen.fill((255,255,255))
-        # screen.blit(background1, background_rect) 
+        screen.blit(background1, background_rect) 
 
         # Depois de desenhar tudo, inverte o display.
         pygame.display.flip()

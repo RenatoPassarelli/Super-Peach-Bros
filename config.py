@@ -108,6 +108,7 @@ all_blocos = pygame.sprite.Group()
 all_moedas = pygame.sprite.Group() 
 movimento_blocos=pygame.sprite.Group()
 movimento_nuvem=pygame.sprite.Group()
+a_star = pygame.sprite.GroupSingle()
 player = None
 ret_x=[]
 ret_m = []
