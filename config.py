@@ -13,9 +13,12 @@ peach_largura=200
 tile_size = 60
 
 PP=0
+NN = 0 
 INIT = 6
+MP = 20
 GAME = 8 
 GO = 9 
 QUIT =10  
 PG=11
 FPS = 60 
+

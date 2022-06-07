@@ -30,7 +30,7 @@ def Pag1(screen):
 
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE: 
-                    state = INIT
+                    state = MP 
                     running = False
 
         text_1 = fonte_placar.render("Bem vindo!", True, (0,0,0))
@@ -47,6 +47,56 @@ def Pag1(screen):
 
     return state
 
+def mapas_screen(screen):
+    
+    # Variável para o ajuste de velocidade
+    clock = pygame.time.Clock()
+
+    # ----- Carrega Imagem de fundo
+    # background = pygame.image.load(path.join(path.dirname(__file__), 'Imagens\selplayer_ct.png')).convert()
+    # background1 = pygame.transform.scale(background, (WIDTH,HEIGHT)) 
+    # background_rect = background1.get_rect()
+
+    running = True
+    while running:
+        # Ajusta a velocidade do jogo.
+        clock.tick(FPS)
+        # Processa os eventos (mouse, teclado, botão, etc).
+        for event in pygame.event.get():
+            # Verifica se foi fechado.
+            if event.type == pygame.QUIT:
+                state = PG
+                running = False
+                ret = [state, NN]
+
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_1: 
+                    NN=0
+                    state = INIT 
+                    running = False
+                    ret = [state, NN]
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_2: 
+                    NN=1
+                    state = INIT 
+                    running = False
+                    ret = [state, NN]
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_3: 
+                    NN=2
+                    state = INIT
+                    running = False
+                    ret = [state, NN]
+           
+        
+        # A cada loop, redesenha o fundo, escritos e os sprites
+        screen.fill((255,255,255))
+        # screen.blit(background1, background_rect) 
+
+        # Depois de desenhar tudo, inverte o display.
+        pygame.display.flip()
+
+    return ret 
 
 def init_screen(screen):
     

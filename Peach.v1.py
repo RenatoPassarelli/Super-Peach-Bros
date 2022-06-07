@@ -93,6 +93,7 @@ movimento_blocos=pygame.sprite.Group()
 movimento_nuvem=pygame.sprite.Group()
 player = None
 ret_x=[]
+ret_m = []
          
 pygame.mixer.music.load(path.join(path.dirname(__file__),"sounds\emafundo1.wav")) 
 pygame.mixer.music.set_volume(0) 
@@ -104,6 +105,12 @@ state = PG
 while state != QUIT:
     if state == PG:
         state = Pag1(window)
+        
+    if state == MP:
+        ret_m.append(mapas_screen(window))
+        state = ret_m[0][0]
+        n = ret_m[0][1]
+
     if state == INIT:
         ret_x.append(init_screen(window))
         personagem = ret_x[0][1]
@@ -127,7 +134,7 @@ while state != QUIT:
                     
         pygame.mixer.music.play(loops=-1)
         # Looping do Game 
-        mapa = MAPAS[0]
+        mapa = MAPAS[n]
         nivel = list(MAPAS.keys())[0] + 1 
 
         for l in range(len(mapa)):
@@ -222,6 +229,7 @@ while state != QUIT:
             
         # Atualizando a posição das sprites tiles 
         if player.rect.y >= 600:
+            pygame.mixer.music.set_volume(0) 
             caiu_sound.play() 
             time.sleep(2.5) 
             state = GO 
@@ -254,6 +262,7 @@ while state != QUIT:
         # Colisões com as moedas (colocar som)
         peg_moeda = pygame.sprite.spritecollide(player, all_moedas, True)
         for m in peg_moeda:
+            pygame.mixer.music.set_volume(0) 
             som_moeda.play()
             moedas += 1 
         
