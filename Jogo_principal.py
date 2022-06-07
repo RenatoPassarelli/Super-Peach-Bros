@@ -1,3 +1,4 @@
+# Imports 
 from personagem import * 
 from mapas import MAPAS
 from elementos import *
@@ -5,25 +6,25 @@ from personagem import batida
 from telas import *
 from config import * 
 
-
-
-game = True
-# Looping do Game 
+# Looping do Game
+game = True 
 ret_x=[]
 ret_m = []
 
 state = PG
 while state != QUIT:
-    if state == PG:
+
+    if state == PG: # Primeira página - inicial 
         state = Pag1(window)
         
-    if state == MP:
+    if state == MP: # Mapa dos níveis 
         ret_m.append(mapas_screen(window))
         n = ret_m[0][1] 
         state = ret_m[0][0]
         
+    if state == INIT: # Escolhe personagem 
 
-    if state == INIT:
+        # Cria os grupos de sprite 
         limite=pygame.sprite.Group()
         all_sprites = pygame.sprite.Group()
         all_blocos = pygame.sprite.Group()
@@ -31,8 +32,6 @@ while state != QUIT:
         movimento_blocos=pygame.sprite.Group()
         movimento_nuvem=pygame.sprite.Group()
         a_star = pygame.sprite.GroupSingle()
-        player = None
-        
         limite=pygame.sprite.Group()
         all_sprites = pygame.sprite.Group()
         all_blocos = pygame.sprite.Group()
@@ -42,6 +41,7 @@ while state != QUIT:
         LimiteD_peach=pygame.sprite.Group()
         morrer=pygame.sprite.Group()
 
+        # Define as variáveis iniciais da partida 
         ret_x.append(init_screen(window))
         personagem = ret_x[0][1]
         state = ret_x[0][0]
@@ -49,14 +49,16 @@ while state != QUIT:
         tempo = 0 
         moedas = 0 
         nivel = 0 
+
+        # Música tema de fundo 
         pygame.mixer.music.load(path.join(path.dirname(__file__),"sounds\emafundo1.wav")) 
-        pygame.mixer.music.set_volume(0) 
-                    
+        pygame.mixer.music.set_volume(0)         
         pygame.mixer.music.play(loops=-1)
-        # Looping do Game 
+ 
         mapa = MAPAS[n]
         nivel = list(MAPAS.keys())[n] + 1 
 
+        # Plota os caracteres do mapa 
         for l in range(len(mapa)):
             for c in range(len(mapa[l])):
                 e = mapa[l][c]
@@ -81,8 +83,7 @@ while state != QUIT:
                     movimento_blocos.add(b)
                 elif e == "P":
                     player = Player(img,imgcont, l, c,all_blocos,personagem)
-                    all_sprites.add(player)
-                    
+                    all_sprites.add(player)  
                 elif e == 'M':
                     coin = Moedas(moedinha1, l, c)
                     all_moedas.add(coin)
@@ -107,14 +108,15 @@ while state != QUIT:
                     all_sprites.add(a)
                     movimento_blocos.add(a)
                     LimiteE_peach.add(a)
-
                 elif e == "D":
                     a = LimiteD(Vazio, l, c)
                     all_sprites.add(a)
                     movimento_blocos.add(a)
-                    LimiteD_peach.add(a)       
+                    LimiteD_peach.add(a)
+
         clock = pygame.time.Clock()
-    elif state == GAME:
+
+    elif state == GAME: # Looping principal do jogo 
         ret_x=[]
         ret_m = []
         pygame.mixer.music.set_volume(0.3)
@@ -124,15 +126,14 @@ while state != QUIT:
         clock.tick(FPS)
         # ----- Trata eventos
         for event in pygame.event.get():
-            # ----- Verifica consequências
+            # ----- Verifica consequências: 
+
             # ----- Se é para sair do jogo
             if event.type == pygame.QUIT:
                 state = QUIT 
+
             # ----- Checa as teclas apertadas 
-
             keys_pressed=pygame.key.get_pressed()
-
-
             if event.type == pygame.KEYDOWN:        
                 if event.key == pygame.K_LEFT:
                     player.speedx -= 5
@@ -150,18 +151,18 @@ while state != QUIT:
                 if event.key == pygame.K_RIGHT and player.speedx<1:
                     player.speedx =0
             
-        # Atualizando a posição das sprites tiles 
+        # Verifica se o player caiu da tela 
         if player.rect.y >= 600:
             pygame.mixer.music.set_volume(0) 
             caiu_sound.play() 
             time.sleep(2.5) 
             state = GO 
 
+        # Atualizando a posição das sprites tiles 
         if player.rect.x < WIDTH/8 and player.speedx < 0: 
             for bloco in movimento_blocos:
                 bloco.rect.x += 5
                 player.speedx = -0.0001
-
         if player.rect.x > WIDTH/2 and player.speedx > 0: 
             for bloco in movimento_blocos:
                 bloco.rect.x -= 5
@@ -172,13 +173,13 @@ while state != QUIT:
             for bloco in movimento_nuvem:
                 bloco.rect.x -= 1
         
+        # Ajuste de colisão com os blocos
         bloco = pygame.sprite.spritecollide(player, all_blocos, False)
         for blocos in bloco:
             if player.speedx > 0:
                 player.rect.right = blocos.rect.left-1
             elif player.speedx < 0:
-                player.rect.left = blocos.rect.right+1
-                
+                player.rect.left = blocos.rect.right+1  
 
         # Colisões com as moedas (colocar som)
         peg_moeda = pygame.sprite.spritecollide(player, all_moedas, True)
@@ -187,13 +188,14 @@ while state != QUIT:
             som_moeda.play()
             moedas += 1 
         
-        # Ganhou 
+        # Verifica se o player ganhou o nível 
         ganhou = pygame.sprite.spritecollide(player,a_star, True)
         for g in ganhou:
             pygame.mixer.music.set_volume(0)  
             ganhou_sound.play() 
             state = WIN 
         
+        # Verifica se o player morreu colidindo com o gomba
         morrere = pygame.sprite.spritecollide(player,morrer,False,pygame.sprite.collide_mask)
         for m in morrere:
             if player.speedy>0:
@@ -203,19 +205,15 @@ while state != QUIT:
                 pygame.time.wait(1000)
                 state=GO
                 
-            #pygame.time.wait(1000)
-            #state= GO
-
+        # Limita os movimentos do player na tela (esquerda e direita)
         limitee=pygame.sprite.spritecollide(player,LimiteE_peach,False)
         for l in limitee:
-            
-            player.rect.left=l.rect.right+1
-                
+            player.rect.left=l.rect.right+1        
         limited=pygame.sprite.spritecollide(player,LimiteD_peach,False)
         for l in limited:
             player.rect.right=l.rect.left-1
             
-
+        # Atualiza as sprites 
         all_sprites.update() 
         window.fill((0, 200, 253))  # Preenche com a cor de fundo
         window.blit(Deserto,(0,150))
@@ -235,15 +233,16 @@ while state != QUIT:
         window.blit(text_nivel, text_nivel_rect)
         window.blit(text_tempo, text_tempo_rect)
 
-
+        # Atualiza o display do jogo 
         pygame.display.update()
 
-    elif state == GO:
+    elif state == GO: # Game Over  
         state = game_over_screen(window)
-    elif state == WIN:
+
+    elif state == WIN: # Game win 
         state = win_screen(window)
 
-    else:
+    else: # Sai do jogo 
         state = QUIT
         
 

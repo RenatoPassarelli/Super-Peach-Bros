@@ -1,18 +1,22 @@
+# Imports 
 import pygame
 from os import path
 from math import *
 
-
-
-jan_largura = 1200
-jan_altura=600
-pygame.init()
-pygame.mixer.init()
-window = pygame.display.set_mode((jan_largura, jan_altura))
-pygame.display.set_caption('Super Peach game')
-# Tamanho da tela
+# Define dimensões da tela 
 WIDTH = 1200
 HEIGHT = 600
+window = pygame.display.set_mode((WIDTH, HEIGHT))
+
+# Inicia o pygame e o módulo de sound 
+pygame.init()
+pygame.mixer.init()
+
+# Set caption 
+pygame.display.set_caption('Super Peach game')
+
+# Tamanho da tela
+
 
 # Settings personagem 
 peach_altura=460

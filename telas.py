@@ -1,8 +1,12 @@
+# Imports 
 import pygame
 from os import path
 import time 
-
 from config import * 
+
+# Funções das telas de jogo 
+
+# Página de início 
 def Pag1(screen):
     
     # Variável para o ajuste de velocidade
@@ -10,7 +14,6 @@ def Pag1(screen):
     # ----- Carrega settings escritos 
     fonte_placar = pygame.font.Font(path.join(path.dirname(__file__),"font\PressStart2P.ttf" ),40) 
     fonte_placar_peq = pygame.font.Font(path.join(path.dirname(__file__),"font\PressStart2P.ttf" ),30) 
-
 
     # Carrega o fundo da tela inicial
     background = pygame.image.load(path.join(path.dirname(__file__), 'Imagens\inicial.png')).convert()
@@ -47,6 +50,7 @@ def Pag1(screen):
 
     return state
 
+# Escolha dos mapas 
 def mapas_screen(screen):
     
     # Variável para o ajuste de velocidade
@@ -98,6 +102,7 @@ def mapas_screen(screen):
 
     return ret 
 
+# Escolha do personagem do player 
 def init_screen(screen):
     
     # Variável para o ajuste de velocidade
@@ -166,6 +171,7 @@ def init_screen(screen):
 
     return ret 
 
+# Game over - player perde 
 def game_over_screen(screen):
     # Variável para o ajuste de velocidade
     clock = pygame.time.Clock() 
@@ -218,9 +224,9 @@ def game_over_screen(screen):
         # Depois de desenhar tudo, inverte o display.
         pygame.display.flip()
 
-
     return state
 
+# Ganhou o jogo - pegou a estrela
 def win_screen(screen):
     # Variável para o ajuste de velocidade
     clock = pygame.time.Clock() 
@@ -247,16 +253,11 @@ def win_screen(screen):
                     state = MP
                     running = False
  
-
-        
         # A cada loop, redesenha o fundo e os sprites
         screen.fill((0,0,0))
         screen.blit(background, background_rect)
 
-
-
         # Depois de desenhar tudo, inverte o display.
         pygame.display.flip()
-
 
     return state
