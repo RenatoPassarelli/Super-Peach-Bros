@@ -102,7 +102,7 @@ Gomba1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\gomp.gif"))
 Gomba=pygame.transform.scale(Gomba1, (60,60)).convert_alpha()
 
 moedinha = pygame.image.load(path.join(path.dirname(__file__), "Imagens\moedinha.png"))
-moedinha1 = pygame.transform.scale(moedinha, (40, 40)).convert_alpha()
+moedinha1 = pygame.transform.scale(moedinha, (20, 20)).convert_alpha()
 
 nuvem1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\pngwing.com.png"))
 nuvemzinha = pygame.transform.scale(nuvem1, (100,100)).convert_alpha()

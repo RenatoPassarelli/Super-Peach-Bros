@@ -120,12 +120,12 @@ while state != QUIT:
                     player = Player(img,imgcont, l, c,all_blocos,personagem)
                     all_sprites.add(player)  
                 elif e == 'M':
-                    coin = Moedas(moedinha1, l, c)
+                    coin = Moedas(l, c,limite)
                     all_moedas.add(coin)
                     all_sprites.add(coin)
                     movimento_blocos.add(coin)
                 elif e == 'S':
-                    est = Estrela(estrela, l, c)
+                    est = Estrela(l, c,limite)
                     all_sprites.add(est)
                     movimento_blocos.add(est)
                     a_star.add(est)    
