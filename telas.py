@@ -52,7 +52,11 @@ def init_screen(screen):
     
     # Variável para o ajuste de velocidade
     clock = pygame.time.Clock()
-    # ----- Carrega settings escritos 
+
+    # ----- Carrega Imagem de fundo
+    background = pygame.image.load(path.join(path.dirname(__file__), 'Imagens\selplayer_ct.png')).convert()
+    background1 = pygame.transform.scale(background, (WIDTH,HEIGHT)) 
+    background_rect = background1.get_rect()
 
     running = True
     while running:
@@ -107,6 +111,7 @@ def init_screen(screen):
         
         # A cada loop, redesenha o fundo, escritos e os sprites
         screen.fill((255,255,255))
+        screen.blit(background1, background_rect) 
 
         # Depois de desenhar tudo, inverte o display.
         pygame.display.flip()
