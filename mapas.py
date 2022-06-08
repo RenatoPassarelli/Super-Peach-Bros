@@ -28,15 +28,15 @@ MAPAS = {
     'CCCCCCCCCCCCCCCCCCCCCCCR   YZZZZZZZU  YZZZZZZZZZZZZZZZZU                                YZZZZZU               YZZZZZZZZZZZZZZZZZZZZZZZZZZ'
 ] ,
     2: [
-    '                                                                                             CCCCCCCCC                DDD',
-    '                                                      MMMMMMMMMM                             GGGGGGGGG     K    S WWWWDDD',
-    '                                                    GGGGGGGGGGGGGG   G   G   G        W                    LCCCCCCCCCCRWWW',
-    '                                                G                                     KLCRqaaaaaa MMMMMqLCCZZZZZZZZZZZZZZZ',
-    '                            KW WKMM  G   G   G                                   W W LCZZZCCCCCCCCCCCCCCCZZZZZZZZZZZZZZZZZ',
-    'E                          LCCCCCCR                  K  K                        LCCCZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ',
-    'E                       W  YZZZZZZU                LCCCCR                       GYZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ',
-    'E            q aKWMKMq LCCCZZZZZZZU                 YZZZZRq KKaaaq               YZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ',
-    'EqK PKaMM a q LCCCCCR  YZZZZZZZZZZU                 YZZZZZCCCCCCR      G  G   G  YZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ',
-    'ELCCCCCCCCCR  YZZZZZU  YZZZZZZZZZZU                 YZZZZZZZZZZZZCCR G G  G   G  YZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ',
+    '                                                                                                    CCCCCCCCC                DDD     ',
+    '                                                             MMMMMMMMMM                             GGGGGGGGG     K    S WWWWDDD     ',
+    '                                                          GGGGGGGGGGGGGG   G   G   G        W                    LCCCCCCCCCCRWWWWWWWW',
+    '                                                      G                                     KLCRqaaaaaa MMMMMqLCCZZZZZZZZZZZZZZZCCCCC',
+    '                                  KW WKMM  G   G   G                                   W W LCZZZCCCCCCCCCCCCCCCZZZZZZZZZZZZZZZZZZZZZZ',
+    '      E                          LCCCCCCR                  K  K                        LCCCZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ',
+    '      E                       W  YZZZZZZU                LCCCCR                       GYZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ',
+    '      E            q aKWMKMq LCCCZZZZZZZU                 YZZZZRq KKaaaq               YZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ',
+    'WWWWWWEqK PKaMM a q LCCCCCR  YZZZZZZZZZZU                 YZZZZZCCCCCCR      G  G   G  YZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ',
+    'CCCCCCCCCCCCCCCCCR  YZZZZZU  YZZZZZZZZZZU                 YZZZZZZZZZZZZCCR G G  G   G  YZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ',
 ] 
 }
