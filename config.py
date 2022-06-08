@@ -134,7 +134,7 @@ caiu_sound = pygame.mixer.Sound(path.join(path.dirname(__file__),"sounds\caiu.wa
 pisou_sound = pygame.mixer.Sound(path.join(path.dirname(__file__),"sounds\smb_bump.wav"))
 som_moeda = pygame.mixer.Sound(path.join(path.dirname(__file__),"sounds\smb_coin.wav"))
 ganhou_sound = pygame.mixer.Sound(path.join(path.dirname(__file__),"sounds\ganhou.wav"))
-
+pulou_sound = pygame.mixer.Sound(path.join(path.dirname(__file__),"sounds\smb_jump-small.wav"))
 
 # Fontes 
 fonte_placar = pygame.font.Font(path.join(path.dirname(__file__),"font\PressStart2P.ttf" ),28)

@@ -184,7 +184,9 @@ while state != QUIT:
                 if event.key == pygame.K_RIGHT:
                     player.speedx += 5
                 if event.key == pygame.K_SPACE:
-                    player.jump()   
+                    player.jump()
+                    pulou_sound.set_volume(0.3)
+                    pulou_sound.play()   
             if event.type == pygame.KEYUP:
                 if event.key == pygame.K_LEFT and player.speedx>-1:
                     player.speedx = 0 
