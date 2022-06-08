@@ -4,7 +4,7 @@ from mapas import MAPAS
 from elementos import *
 from personagem import batida
 from telas import *
-from config import * 
+from config import *  
 
 # Looping do Game
 game = True 
@@ -56,14 +56,23 @@ while state != QUIT:
         pygame.mixer.music.play(loops=-1)
  
         mapa = MAPAS[n]
+        fundo=n
         nivel = list(MAPAS.keys())[n] + 1 
 
         # Plota os caracteres do mapa 
         for l in range(len(mapa)):
             for c in range(len(mapa[l])):
                 e = mapa[l][c]
+                if e == "K":
+                    a = Gelinho(gelinho, l, c)
+                    all_sprites.add(a)
+                    movimento_blocos.add(a)
                 if e == "t":
                     a = Arvore(arvore, l, c)
+                    all_sprites.add(a)
+                    movimento_blocos.add(a)
+                if e == "W":
+                    a = Pinheiro(Pinheiror, l, c)
                     all_sprites.add(a)
                     movimento_blocos.add(a)
                 elif e == "q":
@@ -107,7 +116,7 @@ while state != QUIT:
                     all_sprites.add(b)
                     movimento_blocos.add(b)
                 elif e == "X":
-                    b = Bloco(cantod, l, c)
+                    b = Bloco(chaozinho, l, c)
                     all_blocos.add(b)
                     all_sprites.add(b)
                     movimento_blocos.add(b)
@@ -250,8 +259,14 @@ while state != QUIT:
             
         # Atualiza as sprites 
         all_sprites.update() 
-        window.fill((0, 200, 253))  # Preenche com a cor de fundo
-        window.blit(Deserto,(0,150))
+        window.fill((0, 200, 253))
+          # Preenche com a cor de fundo
+        if fundo ==1:
+            window.blit(Deserto,(0,150))
+        if fundo ==2:
+            window.fill((255, 255, 255))
+            window.blit(Montanha,(0,0))
+
         all_sprites.draw(window)
 
         # Placar

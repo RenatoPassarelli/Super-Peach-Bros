@@ -113,8 +113,17 @@ estrela = pygame.transform.scale(estrela1, (40,40)) .convert_alpha()
 arvore1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\Arvore.png"))
 arvore=pygame.transform.scale(arvore1, (125,250)).convert_alpha()
 
+gelinho1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\Gelinho.jpeg"))
+gelinho=pygame.transform.scale(gelinho1, (60,60)).convert_alpha()
+
+Pinheiro1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\Pinherinhos_de_alegria_tralalalalalalalala.png"))
+Pinheiror=pygame.transform.scale(Pinheiro1, (200,400)).convert_alpha()
+
 Deserto1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\Duna.png"))
 Deserto=pygame.transform.scale(Deserto1, (1210,600)).convert_alpha()
+
+Montanha1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\Fundo montanha.png"))
+Montanha=pygame.transform.scale(Montanha1, (1210,600)).convert_alpha()
 
 # Carrendo sons especiais + músicas de fundo 
 pygame.mixer.music.load(path.join(path.dirname(__file__),"sounds\emafundo1.wav")) 

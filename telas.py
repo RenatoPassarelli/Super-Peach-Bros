@@ -37,7 +37,7 @@ def Pag1(screen):
                     running = False
 
         text_1 = fonte_placar.render("Bem vindo!", True, (0,0,0))
-        text_2 = fonte_placar_peq.render("Aperte qualquer tecla para iniciar", True, (0,0,0))
+        text_2 = fonte_placar_peq.render("Aperte a tecla espaço para iniciar", True, (0,0,0))
 
         # A cada loop, redesenha o fundo, escritos e os sprites
         screen.fill((255,255,255))
