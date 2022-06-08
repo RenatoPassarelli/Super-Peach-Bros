@@ -155,6 +155,9 @@ suspen=[suspf,flutuandod,gelo]
 jorre1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\jorre.png"))
 jorre = pygame.transform.scale(jorre1, (60,60)).convert_alpha()
 
+Lapide1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\Lapide.png"))
+Lapide=pygame.transform.scale(Lapide1, (60,60)).convert_alpha()
+
 Vazio1= pygame.image.load(path.join(path.dirname(__file__),"Imagens\pngegg.png"))
 Vazio=pygame.transform.scale(Vazio1, (60,60)).convert_alpha()
 

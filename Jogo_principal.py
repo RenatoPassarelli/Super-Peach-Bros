@@ -87,6 +87,10 @@ while state != QUIT:
                     a = Vegetacao(veg, l, c)
                     all_sprites.add(a)
                     movimento_blocos.add(a)
+                elif e == "3":
+                    a = Vegetacao(Lapide, l, c)
+                    all_sprites.add(a)
+                    movimento_blocos.add(a)
                 elif e == "W":
                     a = Pinheiro(Pinheiror, l, c)
                     all_sprites.add(a)
@@ -287,11 +291,15 @@ while state != QUIT:
             window.blit(Montanha,(0,0))
 
         all_sprites.draw(window)
-
         # Placar
-        text_tempo = fonte_placar.render("Tempo: {}".format(ceil(tempo)), True, (0,0,0))
-        text_moedas = fonte_placar.render("Moedas: {}".format(moedas), True, (0,0,0))
-        text_nivel = fonte_placar.render("Nível: {}".format(nivel), True, (0,0,0))
+        if n>0:
+            text_tempo = fonte_placar.render("Tempo: {}".format(ceil(tempo)), True, (0,0,0))
+            text_moedas = fonte_placar.render("Moedas: {}".format(moedas), True, (0,0,0))
+            text_nivel = fonte_placar.render("Nível: {}".format(nivel), True, (0,0,0))
+        else:
+            text_tempo = fonte_placar.render("Tempo: {}".format(ceil(tempo)), True, (255,255,255))
+            text_moedas = fonte_placar.render("Moedas: {}".format(moedas), True, (255,255,255))
+            text_nivel = fonte_placar.render("Nível: {}".format(nivel), True, (255,255,255))
         text_moedas_rect = text_moedas.get_rect()
         text_nivel_rect = text_nivel.get_rect()
         text_tempo_rect = text_tempo.get_rect()

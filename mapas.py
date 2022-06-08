@@ -5,11 +5,11 @@ from config import tile_size
 MAPAS = {
     0: [
     '     E                                                                                                                                        ',
-    '     E                                   q MaM a q V                                                                       1MHM1MHM1MHM       D     ',
+    '     E                                   q MaM a q V                                                                   3   1MHM1MHM1MHM       D     ',
     '     E                                    GGGGGGG  GGGG                                                                G   LCCCCCCCCCCR       D     ',
     '     E                                 G               GH                                                             LU   YZZZZZZZZZZU       D     ',
-    '     E                         LR  GG                   LRq 1MaMaHMaHaqJq a1qJqHaHqJ1                   M  M         LZU   YZZZZZZZZZZU       D     ',
-    '1H1H1E              qV1M1a MHqVYU                       YZCCCCCCCCCCCCCCCCCCCCCCCCCCCR                 GGGGG        LZZU                      D     ',
+    '     E                         LR  GG                   LRq31MaMaHMaHaqJq3a1qJqHaHqJ1                   M  M         LZU   YZZZZZZZZZZU       D     ',
+    '1H1H1E3          3  qV1M1a MHqVYU                       YZCCCCCCCCCCCCCCCCCCCCCCCCCCCR                 GGGGG        LZZU                      D     ',
     'CCCCCCRqP M  MaqLR  LCCCCCCCCCCZU                       YZZZZZZZZZZZZZZZZZZZZZZZZZZZZU  GGGG       1            1  LZZZU                      D     ',
     'ZZZZZZZCCCCCCCCCZU  YZZZZZZZZZZZU                       YZZZZZZZZZZZZZZZZZZZZZZZZZZZZU       GGGGG LRqaMaMaMaMqLCCCZZZZUq    a a a a a q  S   D1H1H1',
     'ZZZZZZZZZZZZZZZZZU  YZZZZZZZZZZZU                       YZZZZZZZZZZZZZZZZZZZZZZZZZZZZU             YZCCCCCCCCCCZZZZZZZZZCCCCCCCCCCCCCCCCCCCCCCCCCCCC',
@@ -31,7 +31,7 @@ MAPAS = {
     '                                                                                                    CCCCCCCCC                DDD     ',
     '                                                             MMMMMMMMMM                             GGGGGGGGG     K    S WWWWDDD     ',
     '                                                          GGGGGGGGGGGGGG   G   G   G        W                    LCCCCCCCCCCRWWWWWWWW',
-    '                                                      G                                     KLCRqaaaaaa MMMMMqLCCZZZZZZZZZZZZZZZCCCCC',
+    '                                                      G                                     KLCRqaaaaaa MMMMMq LCZZZZZZZZZZZZZZZCCCCC',
     '                                  KW WKMM  G   G   G                                   W W LCZZZCCCCCCCCCCCCCCCZZZZZZZZZZZZZZZZZZZZZZ',
     '      E                          LCCCCCCR                  K  K                        LCCCZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ',
     '      E                       W  YZZZZZZU                LCCCCR                       GYZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ',
