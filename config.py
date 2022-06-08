@@ -176,6 +176,9 @@ estrela = pygame.transform.scale(estrela1, (40,40)) .convert_alpha()
 arvore1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\Arvore.png"))
 arvore=pygame.transform.scale(arvore1, (125,250)).convert_alpha()
 
+arvorep1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\Arvore 1.png"))
+arvorep=pygame.transform.scale(arvorep1, (125,250)).convert_alpha()
+
 arvorem11=pygame.image.load(path.join(path.dirname(__file__),"Imagens\A1.png"))
 arvorem1=pygame.transform.scale(arvorem11, (125,250)).convert_alpha()
 

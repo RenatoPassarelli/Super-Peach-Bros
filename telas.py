@@ -121,7 +121,7 @@ def init_screen(screen):
         for event in pygame.event.get():
             # Verifica se foi fechado.
             if event.type == pygame.QUIT:
-                state = QUIT
+                state = MP
                 running = False
                 ret = [state, PP]
 
@@ -202,7 +202,7 @@ def game_over_screen(screen):
 
             if event.type == pygame.KEYUP:
                 if event.key == pygame.K_TAB: 
-                    state = PG
+                    state = MP
                     time.sleep(0.5)
                     pygame.mixer.music.stop() 
                     running = False

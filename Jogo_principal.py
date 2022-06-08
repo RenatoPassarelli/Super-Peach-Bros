@@ -71,6 +71,10 @@ while state != QUIT:
                     a = Arvore(arvore, l, c)
                     all_sprites.add(a)
                     movimento_blocos.add(a)
+                elif e == "2":
+                    a = Arvore(arvorep, l, c)
+                    all_sprites.add(a)
+                    movimento_blocos.add(a)
                 elif e == "H":
                     a = Arvore_morta(arvorem1, l, c)
                     all_sprites.add(a)
