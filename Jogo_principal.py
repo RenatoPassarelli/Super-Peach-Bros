@@ -51,12 +51,12 @@ while state != QUIT:
         nivel = 0 
 
         # Música tema de fundo 
-        pygame.mixer.music.load(path.join(path.dirname(__file__),"sounds\emafundo1.wav")) 
-        pygame.mixer.music.set_volume(0)         
+        backgroundsound = sons_fundo[n]
+        pygame.mixer.music.load(path.join(path.dirname(__file__), backgroundsound))         
         pygame.mixer.music.play(loops=-1)
  
         mapa = MAPAS[n]
-        fundo=n
+        fundo = n
         nivel = list(MAPAS.keys())[n] + 1 
 
         # Plota os caracteres do mapa 

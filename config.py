@@ -126,13 +126,15 @@ Montanha1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\Fundo mont
 Montanha=pygame.transform.scale(Montanha1, (1210,600)).convert_alpha()
 
 # Carrendo sons especiais + músicas de fundo 
-pygame.mixer.music.load(path.join(path.dirname(__file__),"sounds\emafundo1.wav")) 
-pygame.mixer.music.set_volume(0) 
-pygame.mixer.music.play(loops=-1)
+# pygame.mixer.music.load(path.join(path.dirname(__file__),"sounds\emafundo1.wav")) 
+# pygame.mixer.music.set_volume(0) 
+# pygame.mixer.music.play(loops=-1)
+sons_fundo = ["sounds\Samba-Pagode.wav","sounds\emafundo1.wav", "sounds\edm_mario.wav"]
 caiu_sound = pygame.mixer.Sound(path.join(path.dirname(__file__),"sounds\caiu.wav")) 
 pisou_sound = pygame.mixer.Sound(path.join(path.dirname(__file__),"sounds\smb_bump.wav"))
 som_moeda = pygame.mixer.Sound(path.join(path.dirname(__file__),"sounds\smb_coin.wav"))
-ganhou_sound = pygame.mixer.Sound(path.join(path.dirname(__file__),"sounds\ganhou.wav")) 
+ganhou_sound = pygame.mixer.Sound(path.join(path.dirname(__file__),"sounds\ganhou.wav"))
+
 
 # Fontes 
 fonte_placar = pygame.font.Font(path.join(path.dirname(__file__),"font\PressStart2P.ttf" ),28)

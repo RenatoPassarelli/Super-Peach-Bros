@@ -236,6 +236,10 @@ def win_screen(screen):
     background1 = pygame.transform.scale(background, (WIDTH,HEIGHT)) 
     background_rect = background.get_rect()
 
+    # Carrega música fundo
+    pygame.mixer.music.load(path.join(path.dirname(__file__),"sounds\Brega-Funk_wins.wav"))
+    pygame.mixer.music.play() 
+
     running = True
     while running:
         # Ajusta a velocidade do jogo.
