@@ -67,11 +67,23 @@ while state != QUIT:
                     a = Gelinho(gelinho, l, c)
                     all_sprites.add(a)
                     movimento_blocos.add(a)
-                if e == "t":
+                elif e == "t":
                     a = Arvore(arvore, l, c)
                     all_sprites.add(a)
                     movimento_blocos.add(a)
-                if e == "W":
+                elif e == "H":
+                    a = Arvore_morta(arvorem1, l, c)
+                    all_sprites.add(a)
+                    movimento_blocos.add(a)
+                elif e == "1":
+                    a = Arvore_morta(arvorem2, l, c)
+                    all_sprites.add(a)
+                    movimento_blocos.add(a)
+                elif e == "V":
+                    a = Vegetacao(veg, l, c)
+                    all_sprites.add(a)
+                    movimento_blocos.add(a)
+                elif e == "W":
                     a = Pinheiro(Pinheiror, l, c)
                     all_sprites.add(a)
                     movimento_blocos.add(a)
@@ -81,37 +93,37 @@ while state != QUIT:
                     all_sprites.add(b)
                     movimento_blocos.add(b)
                 elif e == "Z":
-                    b = Bloco(centro, l, c)
+                    b = Bloco(centros[n], l, c)
                     all_blocos.add(b)
                     all_sprites.add(b)
                     movimento_blocos.add(b)
                 elif e == "C":
-                    b = Bloco(centroc, l, c)
+                    b = Bloco(centrosc[n], l, c)
                     all_blocos.add(b)
                     all_sprites.add(b)
                     movimento_blocos.add(b)
                 elif e == "U":
-                    b = Bloco(centrod, l, c)
+                    b = Bloco(centrosd[n], l, c)
                     all_blocos.add(b)
                     all_sprites.add(b)
                     movimento_blocos.add(b)
                 elif e == "Y":
-                    b = Bloco(centroe, l, c)
+                    b = Bloco(centrose[n], l, c)
                     all_blocos.add(b)
                     all_sprites.add(b)
                     movimento_blocos.add(b)
                 elif e == "G":
-                    b = Bloco(gelo, l, c)
+                    b = Bloco(suspen[n], l, c)
                     all_blocos.add(b)
                     all_sprites.add(b)
                     movimento_blocos.add(b)
                 elif e == "L":
-                    b = Bloco(cantoe, l, c)
+                    b = Bloco(cantose[n], l, c)
                     all_blocos.add(b)
                     all_sprites.add(b)
                     movimento_blocos.add(b)
                 elif e == "R":
-                    b = Bloco(cantod, l, c)
+                    b = Bloco(cantosd[n], l, c)
                     all_blocos.add(b)
                     all_sprites.add(b)
                     movimento_blocos.add(b)
@@ -263,10 +275,11 @@ while state != QUIT:
         all_sprites.update() 
         window.fill((0, 200, 253))
           # Preenche com a cor de fundo
+        if fundo ==0:
+            window.blit(Floresta,(0,0))
         if fundo ==1:
             window.blit(Deserto,(0,150))
         if fundo ==2:
-            window.fill((255, 255, 255))
             window.blit(Montanha,(0,0))
 
         all_sprites.draw(window)

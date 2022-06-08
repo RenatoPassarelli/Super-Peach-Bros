@@ -5,26 +5,27 @@ from config import tile_size
 MAPAS = {
     0: [
     '                                                                                                       ',
-    '                               q  MaM a q                                                                         MMMMMMMMMM         ',
-    '                                XXXXXXX  XXXX                                                               X   XXXXXXXXXXXX       ',
-    '   P                         X              XX                                                             XX   XXXXXXXXXXXX     ',
-    ' XXXXXXX             XX  XX                  XXq  MaMa Ma aqJq a qJq a qJ                   M  M          XXX   XXXXXXXXXXXX     ',
-    '          q  M a M q XX                       XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX               XXXXXX        XXXX                    ',
-    '          XXXXXXXXXXXXX                                                       XXXX                      XXXXX                     ',
-    '                                                                                    XXXX  qMaMaMaMaM  qXXXXXXq    a a a a a q  S   ',
-    '                                                                                          XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
-],
+    '                                    q MaM a q V                                                                      1MHM1MHM1MHM         ',
+    '                                     GGGGGGG  GGGG                                                               G   LCCCCCCCCCCR       ',
+    '                                  G               GH                                                            LU   YZZZZZZZZZZU     ',
+    '                          LR  GG                   LRq 1MaMaHMaHaqJq a1qJqHaHqJ1                 M  M          LZU   YZZZZZZZZZZU     ',
+    '               qV1M1a MHqVYU                       YZCCCCCCCCCCCCCCCCCCCCCCCCCCCR               GGGGGG        LZZU                    ',
+    'LRqP M  MaqLR  LCCCCCCCCCCZU                       YZZZZZZZZZZZZZZZZZZZZZZZZZZZZU  GGGG                      LZZZU                     ',
+    'YZZZZZZZZZZZU  YZZZZZZZZZZZU                       YZZZZZZZZZZZZZZZZZZZZZZZZZZZZU       GGGGG 1qMaMaMaMaM HqLZZZZUq    a a a a a q  S   ',
+    'YZZZZZZZZZZZU  YZZZZZZZZZZZU                       YZZZZZZZZZZZZZZZZZZZZZZZZZZZZU             LCCCCCCCCCCCCCZZZZZZCCCCCCCCCCCCCCCCCCCC',
+    'YZZZZZZZZZZZU  YZZZZZZZZZZZU                       YZZZZZZZZZZZZZZZZZZZZZZZZZZZZU             YZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ'
+],  
     1: [
     '                                N      N          N            N                                                       ',
     '               N                                  N                                                         tMtMtMt    ',
-    '    N                q ta M a M atq   Nq  tatMMtq M        MMt        M                                    XXXXXXXX   ',
-    '           N         XXXXXXXXXXXXX     M XXXXXXXX   tt t   XXXX   t t                    q Mat aMatq    MM             D',
-    'E                t M      N         t XXXXXXXXXXX   XXXXX        XXXXX   t  Mqaq          XXXXXXXXXX   XXX        S    D',
-    'E   N        MMt XX              N  XXXXXXXXXXXXX             N          XXX  X    t t X               XXXq  at ta a tqD',
-    'E           XXXXXXX               tXXXXXXXXXXXXXX                                XXXXXXX               XXXXXXXXXXXXXXXXX',
-    'E                  N q M a M a q  XXXXXXXXXXXXXXX                                XXXXXXX               XXXXXXXXXXXXXXXX',
-    'E ttt  P        MM    XXXXXXXXX  XXXXXXXXXXXXXXXX N                              XXXXXXX               XXXXXXXXXXXXXXXX',
-    'XXXXXXXXXXXXXXXXXXX   XXXXXXXXX  XXXXXXXXXXXXXXXX                                XXXXXXX               XXXXXXXXXXXXXXXX'
+    '    N                q ta M a M atq   Nq  tatMMtq M        MMt        M                                    GGGGGGGGG   ',
+    '           N         GGGGGGGGGGGGG     M LCCCCCCR   tt t   GGGG   t t                    q Mat aMatq    MM             D',
+    'E                t M      N         t LCCZZZZZZZU   GGGGG        GGGGG   t  Mqaq          GGGGGGGGGG   LCR        S    D',
+    'E   N        MMt GG              N  LCZZZZZZZZZZU             N          GGG  G    t t G               YZUq  at ta a tqD',
+    'E           GGGGGGG               tLZZZZZZZZZZZZU                                LCCCCCU               YZZCCCCCCCCCCCCR',
+    'E                  N q M a M a q  LZZZZZZZZZZZZZU                                YZZZZZU               YZZZZZZZZZZZZZZU',
+    'E ttt  P        MM    LCCCCCCCR  LZZZZZZZZZZZZZZU N                              YZZZZZU               YZZZZZZZZZZZZZZU',
+    'CCCCCCCCCCCCCCCCCCR   YZZZZZZZU  YZZZZZZZZZZZZZZU                                YZZZZZU               YZZZZZZZZZZZZZZU'
 ] ,
     2: [
     '                                                                                             CCCCCCCCC                  D     ',

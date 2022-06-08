@@ -16,7 +16,7 @@ def Pag1(screen):
     fonte_placar_peq = pygame.font.Font(path.join(path.dirname(__file__),"font\PressStart2P.ttf" ),30) 
 
     # Carrega o fundo da tela inicial
-    background = pygame.image.load(path.join(path.dirname(__file__), 'Imagens\inicial.png')).convert()
+    background = pygame.image.load(path.join(path.dirname(__file__), 'Imagens\main.png')).convert()
     background1 = pygame.transform.scale(background, (WIDTH,HEIGHT)) 
     background_rect = background1.get_rect()
 
