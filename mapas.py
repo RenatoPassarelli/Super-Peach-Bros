@@ -4,17 +4,16 @@ from config import tile_size
 # Diretório com os mapas de cada nível do jogo 
 MAPAS = {
     0: [
-        '                           ',
-        '                           ',
-        '           XXX             ',
-        '    XX                     ',
-        '                  XXXXXXX  ',
-        '        XXXXX              ',
-        '                           ',
-        '      XXXXXXXXXXXX  XXXXXXX',
-        ' P XXXXXXXXXXXXXXX  XXXXXXX',
-        'XXXXXXXXXXXXXXXXXX  XXXXXXX'
-    ],
+    '                                                                                                       ',
+    '                               q  MaM a q                                                                         MMMMMMMMMM         ',
+    '                                XXXXXXX  XXXX                                                               X   XXXXXXXXXXXX       ',
+    '   P                         X              XX                                                             XX   XXXXXXXXXXXX     ',
+    ' XXXXXXX             XX  XX                  XXq  MaMa Ma aqJq a qJq a qJ                   M  M          XXX   XXXXXXXXXXXX     ',
+    '          q  M a M q XX                       XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX               XXXXXX        XXXX                    ',
+    '          XXXXXXXXXXXXX                                                       XXXX                      XXXXX                     ',
+    '                                                                                    XXXX  qMaMaMaMaM  qXXXXXXq    a a a a a q  S   ',
+    '                                                                                          XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+],
     1: [
     '                                N      N          N            N                                                       ',
     '               N                                  N                                                         tMtMtMt    ',
