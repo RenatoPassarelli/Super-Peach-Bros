@@ -5,6 +5,9 @@ Game by:
     Felipe Fuchs
     Renato Passarelli
 
+Descrição do Jogo:
+    Jogo singleplayer inspirado no famoso Mario Bros. O objetivo do jogo é completar cada nível, passando por diferentes cenários e desafios afim de capturar a estrela vencedora. O jogador pode escolher o personagem com o qual irá jogar e ainda o nível em que quer começar. 
+
 Assets:
     font = Pasta onde estão as fontes de texto.
     Imagens = Pasta com todas as Imagens que estão no jogo.
@@ -26,13 +29,25 @@ Como joga:
 Video jogo:
 
 Fontes usadas:
+    Documentação Pygame:
+        https://www.pygame.org/docs/
 
-Créditos musicais: 
+    Créditos musicais: 
 
-    Efeitos sonoros:
-    https://themushroomkingdom.net/media/smb/wav 
+        Efeitos sonoros:
+        https://themushroomkingdom.net/media/smb/wav 
 
-    Música de Fundo Nível 1:
+        Música de Fundo Nível 1:
+        https://www.youtube.com/watch?v=G0YCVUSR17U&t=1s
 
-    Música de Fundo Game Over: 
-    https://www.youtube.com/watch?v=uajoPwjiqqI 
+        Musica de Fundo Nível 2:
+        https://www.youtube.com/watch?v=eaN5rYVSK50&t=16s 
+
+        Música de Fundo Nível 3:
+        https://www.youtube.com/watch?v=ZCKntO6GMAI 
+
+        Música de Fundo Game Over: 
+        https://www.youtube.com/watch?v=uajoPwjiqqI 
+
+        Música de Fundo Win: 
+        https://www.youtube.com/watch?v=AYFXUzex3XQ 
