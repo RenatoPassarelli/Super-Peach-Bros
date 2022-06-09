@@ -32,32 +32,37 @@ QUIT =10
 PG=11
 FPS = 70 
 
-# Imagens dos personagens
+# Imagens da Peach
 peachzinha = pygame.image.load(path.join(path.dirname(__file__),"Imagens\Peachzinha.png"))
 peachzinha1=pygame.transform.scale(peachzinha, (60,80)).convert_alpha()
 peachzinhaco=pygame.image.load(path.join(path.dirname(__file__),"Imagens\Peachzinha contrária.png"))
 peachzinhaco1=pygame.transform.scale(peachzinhaco, (60,80)).convert_alpha()
 
+#Imagens do Sonico
 sonic1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\sonic.png"))
 sonic=pygame.transform.scale(sonic1, (60,80)).convert_alpha()
 sonico1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\sonico.png"))
 sonico=pygame.transform.scale(sonico1, (60,80)).convert_alpha()
 
+#Imagens do Yoshi
 yoshi1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\Yoshi.png"))
 yoshi=pygame.transform.scale(yoshi1, (60,80)).convert_alpha()
 yoshico1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\Yoshico.png"))
 yoshico=pygame.transform.scale(yoshico1, (60,80)).convert_alpha()
 
+#Imagens do Resina
 resina1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\lresina.png"))
 resina=pygame.transform.scale(resina1, (60,80)).convert_alpha()
 resinaco1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\lresina_co.png"))
 resinaco=pygame.transform.scale(resinaco1, (60,80)).convert_alpha()
 
+#Imagens do Humberto
 Humberto1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\mhumberto.png"))
 Humberto=pygame.transform.scale(Humberto1, (60,80)).convert_alpha()
 Humbertoco1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\mhumberto_co.png"))
 Humbertoco=pygame.transform.scale(Humbertoco1, (60,80)).convert_alpha()
 
+#Imagens da Bomba
 bomba1 = pygame.image.load(path.join(path.dirname(__file__),"Imagens\Bomba.png"))
 bomba=pygame.transform.scale(bomba1, (60,80)).convert_alpha()
 bombaco1=pygame.image.load(path.join(path.dirname(__file__),"Imagens\Bombaco.png"))

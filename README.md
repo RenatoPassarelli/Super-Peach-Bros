@@ -55,3 +55,31 @@ Fontes usadas:
 
         Música de Fundo Win: 
         https://www.youtube.com/watch?v=AYFXUzex3XQ 
+
+    Site das imagens:
+
+        Blocos e afins:
+        https://craftpix.net/
+
+        Personagens:
+        https://www.seekpng.com/
+        https://www.pinclipart.com/downpngs/iTJmiih_super-mario-clipart-mystery-number-peach-mario-bros/
+
+        Conversor de imagem para PNG:
+        https://www.remove.bg/
+
+    Comandos e movimentação dos personagens:
+
+        Colisão:
+        https://github.com/Insper/pygame-snippets
+
+        Outra fonte:
+        https://www.pygame.org/docs/
+        
+
+
+
+
+
+
+
