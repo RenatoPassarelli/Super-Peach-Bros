@@ -16,16 +16,16 @@ MAPAS = {
     'ZZZZZZZZZZZZZZZZZU  YZZZZZZZZZZZU                       YZZZZZZZZZZZZZZZZZZZZZZZZZZZZU             YZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ'
 ],  
     1: [
-    '                                     N        N          N            N                                                       D         ',
-    '                      N                                  N                                                         tM2MtM2    D         ',
-    '         N                q 2a M2atM 2aq     N  qta2MM2q M        M2M         M                                    GGGGGGGGG   D         ',
-    '                N         GGGGGGGGGGGGG      2M LCCCCCCR   t2 t   GGGG   t 2                    q Mata2Matq    MM             D         ',
-    '     E                2 M      N           LCCCCZZZZZZZU   GGGGG        GGGGG   2  Mqaq          GGGGGGGGGG   LCR        S    D         ',
-    '     E   N        MM2 GG              N  LCZZZZZZZZZZZZU             N          GGG  G    t t G               YZUq  at ta a tqD222222222',
-    '     E           GGGGGGG                LZZZZZZZZZZZZZZU                                LCCCCCU               YZZCCCCCCCCCCCCCCCCCCCCCCC',
-    '     E                  N q M a M a q  LZZZZZZZZZZZZZZZU                                YZZZZZU               YZZZZZZZZZZZZZZZZZZZZZZZZZ',
-    '22222Eq     P M a  aqMM    LCCCCCCCR  LZZZZZZZZZZZZZZZZU N                              YZZZZZU               YZZZZZZZZZZZZZZZZZZZZZZZZZZ',
-    'CCCCCCCCCCCCCCCCCCCCCCCR   YZZZZZZZU  YZZZZZZZZZZZZZZZZU                                YZZZZZU               YZZZZZZZZZZZZZZZZZZZZZZZZZZ'
+    '                                     N        N          N            N                                                          D       ',
+    '                      N                                  N                                                         tM2MtM2       D      ',
+    '         N                q 2a M2atM 2aq     N qta2MM2  q M        M2M         M                                  GGGGGGGGG      D      ',
+    '                N         GGGGGGGGGGGGG      2M LCCCCCCR   t2 t   GGGG   t 2                    q Mata2Matq    MM                D      ',
+    '     E                2 M      N           LCCCCZZZZZZZU   GGGGG        GGGGG   2  Mqaq          GGGGGGGGGG   LCR        S       D      ',
+    '     E   N        MM2 GG              N  LCZZZZZZZZZZZZU             N          GGG  G    t t G               YZUq  at ta a tq   D22222222222',
+    '     E           GGGGGGG                LZZZZZZZZZZZZZZU                                LCCCCCU               YZZCCCCCCCCCCCCCCCCCCCCCCCCCCCC',
+    '     E                  N q M a M a q  LZZZZZZZZZZZZZZZU                                YZZZZZU               YZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ',
+    '22222Eq     P M a  aqMM    LCCCCCCCR  LZZZZZZZZZZZZZZZZU N                              YZZZZZU               YZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ',
+    'CCCCCCCCCCCCCCCCCCCCCCCR   YZZZZZZZU  YZZZZZZZZZZZZZZZZU                                YZZZZZU               YZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ'
 ] ,
     2: [
     '                                                                                                    CCCCCCCCC                DDD     ',
