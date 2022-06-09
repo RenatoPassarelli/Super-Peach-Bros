@@ -8,6 +8,10 @@ Game by:
 Descrição do Jogo:
     Jogo singleplayer inspirado no famoso Mario Bros. O objetivo do jogo é completar cada nível, passando por diferentes cenários e desafios afim de capturar a estrela vencedora. O jogador pode escolher o personagem com o qual irá jogar e ainda o nível em que quer começar. 
 
+Vídeo do jogo:
+    Link do youtube
+    <https://youtu.be/bvsVGs_dQOg>
+
 Assets:
     font = Pasta onde estão as fontes de texto.
     Imagens = Pasta com todas as Imagens que estão no jogo.
