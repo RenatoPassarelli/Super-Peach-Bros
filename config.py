@@ -30,7 +30,7 @@ GO = 9
 WIN = 12 
 QUIT =10  
 PG=11
-FPS = 60 
+FPS = 70 
 
 # Imagens dos personagens
 peachzinha = pygame.image.load(path.join(path.dirname(__file__),"Imagens\Peachzinha.png"))

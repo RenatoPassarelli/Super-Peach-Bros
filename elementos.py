@@ -124,7 +124,7 @@ class Arvore_morta(pygame.sprite.Sprite):
 
 # Gombas 
 class Animais(pygame.sprite.Sprite):
-    def __init__(self, l, c,limites):
+    def __init__(self, l, c,limites,n):
         # Construtor da classe mãe (Sprite).
         pygame.sprite.Sprite.__init__(self)
         self.frames = []
@@ -137,7 +137,7 @@ class Animais(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = c * tile_size
         self.rect.y = l * tile_size+6
-        self.speedx=2
+        self.speedx=2*(n+1)
         self.pecas=limites
 
     def update(self):
@@ -149,9 +149,9 @@ class Animais(pygame.sprite.Sprite):
         self.image = self.frames[int(self.frame_atual)]
         for blocos in limitess:
             if self.speedx > 0:
-                self.speedx=-2
+                self.speedx=-self.speedx
             elif self.speedx < 0:
-                self.speedx=2
+                self.speedx=-self.speedx
 
     def afundando(self):
         self.image = pygame.image.load(path.join('Super-Peach-Bros/Imagens/goompa2/Imagem{}.png'.format(3))).convert_alpha()
