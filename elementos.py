@@ -123,7 +123,7 @@ class Arvore_morta(pygame.sprite.Sprite):
 
 
 # Gombas 
-class Animais(pygame.sprite.Sprite):
+class Gombas(pygame.sprite.Sprite):
     def __init__(self, l, c,limites,n):
         # Construtor da classe mãe (Sprite).
         pygame.sprite.Sprite.__init__(self)

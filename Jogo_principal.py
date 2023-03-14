@@ -163,7 +163,7 @@ while state != QUIT:
                     all_sprites.add(cloud)
                     movimento_nuvem.add(cloud)
                 elif e == "a":
-                    g = Animais(l, c,limite,n)
+                    g = Gombas(l, c,limite,n)
                     all_sprites.add(g)
                     movimento_blocos.add(g)
                     morrer.add(g)
