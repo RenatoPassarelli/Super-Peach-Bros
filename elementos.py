@@ -41,82 +41,73 @@ class LimiteD(pygame.sprite.Sprite):
 
     def update(self):
         pass
-    
-# Blocos mapa 
-class Bloco(pygame.sprite.Sprite):
-    def __init__(self, img, l, c):
+
+
+class Objetos(pygame.sprite.Sprite):
+    def __init__(self,img, l, c):
         # Construtor da classe mãe (Sprite).
         pygame.sprite.Sprite.__init__(self)
         self.image = img
         self.rect = self.image.get_rect()
         self.rect.x = c * tile_size
-        self.rect.y = l * tile_size
+        self.rect.y = l * tile_size 
+
+        
+   
+# Blocos mapa 
+class Bloco(Objetos):
+    def __init__(self, img, l, c):
+        # Construtor da classe mãe (Bloco).
+        super().__init__(img, l, c) 
+        
+        
+    
 
 # Torre jogo 
-class Jorre(pygame.sprite.Sprite):
+class Jorre(Objetos):
     def __init__(self, img, l, c):
-        # Construtor da classe mãe (Sprite).
-        pygame.sprite.Sprite.__init__(self)
-        self.image = img
-        self.rect = self.image.get_rect()
-        self.rect.x = c * tile_size
-        self.rect.y = l * tile_size
+        # Construtor da classe mãe (Bloco).
+        super().__init__(img, l, c) 
 
 # Arvores      
-class Arvore(pygame.sprite.Sprite):
+class Arvore(Objetos):
     def __init__(self, img, l, c):
-        # Construtor da classe mãe (Sprite).
-        pygame.sprite.Sprite.__init__(self)
-        self.image = img
-        self.rect = self.image.get_rect()
-        self.rect.x = c * tile_size
-        self.rect.y = l*tile_size-130
+        # Construtor da classe mãe (Bloco).
+        super().__init__(img, l, c) 
+        self.rect.y -= 130
 
 #Pinheiros
     def update(self):
         pass 
 
-class Pinheiro(pygame.sprite.Sprite):
+class Pinheiro(Objetos):
     def __init__(self, img, l, c):
-        # Construtor da classe mãe (Sprite).
-        pygame.sprite.Sprite.__init__(self)
-        self.image = img
-        self.rect = self.image.get_rect()
-        self.rect.x = c * tile_size
-        self.rect.y = l*tile_size-330
+        # Construtor da classe mãe (Bloco).
+        super().__init__(img, l, c) 
+        self.rect.y -= 330
 
-class Gelinho(pygame.sprite.Sprite):
+class Gelinho(Objetos):
     def __init__(self, img, l, c):
-        # Construtor da classe mãe (Sprite).
-        pygame.sprite.Sprite.__init__(self)
-        self.image = img
-        self.rect = self.image.get_rect()
-        self.rect.x = c * tile_size
-        self.rect.y = l*tile_size
+        # Construtor da classe mãe (Bloco).
+        super().__init__(img, l, c) 
 
     def update(self):
         pass 
 
-class Vegetacao(pygame.sprite.Sprite):
+class Vegetacao(Objetos):
     def __init__(self, img, l, c):
-        # Construtor da classe mãe (Sprite).
-        pygame.sprite.Sprite.__init__(self)
-        self.image = img
-        self.rect = self.image.get_rect()
-        self.rect.x = c * tile_size
-        self.rect.y = l*tile_size+30
+        # Construtor da classe mãe (Bloco).
+        super().__init__(img, l, c) 
+        self.rect.y += 30
 
     def update(self):
         pass 
 
-class Arvore_morta(pygame.sprite.Sprite):
+class Arvore_morta(Objetos):
     def __init__(self, img, l, c):
-        # Construtor da classe mãe (Sprite).
-        pygame.sprite.Sprite.__init__(self)
-        self.image = img
-        self.rect = self.image.get_rect()
-        self.rect.x = c * tile_size
-        self.rect.y = l*tile_size-150
+        # Construtor da classe mãe (Bloco).
+        super().__init__(img, l, c) 
+        self.rect.y -= 150
 
     def update(self):
         pass 
