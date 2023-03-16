@@ -1,0 +1,9 @@
+Mudanças:
+
+ABSTRAÇÃO
+    - criação de uma classe mãe que englobasse a construção padrão de todos os elementos decorativos do jogo.
+COESÃO 
+    - Criação de uma função que executa a colisão dos personagens com os blocos
+    - Transferência da classe Gombas para o arquivo de personagens, uma vez que estes não são apenas elementos. 
+
+
