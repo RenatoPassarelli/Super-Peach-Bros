@@ -1,21 +1,9 @@
-Oq pensamos: 
-- criar uma superclasse de objetos parados # abstração
-- metodo de construção padrão # coesão
+Mudanças:
 
-Construtor
-- todas as linhas é igual para todos os objetos parados do jogo
-- override para o self.rect.y
-
-coesão
-- mudar codigo dos gompas para a pasta de personagens
-
-    
-def __init__(self, img, l, c):
-    # Construtor da classe mãe (Sprite).
-    pygame.sprite.Sprite.__init__(self)
-    self.image = img
-    self.rect = self.image.get_rect()
-    self.rect.x = c * tile_size
-    self.rect.y = l*tile_size
+ABSTRAÇÃO
+    - criação de uma classe mãe que englobasse a construção padrão de todos os elementos decorativos do jogo.
+COESÃO 
+    - Criação de uma função que executa a colisão dos personagens com os blocos
+    - Transferência da classe Gombas para o arquivo de personagens, uma vez que estes não são apenas elementos. 
 
 
