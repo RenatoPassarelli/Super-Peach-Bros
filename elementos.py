@@ -113,40 +113,6 @@ class Arvore_morta(Objetos):
         pass 
 
 
-# Gombas 
-class Gombas(pygame.sprite.Sprite):
-    def __init__(self, l, c,limites,n):
-        # Construtor da classe mãe (Sprite).
-        pygame.sprite.Sprite.__init__(self)
-        self.frames = []
-        for i in range(1,3):
-            self.image = pygame.image.load(path.join(path.dirname(__file__),'Imagens/goompa2/Imagem{}.png'.format(i))).convert_alpha()
-            self.image = pygame.transform.scale(self.image, (60,60))
-            self.frames.append(self.image)
-        self.frame_atual = 0
-        self.image = self.frames[self.frame_atual]
-        self.rect = self.image.get_rect()
-        self.rect.x = c * tile_size
-        self.rect.y = l * tile_size+6
-        self.speedx=2*(n+1)
-        self.pecas=limites
-
-    def update(self):
-        self.frame_atual += 0.14
-        self.rect.x+=self.speedx
-        limitess = pygame.sprite.spritecollide(self, self.pecas, False)
-        if self.frame_atual > len(self.frames):
-            self.frame_atual = 0
-        self.image = self.frames[int(self.frame_atual)]
-        for blocos in limitess:
-            if self.speedx > 0:
-                self.speedx=-self.speedx
-            elif self.speedx < 0:
-                self.speedx=-self.speedx
-
-    def afundando(self):
-        self.image = pygame.image.load(path.join('Super-Peach-Bros/Imagens/goompa2/Imagem{}.png'.format(3))).convert_alpha()
-        self.image = pygame.transform.scale(self.image, (60,60))
             
         
 # Moedas    
@@ -175,13 +141,10 @@ class Moedas(pygame.sprite.Sprite):
         self.image = self.frames[int(self.frame_atual)]
        
 # Nuvenzinhas do céu 
-class Nuvem(pygame.sprite.Sprite):
+class Nuvem(Objetos):
     def __init__(self, img, l, c):
-        pygame.sprite.Sprite.__init__(self)
-        self.image = img
-        self.rect = self.image.get_rect()
-        self.rect.x = c * tile_size
-        self.rect.y = l * tile_size 
+        # Construtor da classe mãe (Bloco).
+        super().__init__(img, l, c) 
 
     def update(self):
         pass 

@@ -6,6 +6,9 @@ Construtor
 - todas as linhas é igual para todos os objetos parados do jogo
 - override para o self.rect.y
 
+coesão
+- mudar codigo dos gompas para a pasta de personagens
+
     
 def __init__(self, img, l, c):
     # Construtor da classe mãe (Sprite).
