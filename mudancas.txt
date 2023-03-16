@@ -17,3 +17,5 @@ def __init__(self, img, l, c):
     self.rect = self.image.get_rect()
     self.rect.x = c * tile_size
     self.rect.y = l*tile_size
+
+
